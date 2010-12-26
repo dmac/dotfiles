@@ -24,7 +24,7 @@ alias la="ls -la"
 EDITOR=vim
 export EDITOR
 PAGER="less -FiRsw"
-MANPAGER = $PAGER
+MANPAGER=$PAGER
 export PAGER MANPAGER
 
 # ====================
