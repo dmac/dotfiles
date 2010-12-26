@@ -3,7 +3,7 @@
 DOTDIR = ".dotfiles"
 Dir.chdir(File::expand_path("~"))
 Dir.foreach(DOTDIR) do |file|
-  if file.match(/(\.[a-z]+)/)
+  if file.match(/(\.[a-z]+)/) && file != ".git"
     system("ln -sf #{DOTDIR}/#{file} #{file}")
     puts "#{file} => #{DOTDIR}/#{file}"
   end
