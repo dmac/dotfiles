@@ -1,0 +1,26 @@
+[core]
+  filemode = true
+  excludesfile = ~/.gitexcludes
+
+[user]
+  name = Daniel MacDougall
+  email = dmacdougall@gmail.com
+
+[branch]
+  autosetuprebase = always
+
+[color]
+  ui = auto
+
+[push]
+  default = tracking
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  wc = whatchanged
+  cp = cherry-pick
+  last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
+
