@@ -81,6 +81,20 @@ nmap <LEADER>e :e **/
 nmap <LEADER>f :NERDTreeToggle<CR>
 nmap <LEADER>t :TlistToggle<CR>
 
+" Automatic brace and quote closing
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     [}
+inoremap "      ""<Left>
+inoremap ""     ""
+inoremap '      ''<Left>
+inoremap ''     ''
+
 " ====================
 " Auto Commands
 " ====================
