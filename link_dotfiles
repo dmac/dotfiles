@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+DOTDIR = ".dotfiles"
+Dir.chdir(File::expand_path("~"))
+Dir.foreach(DOTDIR) do |file|
+  if file.match(/(\.[a-z]+)/)
+    system("ln -sf #{DOTDIR}/#{file} #{file}")
+    puts "#{file} => #{DOTDIR}/#{file}"
+  end
+end
+

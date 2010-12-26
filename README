@@ -1,0 +1,8 @@
+Configuration files, including bash environment, vim configuration, and screen
+settings.
+
+Also included is a script that will create symlinks from the HOME directory to
+where these configuration files are stored.
+
+I use this to quickly set up and share environments across machines.
+
