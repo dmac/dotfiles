@@ -46,14 +46,14 @@ RED="\[\033[0;31m\]"
 
 prompt_simple() {
   unset PROMPT_COMMAND
-  PS1="[\u@\h:\w]\$ "
+  PS1="\W\$ "
   PS2="> "
 }
 
 function prompt_fancy {
   # Shows user@host in the title
   unset PROMPT_COMMAND
-  TITLEBAR="\[\033]0;\u@\h:\w \007\]"
+  TITLEBAR="\[\033]0;\u@\h\007\]"
   # Shows a "*" next to the branch name if you have un-staged local changes
   # Shows a "+" next to the branch name if you have staged local changes
   export GIT_PS1_SHOWDIRTYSTATE=1
