@@ -38,6 +38,13 @@ export PAGER MANPAGER
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # ====================
+# Bash Completion
+# ====================
+if [ -f /opt/local/etc/bash_completion ]; then
+  . /opt/local/etc/bash_completion
+fi
+
+# ====================
 # PROMPT
 # ====================
 WHITE="\[\033[0;37m\]"
@@ -67,15 +74,12 @@ function prompt_fancy {
   # Shows a "%" next to the branch name if you have untracked files
   export GIT_PS1_SHOWUNTRACKEDFILES=1
   # Put it all together
-  PS1="${TITLEBAR}${CYAN}\W${GREEN}"'$(__git_ps1 "(%s)")'"${WHITE}\$ "
+  if type -p __git_ps1; then
+    PS1="${TITLEBAR}${CYAN}\W${GREEN}"'$(__git_ps1 "(%s)")'"${WHITE}\$ "
+  else
+    PS1="${TITLEBAR}${CYAN}\W${GREEN}${WHITE}\$ "
+  fi
   PS2="> "
 }
 prompt_fancy
-
-# ====================
-# Bash Completion
-# ====================
-if [ -f /opt/local/etc/bash_completion ]; then
-  . /opt/local/etc/bash_completion
-fi
 
