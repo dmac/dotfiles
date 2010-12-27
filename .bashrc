@@ -36,6 +36,7 @@ export PAGER MANPAGER
 # LS Colors
 # ====================
 export LSCOLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS="ex=31:di=36:ln=35"
 
 # ====================
 # Bash Completion
