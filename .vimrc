@@ -19,13 +19,11 @@ endif
 " ====================
 " Plugins
 " ====================
-set runtimepath+=~/.vim/addons/vim-addon-manager
-call scriptmanager#Activate(["The_NERD_tree",
-                           \ "surround",
-                           \ "repeat",
-                           \ "snipMate",
-                           \ "git-vim",
-                           \ "taglist"])
+set runtimepath+=~/.vim/addons/The_NERD_tree
+set runtimepath+=~/.vim/addons/git-vim
+set runtimepath+=~/.vim/addons/repeat
+set runtimepath+=~/.vim/addons/surround
+set runtimepath+=~/.vim/addons/taglist
 
 " ====================
 " Backups
