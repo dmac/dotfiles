@@ -31,8 +31,8 @@ set runtimepath+=~/.vim/addons/taglist
 set nobackup
 set nowritebackup
 set noswapfile
-set backupdir=~/.vim/backup
-set backupcopy=yes
+"set backupdir=~/.vim/backup
+"set backupcopy=yes
 
 " ====================
 " UI
