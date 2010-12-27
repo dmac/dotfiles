@@ -14,7 +14,12 @@ export PATH
 # ====================
 # Aliases
 # ====================
-alias ls="ls -Gh"
+if [[ $(uname) == 'Linux' ]]; then
+  LS_COMMON="--color=auto"
+elif [[ $(uname) == 'Darwin' ]]; then
+  LS_COMMON="-Gh"
+fi
+test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
 alias ll="ls -l"
 alias la="ls -la"
 
