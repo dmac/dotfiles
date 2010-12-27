@@ -12,7 +12,7 @@ filetype plugin indent on
 " Colors and Skins
 " ====================
 if &t_Co > 2 || has("gui_running")
-  syntax on
+  syntax enable
   set hlsearch
 endif
 
@@ -46,9 +46,13 @@ set number
 " ====================
 " Highlights
 " ====================
-hi LineNr ctermfg = DarkGray ctermbg=Black
+hi LineNr ctermfg=DarkGray ctermbg=Black
 hi Comment ctermfg=cyan cterm=none
 hi Directory ctermfg=cyan cterm=none
+" better git diff colors
+hi diffAdded ctermfg=DarkGreen ctermbg=Black
+hi diffRemoved ctermfg=DarkRed ctermbg=Black
+hi diffFile ctermfg=darkcyan ctermbg=Black
 
 " ====================
 " Visual Cues
