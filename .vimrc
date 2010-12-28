@@ -59,6 +59,7 @@ hi diffFile ctermfg=darkcyan ctermbg=Black
 " ====================
 set showmatch
 set ignorecase
+set nohlsearch
 set list listchars=trail:.,tab:>. " highlight trailing whitespace
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
