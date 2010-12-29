@@ -24,6 +24,7 @@ set runtimepath+=~/.vim/addons/git-vim
 set runtimepath+=~/.vim/addons/repeat
 set runtimepath+=~/.vim/addons/surround
 set runtimepath+=~/.vim/addons/taglist
+set runtimepath+=~/.vim/addons/autoclose
 
 " ====================
 " Backups
@@ -85,14 +86,8 @@ nmap <LEADER>f :NERDTreeToggle<CR>
 nmap <LEADER>t :TlistToggle<CR>
 
 " Automatic brace and quote closing
-inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-inoremap [      []<Left>
 inoremap [<CR>  [<CR>]<Esc>O
-inoremap [[     [
-inoremap []     [}
 
 " ====================
 " Auto Commands
