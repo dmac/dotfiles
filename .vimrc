@@ -19,7 +19,8 @@ endif
 " ====================
 " Plugins
 " ====================
-set runtimepath+=~/.vim/addons/The_NERD_tree
+set runtimepath+=~/.vim/addons/NERD_tree
+set runtimepath+=~/.vim/addons/NERD_commenter
 set runtimepath+=~/.vim/addons/git-vim
 set runtimepath+=~/.vim/addons/repeat
 set runtimepath+=~/.vim/addons/surround
