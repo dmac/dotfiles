@@ -26,6 +26,7 @@ set runtimepath+=~/.vim/addons/repeat
 set runtimepath+=~/.vim/addons/surround
 set runtimepath+=~/.vim/addons/taglist
 set runtimepath+=~/.vim/addons/autoclose
+set runtimepath+=~/.vim/addons/bufkill
 
 " ====================
 " Backups
@@ -85,6 +86,8 @@ let mapleader=","
 nmap <LEADER>e :e **/
 nmap <LEADER>f :NERDTreeToggle<CR>
 nmap <LEADER>t :TlistToggle<CR>
+nmap <LEADER>d :BD<CR>
+nnoremap <LEADER>b :b *
 
 " Automatic brace and quote closing
 inoremap {<CR>  {<CR>}<Esc>O
