@@ -1,1 +1,5 @@
 .irssi/config.autosave
+.irssi/away.log
+.irssi/scripts/twirssi.json
+.irssi/scripts/twirssi.oauth
+
