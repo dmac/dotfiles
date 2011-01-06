@@ -1,5 +1,5 @@
 servers = (
-  { 
+  {
     address = "irc.freenode.net";
     chatnet = "freenode";
     port = "6667";
@@ -119,6 +119,7 @@ statusbar = {
         window_empty = { };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
+        typing_notice = { };
       };
     };
 
@@ -185,3 +186,4 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = { awl_display_key = "$Q%K|%n$H$C$S"; };
 };
+logs = { };
