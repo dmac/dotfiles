@@ -250,7 +250,7 @@ abstracts = {
 
   # default background for all statusbars. You can also give
   # the default foreground color for statusbar items.
-  sb_background = "%0%w";
+  sb_background = "%4%w";
 
   # default backround for "default" statusbar group
   #sb_default_bg = "%4";
@@ -262,7 +262,7 @@ abstracts = {
   sb_topic_bg = "%4";
 
   # text at the beginning of statusbars.
-  sbstart = "%K>>%n";
+  sbstart = "";
   # text at the end of statusbars. Use space so that it's never
   # used for anything.
   sbend = " ";
@@ -272,7 +272,7 @@ abstracts = {
 
   prompt = "[$*] ";
 
-  sb = " %c[%n$*%c]%";
+  sb = " %c[%n$*%c]%n";
   sbmode = "(%c+%n$*)";
   sbaway = " (%GzZzZ%n)";
   sbservertag = ":$0 (change with ^X)";
