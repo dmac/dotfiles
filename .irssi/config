@@ -184,6 +184,6 @@ settings = {
   };
   "fe-common/core" = { use_status_window = "yes"; theme = "custom"; };
   "fe-text" = { actlist_sort = "refnum"; };
-  "perl/core/scripts" = { awl_display_key = "$Q%K|%n$H$C$S"; };
+  "perl/core/scripts" = { awl_display_key = "$Q%K|%n%w$H$C$S$n"; };
 };
 logs = { };
