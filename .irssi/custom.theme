@@ -137,7 +137,7 @@ abstracts = {
   #  privmsgnick = "%K{msgnick  %R$*%K}%n";
 
   # $0 = nick mode, $1 = nick
-  ownmsgnick = "{msgnick %g$0%n $1-}";
+  ownmsgnick = "{msgnick $0 $1-}";
   ownnick = "%g$*%n";
 
   # public message in channel, $0 = nick mode, $1 = nick
@@ -145,7 +145,7 @@ abstracts = {
   pubnick = "%N$*%n";
 
   # public message in channel meant for me, $0 = nick mode, $1 = nick
-  pubmsgmenick = "{msgnick $0 $1-}";
+  pubmsgmenick = "{msgnick $0 $1-}%Y";
   menick = "%Y$*%n";
 
   # public highlighted message in channel
@@ -163,10 +163,10 @@ abstracts = {
 
   # own private message in query
   ownprivmsgnick = "{msgnick  $*}";
-  ownprivnick = "%_$*%n";
+  ownprivnick = "%g$*%n";
 
   # private message in query
-  privmsgnick = "{msgnick  %R$*%n}";
+  privmsgnick = "{msgnick  %r$*%n}";
 
   ##
   ## Actions (/ME stuff)
