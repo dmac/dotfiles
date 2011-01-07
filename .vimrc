@@ -93,6 +93,10 @@ nnoremap <LEADER>b :b *
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap [<CR>  [<CR>]<Esc>O
 
+" Underlining
+nnoremap <LEADER>= yyp<C-v>$r=
+nnoremap <LEADER>- yyp<C-v>$r-
+
 " ====================
 " Auto Commands
 " ====================
