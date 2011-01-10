@@ -1,13 +1,21 @@
 servers = (
-  { 
+  {
     address = "irc.freenode.net";
     chatnet = "freenode";
     port = "6667";
   },
-  { address = "im.bitlbee.org"; chatnet = "bitlbee"; port = "6667"; }
+  {
+    address = "im.bitlbee.org";
+    chatnet = "bitlbee";
+    port = "6667";
+    autoconnect = "yes";
+  },
 );
 
-chatnets = { freenode = { type = "IRC"; }; bitlbee = { type = "IRC"; }; };
+chatnets = {
+  freenode = { type = "IRC"; };
+  bitlbee = { type = "IRC"; };
+};
 
 aliases = {
   J = "join";
