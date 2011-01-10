@@ -83,7 +83,7 @@ set nosmarttab
 " ====================
 map Q g
 let mapleader=","
-nmap <LEADER>e :e **/
+nmap <LEADER>e :e **/*
 nmap <LEADER>f :NERDTreeToggle<CR>
 nmap <LEADER>t :TlistToggle<CR>
 nmap <LEADER>d :BD<CR>
