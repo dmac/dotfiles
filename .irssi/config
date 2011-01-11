@@ -10,11 +10,18 @@ servers = (
     port = "6667";
     autoconnect = "yes";
   },
+  {
+    address = "irc.sv2";
+    chatnet = "ooyala";
+    port = "6667";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
   freenode = { type = "IRC"; };
   bitlbee = { type = "IRC"; };
+  ooyala = { type = "IRC"; };
 };
 
 aliases = {
@@ -199,3 +206,7 @@ settings = {
   "perl/core/scripts" = { awl_display_key = "$Q%K|%n%w$H$C$S$n"; };
 };
 logs = { };
+channels = (
+  { name = "#engineering"; chatnet = "ooyala"; autojoin = "yes"; }
+  { name = "#backlot"; chatnet = "ooyala"; autojoin = "yes"; }
+);
