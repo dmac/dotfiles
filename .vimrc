@@ -72,6 +72,7 @@ highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 set autoindent
 set smartindent
 set backspace=2
+set tabstop=4
 set softtabstop=2
 set shiftwidth=2
 set textwidth=110
