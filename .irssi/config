@@ -1,5 +1,5 @@
 servers = (
-  {
+  { 
     address = "irc.freenode.net";
     chatnet = "freenode";
     port = "6667";
@@ -207,6 +207,6 @@ settings = {
 };
 logs = { };
 channels = (
-  { name = "#engineering"; chatnet = "ooyala"; autojoin = "yes"; }
+  { name = "#engineering"; chatnet = "ooyala"; autojoin = "yes"; },
   { name = "#backlot"; chatnet = "ooyala"; autojoin = "yes"; }
 );
