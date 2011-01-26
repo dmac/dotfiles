@@ -1,7 +1,12 @@
 servers = (
-  { 
+  {
     address = "irc.freenode.net";
     chatnet = "freenode";
+    port = "6667";
+  },
+  {
+    address = "irc.mozilla.org";
+    chatnet = "mozilla";
     port = "6667";
   },
   {
@@ -20,6 +25,7 @@ servers = (
 
 chatnets = {
   freenode = { type = "IRC"; };
+  mozilla = { type = "IRC"; };
   bitlbee = { type = "IRC"; };
   ooyala = { type = "IRC"; };
 };
@@ -208,5 +214,6 @@ settings = {
 logs = { };
 channels = (
   { name = "#engineering"; chatnet = "ooyala"; autojoin = "yes"; },
-  { name = "#backlot"; chatnet = "ooyala"; autojoin = "yes"; }
+  { name = "#backlot"; chatnet = "ooyala"; autojoin = "yes"; },
+  { name = "#songbird"; chatnet = "mozilla"; autojoin = "yes"; }
 );
