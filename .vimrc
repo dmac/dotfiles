@@ -84,11 +84,12 @@ set nosmarttab
 " ====================
 map Q g
 let mapleader=","
-nmap <LEADER>e :e **/*
-nmap <LEADER>f :NERDTreeToggle<CR>
-nmap <LEADER>t :TlistToggle<CR>
-nmap <LEADER>d :BD<CR>
+nnoremap <LEADER>e :e **/*
 nnoremap <LEADER>b :b *
+nnoremap <LEADER>f :NERDTreeToggle<CR>
+nnoremap <LEADER>t :TlistToggle<CR>
+nnoremap <LEADER>d :BD<CR>
+nnoremap <LEADER>h :set hlsearch!<CR>
 
 " Automatic brace and quote closing
 inoremap {<CR>  {<CR>}<Esc>O
