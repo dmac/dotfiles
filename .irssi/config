@@ -4,11 +4,7 @@ servers = (
     chatnet = "freenode";
     port = "6667";
   },
-  {
-    address = "irc.mozilla.org";
-    chatnet = "mozilla";
-    port = "6667";
-  },
+  { address = "irc.mozilla.org"; chatnet = "mozilla"; port = "6667"; },
   {
     address = "im.bitlbee.org";
     chatnet = "bitlbee";
