@@ -11,6 +11,7 @@ filetype plugin indent on
 " ====================
 " Colors and Skins
 " ====================
+set background=dark
 if &t_Co > 2 || has("gui_running")
   syntax enable
   set hlsearch
