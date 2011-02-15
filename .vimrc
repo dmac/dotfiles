@@ -12,6 +12,7 @@ set runtimepath+=~/.vim/bundle/vim-repeat
 set runtimepath+=~/.vim/bundle/vim-surround
 set runtimepath+=~/.vim/bundle/taglist
 set runtimepath+=~/.vim/bundle/bufkill
+set runtimepath+=~/.vim/bundle/Command-T
 call pathogen#helptags()
 
 " ====================
@@ -91,7 +92,7 @@ let mapleader=","
 nnoremap <LEADER>e :e **/*
 nnoremap <LEADER>b :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
-nnoremap <LEADER>t :TlistToggle<CR>
+nnoremap <LEADER>T :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 
