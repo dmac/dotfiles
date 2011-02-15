@@ -19,5 +19,6 @@
   br = branch
   wc = whatchanged
   cp = cherry-pick
+  sm = submodule
   last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
 
