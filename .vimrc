@@ -19,14 +19,13 @@ endif
 " ====================
 " Plugins
 " ====================
-set runtimepath+=~/.vim/addons/NERD_tree
-set runtimepath+=~/.vim/addons/NERD_commenter
-set runtimepath+=~/.vim/addons/git-vim
-set runtimepath+=~/.vim/addons/repeat
-set runtimepath+=~/.vim/addons/surround
-set runtimepath+=~/.vim/addons/taglist
-set runtimepath+=~/.vim/addons/autoclose
-set runtimepath+=~/.vim/addons/bufkill
+set runtimepath+=~/.vim/bundle/The-NERD-tree
+set runtimepath+=~/.vim/bundle/The-NERD-Commenter
+set runtimepath+=~/.vim/bundle/git-vim
+set runtimepath+=~/.vim/bundle/vim-repeat
+set runtimepath+=~/.vim/bundle/vim-surround
+set runtimepath+=~/.vim/bundle/taglist
+set runtimepath+=~/.vim/bundle/bufkill
 
 " ====================
 " Backups
@@ -91,7 +90,7 @@ nnoremap <LEADER>t :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 
-" Automatic brace and quote closing
+" Automatic brace closing
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap [<CR>  [<CR>]<Esc>O
 
