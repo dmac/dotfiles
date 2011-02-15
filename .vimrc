@@ -1,4 +1,20 @@
 " ====================
+" Plugins
+" ====================
+" I add my plugins to the runtime manually because
+" calling pathogen#runtime_append_all_bundles increases
+" the startup time of vim by a few seconds.
+set runtimepath+=~/.vim/bundle/vim-pathogen
+set runtimepath+=~/.vim/bundle/The-NERD-tree
+set runtimepath+=~/.vim/bundle/The-NERD-Commenter
+set runtimepath+=~/.vim/bundle/git-vim
+set runtimepath+=~/.vim/bundle/vim-repeat
+set runtimepath+=~/.vim/bundle/vim-surround
+set runtimepath+=~/.vim/bundle/taglist
+set runtimepath+=~/.vim/bundle/bufkill
+call pathogen#helptags()
+
+" ====================
 " General
 " ====================
 set nocompatible
@@ -15,17 +31,6 @@ if &t_Co > 2 || has("gui_running")
   syntax enable
   set hlsearch
 endif
-
-" ====================
-" Plugins
-" ====================
-set runtimepath+=~/.vim/bundle/The-NERD-tree
-set runtimepath+=~/.vim/bundle/The-NERD-Commenter
-set runtimepath+=~/.vim/bundle/git-vim
-set runtimepath+=~/.vim/bundle/vim-repeat
-set runtimepath+=~/.vim/bundle/vim-surround
-set runtimepath+=~/.vim/bundle/taglist
-set runtimepath+=~/.vim/bundle/bufkill
 
 " ====================
 " Backups
