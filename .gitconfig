@@ -13,7 +13,7 @@
   ui = auto
 
 [alias]
-  st = status --ignore-submodules=untracked
+  st = status
   ci = commit
   co = checkout
   br = branch
@@ -22,3 +22,5 @@
   sm = submodule
   last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
 
+[diff]
+  ignoreSubmodules = untracked
