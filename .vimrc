@@ -98,7 +98,7 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 nnoremap <LEADER>e :e **/*
-nnoremap <LEADER>b :b *
+nnoremap <LEADER>B :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>T :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
