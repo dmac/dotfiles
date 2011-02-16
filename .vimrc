@@ -72,6 +72,7 @@ hi diffFile ctermfg=darkcyan ctermbg=Black
 " ====================
 set showmatch
 set ignorecase
+set smartcase
 set nohlsearch
 set list listchars=trail:.,tab:>. " highlight trailing whitespace
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
@@ -94,6 +95,8 @@ set nosmarttab
 " ====================
 map Q g
 let mapleader=","
+nnoremap j gj
+nnoremap k gk
 nnoremap <LEADER>e :e **/*
 nnoremap <LEADER>b :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
