@@ -13,12 +13,14 @@ set runtimepath+=~/.vim/bundle/vim-surround
 set runtimepath+=~/.vim/bundle/taglist
 set runtimepath+=~/.vim/bundle/bufkill
 set runtimepath+=~/.vim/bundle/Command-T
+set runtimepath+=~/.vim/bundle/supertab
 call pathogen#helptags()
 
 " ====================
 " Plugin Options
 " ====================
 let g:CommandTCancelMap='<C-c>'
+let g:SuperTabDefaultCompletionType="<C-n>"
 
 " ====================
 " General
