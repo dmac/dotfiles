@@ -16,6 +16,11 @@ set runtimepath+=~/.vim/bundle/Command-T
 call pathogen#helptags()
 
 " ====================
+" Plugin Options
+" ====================
+let g:CommandTCancelMap='<C-c>'
+
+" ====================
 " General
 " ====================
 set nocompatible
