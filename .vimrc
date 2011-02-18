@@ -106,6 +106,7 @@ nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>T :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
+nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 
 " Automatic brace closing
 inoremap {<CR>  {<CR>}<Esc>O
