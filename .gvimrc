@@ -1,3 +1,3 @@
-" Hide toolbar
-set go-=T
+set go-=T " hide toolbar
 colorscheme wombat
+set visualbell
