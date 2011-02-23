@@ -65,8 +65,8 @@ set number                     " show line numbers
 " Highlights
 " ====================
 hi LineNr ctermfg=DarkGray ctermbg=Black
-hi Comment ctermfg=cyan cterm=none
-hi Directory ctermfg=cyan cterm=none
+"hi Comment ctermfg=cyan cterm=none
+"hi Directory ctermfg=cyan cterm=none
 " better git diff colors
 hi diffAdded ctermfg=DarkGreen ctermbg=Black
 hi diffRemoved ctermfg=DarkRed ctermbg=Black
