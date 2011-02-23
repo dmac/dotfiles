@@ -3,4 +3,4 @@ colorscheme wombat
 set visualbell
 set cursorline
 let &colorcolumn = &textwidth
-hi ColorColumn guibg=#343434
+hi ColorColumn guibg=#2D2D2D
