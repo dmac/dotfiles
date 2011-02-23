@@ -1,4 +1,4 @@
-colorscheme wombat            " colorscheme
+colorscheme jellybeans        " colorscheme
 set go-=T                     " hide toolbar
 set visualbell                " be quiet
 set cursorline                " highlight current line
