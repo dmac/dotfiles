@@ -127,6 +127,8 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " Auto Commands
 " ====================
 if has("autocmd")
+  au BufWinLeave * silent! mkview                      " automatically save folds
+  au BufWinEnter * silent! loadview                    " automatically load folds
   autocmd BufWritePre * :%s/\s\+$//e                   " strip trailing whitespace on save
   autocmd BufReadPost *                                " set cursor to the last position when opening
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
