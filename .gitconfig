@@ -24,3 +24,6 @@
 
 [diff]
   ignoreSubmodules = untracked
+
+[github]
+  user = dmacdougall
