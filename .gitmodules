@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/bufexplorer"]
 	path = .vim/bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule ".vim/bundle/scratch"]
+	path = .vim/bundle/scratch
+	url = https://github.com/vim-scripts/scratch.vim.git
