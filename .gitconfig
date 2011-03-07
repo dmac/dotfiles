@@ -7,10 +7,17 @@
   email = dmacdougall@gmail.com
 
 [branch]
+  autosetupmerge = true
   autosetuprebase = always
 
 [color]
   ui = auto
+
+[push]
+  default = tracking
+
+[diff]
+  ignoreSubmodules = untracked
 
 [alias]
   st = status
@@ -21,9 +28,6 @@
   cp = cherry-pick
   sm = submodule
   last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
-
-[diff]
-  ignoreSubmodules = untracked
 
 [github]
   user = dmacdougall
