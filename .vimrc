@@ -94,8 +94,10 @@ let &shiftwidth=&tabstop
 set expandtab
 set nosmarttab
 set textwidth=110              " wrap text at 110 columns
-let &colorcolumn = &textwidth  " color last column before wordwrap
-hi ColorColumn ctermbg=Yellow
+if has("colorcolumn")
+  let &colorcolumn = &textwidth  " color last column before wordwrap
+  hi ColorColumn ctermbg=Yellow
+endif
 
 " ====================
 " Mappings
