@@ -48,24 +48,24 @@ fi
 # ====================
 # PROMPT
 # ====================
-WHITE="\[\033[0;38m\]"
-GREEN="\[\033[0;32m\]"
-CYAN="\[\033[0;36m\]"
-GRAY="\[\033[0;37m\]"
-BLUE="\[\033[0;34m\]"
-BLACK="\[\033[0;30m\]"
-PURPLE="\[\033[0;35m\]"
-RED="\[\033[0;31m\]"
+K="\[\033[0;30m\]"
+R="\[\033[0;31m\]"
+G="\[\033[0;32m\]"
+Y="\[\033[0;33m\]"
+B="\[\033[0;34m\]"
+P="\[\033[0;35m\]"
+C="\[\033[0;36m\]"
+W="\[\033[0;38m\]"
 
-prompt_simple() {
+function prompt_simple {
   unset PROMPT_COMMAND
-  PS1="\W\$ "
+  PS1="\W\\$ "
   PS2="> "
 }
 
 function prompt_fancy {
-  # Shows user@host in the title
   unset PROMPT_COMMAND
+  # Shows user@host in the title
   TITLEBAR="\[\033]0;\u@\h\007\]"
   # Shows a "*" next to the branch name if you have un-staged local changes
   # Shows a "+" next to the branch name if you have staged local changes
@@ -74,13 +74,21 @@ function prompt_fancy {
   export GIT_PS1_SHOWSTASHSTATE=1
   # Shows a "%" next to the branch name if you have untracked files
   export GIT_PS1_SHOWUNTRACKEDFILES=1
+
   # Put it all together
-  if type -p __git_ps1; then
-    PS1="${TITLEBAR}${CYAN}\W${GREEN}"'$(__git_ps1 "(%s)")'"${WHITE}\$ "
-  else
-    PS1="${TITLEBAR}${CYAN}\W${GREEN}${WHITE}\$ "
+  PS1="${TITLEBAR}${P}[\t] ${Y}[\h] ${C}[\w]"
+  # rvm status
+  if [[ $(type -t rvm) = "function" ]]; then
+    PS1="${PS1} ${R}[\$(rvm current)]" # rvm status
   fi
+  # git status
+  if [[ $(type -t __git_ps1) = "function" ]]; then
+    PS1="${PS1} ${G}"'$(__git_ps1 "[%s]")'
+  fi
+  PS1="${PS1} \n${W}\\$ "
+
   PS2="> "
 }
+
 prompt_fancy
 
