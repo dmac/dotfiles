@@ -85,17 +85,17 @@ hi SpecialKey ctermfg=DarkGray ctermbg=Black
 " ====================
 " Text Formatting
 " ====================
-set autoindent                 " continue indentation
-set smartindent                " add indentation for code
-set backspace=indent,eol,start " make backspace work correctly
-set tabstop=2                  " 2 space tabs, all the time
+set autoindent                  " continue indentation
+set smartindent                 " add indentation for code
+set backspace=indent,eol,start  " make backspace work correctly
+set tabstop=2                   " 2 space tabs, all the time
 let &softtabstop=&tabstop
 let &shiftwidth=&tabstop
 set expandtab
 set nosmarttab
-set textwidth=110              " wrap text at 110 columns
-if has("colorcolumn")
-  let &colorcolumn = &textwidth  " color last column before wordwrap
+set textwidth=110               " wrap text at 110 columns
+if exists("+colorcolumn")       " use colorcolumn if supported
+  let &colorcolumn = &textwidth
   hi ColorColumn ctermbg=Yellow
 endif
 
