@@ -78,13 +78,9 @@ function prompt_fancy {
   # Put it all together
   PS1="${TITLEBAR}${P}[\t] ${Y}[\h] ${C}[\w]"
   # rvm status
-  if [[ $(type -t rvm) = "function" ]]; then
-    PS1="${PS1} ${R}[\$(rvm current)]" # rvm status
-  fi
+  #[[ $(type -t rvm) = "function" ]] && PS1="${PS1} ${R}[\$(rvm current)]"
   # git status
-  if [[ $(type -t __git_ps1) = "function" ]]; then
-    PS1="${PS1} ${G}"'$(__git_ps1 "[%s]")'
-  fi
+  [[ $(type -t __git_ps1) = "function" ]] && PS1="${PS1} ${G}"'$(__git_ps1 "[%s]")'
   PS1="${PS1} \n${W}\\$ "
 
   PS2="> "
