@@ -56,6 +56,7 @@ B="\[\033[0;34m\]"
 P="\[\033[0;35m\]"
 C="\[\033[0;36m\]"
 W="\[\033[0;38m\]"
+NC="\[\033[0;0m\]"
 
 function prompt_simple {
   unset PROMPT_COMMAND
@@ -81,7 +82,7 @@ function prompt_fancy {
   #[[ $(type -t rvm) = "function" ]] && PS1="${PS1} ${R}[\$(rvm current)]"
   # git status
   [[ $(type -t __git_ps1) = "function" ]] && PS1="${PS1} ${G}"'$(__git_ps1 "[%s]")'
-  PS1="${PS1} \n${W}\\$ "
+  PS1="${PS1} \n${NC}\\$ "
 
   PS2="> "
 }
