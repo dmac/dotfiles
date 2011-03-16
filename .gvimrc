@@ -1,5 +1,5 @@
 colorscheme jellybeans               " colorscheme
-set guifont=DroidSansMonoSlashed:h11 " custom font
+set guifont=DroidSansMonoSlashed:h12 " custom font
 set go-=T                            " hide toolbar
 set visualbell                       " be quiet
 set cursorline                       " highlight current line
