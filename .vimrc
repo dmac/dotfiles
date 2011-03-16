@@ -110,6 +110,7 @@ nnoremap k gk
 
 " custom shortcuts
 nnoremap <LEADER>e :e **/*
+nnoremap <LEADER>bb :ls<CR>:b
 nnoremap <LEADER>B :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>T :TlistToggle<CR>
