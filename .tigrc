@@ -1,2 +1,2 @@
 bind diff e !git review -c %(commit)
-
+set show-rev-graph = no
