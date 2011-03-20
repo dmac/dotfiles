@@ -20,8 +20,9 @@ call pathogen#runtime_append_all_bundles()
 " ====================
 " Plugin Options
 " ====================
-let g:CommandTCancelMap="<C-c>"             " cancel out of CommandT with C-c
-let g:SuperTabDefaultCompletionType="<C-n>" " tab complete forward in CommandT
+let g:CommandTCancelMap="<C-c>"                    " cancel out of CommandT with C-c
+let g:SuperTabDefaultCompletionType="context"      " contextual autocomplete
+let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with autocomplete
 
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1 " more colorful NERDTree
@@ -132,10 +133,15 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " Auto Commands
 " ====================
 if has("autocmd")
-  au BufWinLeave * silent! mkview                      " automatically save folds
-  au BufWinEnter * silent! loadview                    " automatically load folds
-  autocmd BufWritePre * :%s/\s\+$//e                   " strip trailing whitespace on save
-  autocmd BufReadPost *                                " set cursor to the last position when opening
+  autocmd BufWinLeave * silent! mkview                     " automatically save folds
+  autocmd BufWinEnter * silent! loadview                   " automatically load folds
+
+  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close autocomplete preview when cursor moves
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close autocomplete preview on insert mode exit
+
+  autocmd BufWritePre * :%s/\s\+$//e                       " strip trailing whitespace on save
+
+  autocmd BufReadPost *                                    " set cursor to the last position when opening
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
