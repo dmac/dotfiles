@@ -27,6 +27,12 @@ let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with a
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1 " more colorful NERDTree
 
+" android configuration for javaimp plugin
+if $ANDROID_HOME != ""
+  let g:JavaImpPaths=$ANDROID_HOME."/platforms/android-7"
+  let g:JavaImpDataDir=$HOME."/.javaimp"
+end
+
 " ====================
 " General
 " ====================
