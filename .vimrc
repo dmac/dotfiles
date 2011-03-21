@@ -20,7 +20,7 @@ call pathogen#runtime_append_all_bundles()
 " ====================
 " Plugin Options
 " ====================
-let g:CommandTCancelMap="<C-c>"                    " cancel out of CommandT with C-c
+let g:CommandTCancelMap=['<C-c>', '<C-[>']         " cancel out of CommandT
 let g:SuperTabDefaultCompletionType="context"      " contextual autocomplete
 let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with autocomplete
 
