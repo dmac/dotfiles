@@ -82,7 +82,7 @@ function prompt_fancy {
   #[[ $(type -t rvm) = "function" ]] && PS1="${PS1} ${R}[\$(rvm current)]"
   # git status
   [[ $(type -t __git_ps1) = "function" ]] && PS1="${PS1} ${G}"'$(__git_ps1 "[%s]")'
-  PS1="${PS1} \n${NC}\\$ "
+  PS1="${PS1} \n${R}♥${NC}  "
 
   PS2="> "
 }
