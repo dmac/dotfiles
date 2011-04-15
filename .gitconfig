@@ -27,6 +27,7 @@
   wc = whatchanged
   cp = cherry-pick
   sm = submodule
+  ol = log --oneline
   last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
 
 [github]
