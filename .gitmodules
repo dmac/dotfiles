@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/javaimp"]
 	path = .vim/bundle/javaimp
 	url = https://github.com/vim-scripts/JavaImp.vim--Lee
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
