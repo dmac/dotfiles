@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/treetop"]
 	path = .vim/bundle/treetop
 	url = https://github.com/nanki/treetop.vim.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
