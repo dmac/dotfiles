@@ -47,7 +47,14 @@ filetype plugin indent on " detect filetypes
 " Colors and Skins
 " ====================
 if &t_Co > 2 || has("gui_running")
-  syntax enable " enable syntax highlighting
+  syntax enable                                 " enable syntax highlighting
+endif
+if &t_Co > 8
+  colorscheme jellybeans
+endif
+if exists("+colorcolumn")                       " use colorcolumn if supported
+  let &colorcolumn = &textwidth
+  hi ColorColumn ctermbg=DarkGray guibg=#2D2D2D
 endif
 
 " ====================
@@ -101,10 +108,6 @@ let &shiftwidth=&tabstop
 set expandtab
 set nosmarttab
 set textwidth=110               " wrap text at 110 columns
-if exists("+colorcolumn")       " use colorcolumn if supported
-  let &colorcolumn = &textwidth
-  hi ColorColumn ctermbg=Yellow
-endif
 
 " ====================
 " Mappings
