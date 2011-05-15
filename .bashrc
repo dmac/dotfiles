@@ -5,6 +5,9 @@
 # ====================
 export HOME=~
 
+# Enable vi mode
+set -o vi
+
 # ====================
 # Path
 # ====================
@@ -88,4 +91,3 @@ function prompt_fancy {
 }
 
 prompt_fancy
-
