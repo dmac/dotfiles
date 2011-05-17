@@ -16,6 +16,7 @@
 set runtimepath+=~/.vim/bundle/vim-pathogen
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+filetype off " ensure pathogen will pick up plugins with ftdetect directories
 
 " ====================
 " Plugin Options
@@ -24,8 +25,11 @@ let g:CommandTCancelMap=['<C-c>', '<C-[>']         " cancel out of CommandT
 let g:SuperTabDefaultCompletionType="context"      " contextual autocomplete
 let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with autocomplete
 
-let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
-let g:NERDChristmasTree=1 " more colorful NERDTree
+let g:NERDTreeChDirMode=2                          " change pwd when NERDTree root changes
+let g:NERDChristmasTree=1                          " more colorful NERDTree
+
+let vimclojure#HighlightBuiltins=1                 " Highlight Clojure's builtins
+let vimclojure#ParenRainbow=1                      " Rainbow parenthesis in Clojure
 
 " android configuration for javaimp plugin
 if $ANDROID_HOME != ""
@@ -41,14 +45,12 @@ set history=1000          " longer history
 set incsearch             " perform search as you type
 set autoread              " reload changed files when focus returns
 set modeline              " enable modelines
+syntax on                 " enable syntax highlighting
 filetype plugin indent on " detect filetypes
 
 " ====================
 " Colors and Skins
 " ====================
-if &t_Co > 2 || has("gui_running")
-  syntax enable                                 " enable syntax highlighting
-endif
 if &t_Co > 8
   colorscheme jellybeans
 endif
