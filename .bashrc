@@ -4,6 +4,7 @@
 # Environment
 # ====================
 export HOME=~
+export TERM=xterm-256color
 
 # Enable vi mode
 set -o vi
