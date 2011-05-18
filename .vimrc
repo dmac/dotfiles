@@ -132,10 +132,6 @@ nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>s :Sscratch<CR>
 nnoremap <LEADER>S :Scratch<CR>
 
-" automatic brace closing
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap [<CR>  [<CR>]<Esc>O
-
 " underlining
 nnoremap <LEADER>= yyp<C-v>$r=
 nnoremap <LEADER>- yyp<C-v>$r-
