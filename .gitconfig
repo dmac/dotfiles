@@ -28,7 +28,9 @@
   cp = cherry-pick
   sm = submodule
   ol = log --oneline
-  last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
+  ;last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
+  last = "!git log --oneline -n 1 --format='%H'"
+
 
 [github]
   user = dmacdougall
