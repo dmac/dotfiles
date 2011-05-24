@@ -26,6 +26,7 @@ fi
 test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
 alias ll="ls -l"
 alias la="ls -la"
+alias gh="ghci"
 
 # ====================
 # EDITOR and  PAGER
