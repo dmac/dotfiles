@@ -8,6 +8,8 @@ export TERM=xterm-256color
 
 # Enable vi mode
 set -o vi
+# Restore ^L to clear screen
+bind -m vi-insert "\C-l":clear-screen
 
 # ====================
 # Path
