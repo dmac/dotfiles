@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/AutoClose"]
 	path = .vim/bundle/AutoClose
 	url = https://github.com/vim-scripts/AutoClose.git
+[submodule ".vim/bundle/vim-slime"]
+	path = .vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
