@@ -6,10 +6,10 @@
 export HOME=~
 export TERM=xterm-256color
 
-# Enable vi mode
-set -o vi
-# Restore ^L to clear screen
-bind -m vi-insert "\C-l":clear-screen
+set -o vi                                         # vi mode
+bind -m vi-insert "\C-l":clear-screen             # Restore ^L to clear screen
+bind -m vi-insert "\C-p":dynamic-complete-history # ^p check for partial match in history
+bind -m vi-insert "\C-n":menu-complete            # cycle through the list of partial matches
 
 # ====================
 # Path
