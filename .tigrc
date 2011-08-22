@@ -1,3 +1,4 @@
 bind diff e !git review -c %(commit)
 bind diff r !open http://dmac-dev1.sv2/ooyala/ooyala/commit/%(commit)
+bind diff t !open http://dmac-dev1.sv2/ooyala/backlot/commit/%(commit)
 set show-rev-graph = no
