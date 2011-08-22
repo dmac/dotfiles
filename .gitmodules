@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/delemitMate"]
 	path = .vim/bundle/delemitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule ".vim/bundle/closetag"]
+	path = .vim/bundle/closetag
+	url = https://github.com/vim-scripts/closetag.vim.git
