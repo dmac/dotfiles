@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/vim-racket"]
 	path = .vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
+[submodule ".vim/bundle/delemitMate"]
+	path = .vim/bundle/delemitMate
+	url = https://github.com/Raimondi/delimitMate.git
