@@ -28,6 +28,7 @@ fi
 test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
 alias ll="ls -l"
 alias la="ls -la"
+alias g="git"
 alias gh="ghci"
 
 # ====================
