@@ -54,7 +54,7 @@ if [ -f /opt/local/etc/bash_completion ]; then
 fi
 
 # ====================
-# PROMPT
+# Prompt
 # ====================
 K="\[\033[0;30m\]"
 R="\[\033[0;31m\]"
@@ -96,3 +96,9 @@ function prompt_fancy {
 }
 
 prompt_fancy
+
+# ====================
+# Misc. setup
+# ====================
+# This must come after setting the prompt
+. ~/.dotfiles/bin/z.sh
