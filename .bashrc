@@ -101,4 +101,4 @@ prompt_fancy
 # Misc. setup
 # ====================
 # This must come after setting the prompt
-. ~/.dotfiles/bin/z.sh
+. ~/.dotfiles/scripts/z/z.sh

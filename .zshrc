@@ -1,4 +1,4 @@
-source ~/.dotfiles/bin/z.sh
+source ~/.dotfiles/scripts/z/z.sh
 function precmd()
 {
   _z --add "$(pwd -P)"

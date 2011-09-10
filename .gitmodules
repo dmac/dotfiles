@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/closetag"]
 	path = .vim/bundle/closetag
 	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "scripts/z"]
+	path = scripts/z
+	url = https://github.com/rupa/z.git
