@@ -56,15 +56,15 @@ fi
 # ====================
 # Prompt
 # ====================
-K="\[\033[0;30m\]"
-R="\[\033[0;31m\]"
-G="\[\033[0;32m\]"
-Y="\[\033[0;33m\]"
-B="\[\033[0;34m\]"
-P="\[\033[0;35m\]"
-C="\[\033[0;36m\]"
-W="\[\033[0;38m\]"
-NC="\[\033[0;0m\]"
+K="\e[0;30m\]"
+R="\e[0;31m\]"
+G="\e[0;32m\]"
+Y="\e[0;33m\]"
+B="\e[0;34m\]"
+M="\e[0;35m\]"
+C="\e[0;36m\]"
+W="\e[0;38m\]"
+NC="\e[0;0m\]"
 
 function prompt_simple {
   unset PROMPT_COMMAND
@@ -85,7 +85,7 @@ function prompt_fancy {
   export GIT_PS1_SHOWUNTRACKEDFILES=1
 
   # Put it all together
-  PS1="${TITLEBAR}${P}[\t] ${Y}[\u@\h] ${C}[\w]"
+  PS1="${TITLEBAR}${M}[\t] ${Y}[\u@\h] ${C}[\w]"
   # rvm status
   #[[ $(type -t rvm) = "function" ]] && PS1="${PS1} ${R}[\$(rvm current)]"
   # git status
