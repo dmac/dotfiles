@@ -49,6 +49,7 @@ set noswapfile    " don't create .swp files
 " UI
 " ====================
 set ruler                      " show cursor position, etc.
+set laststatus=2               " show statusline with filename
 set showcmd                    " display commands in progress at the bottom
 set wildmenu                   " tab completion menu for commands
 set wildmode=list:longest,full " tab completion menu options
