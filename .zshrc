@@ -74,6 +74,7 @@ setopt prompt_subst
 # Prompt
 PROMPT='%F{magenta}[%*] %F{yellow}[%n@%m] %F{cyan}[%~] ${vcs_info_msg_0_}
 %F{red}♥%f  '
+RPROMPT="\`if [ \$? = 0 ]; then echo \"%F{green}^_^%f\"; else echo \"%F{red}-_-%f\"; fi\`"
 
 # Vim key bindings
 bindkey -v
