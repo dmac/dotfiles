@@ -27,13 +27,17 @@ autoload -U compinit && compinit
 
 # Case-insensitive, partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:*:*:*:*' menu yes select
 # Cache completions
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zcache
 # Completion colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+# Fuzzy completion matching
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Edit command line with v in normal mode
 autoload -U edit-command-line
