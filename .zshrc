@@ -91,12 +91,12 @@ alias gh="ghci"
 alias src="source ~/.zshrc"
 
 # Load z.sh
-source ~/.dotfiles/scripts/z/z.sh
+[[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh
 
 # flip-the-tables configuration
 export RUBIES=$HOME/.rubies
 export FT_DEFAULT_RUBY="1.9.2-p290"
-source ~/sources/flip-the-tables/ft.sh
+[[ -a ~/sources/flip-the-tables/ft.sh ]] && source ~/sources/flip-the-tables/ft.sh
 
 function precmd()
 {
