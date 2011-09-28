@@ -37,17 +37,6 @@ syntax on                 " enable syntax highlighting
 filetype plugin indent on " detect filetypes
 
 " ====================
-" Colors and Skins
-" ====================
-if &t_Co > 8
-  colorscheme jellybeans
-endif
-if exists("+colorcolumn")                       " use colorcolumn if supported
-  let &colorcolumn = &textwidth
-  hi ColorColumn ctermbg=DarkGray guibg=#2D2D2D
-endif
-
-" ====================
 " Backups
 " ====================
 set nobackup      " don't save backup files
@@ -140,5 +129,16 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+endif
+
+" ====================
+" Colors and Skins
+" ====================
+if &t_Co > 8
+  colorscheme jellybeans
+endif
+if exists("+colorcolumn")                       " use colorcolumn if supported
+  let &colorcolumn = &textwidth
+  hi ColorColumn ctermbg=DarkGray guibg=#2D2D2D
 endif
 
