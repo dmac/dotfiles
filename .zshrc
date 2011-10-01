@@ -6,6 +6,7 @@ export GREP_COLOR='1;32'
 
 # Path
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
+[[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"
 
 # History
 HISTFILE=~/.history       # where to save history
@@ -93,14 +94,12 @@ alias src="source ~/.zshrc"
 # Load z.sh
 [[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh
 
-# flip-the-tables configuration
-export RUBIES=$HOME/.rubies
-export FT_DEFAULT_RUBY="1.9.2-p290"
-[[ -a ~/sources/flip-the-tables/ft.sh ]] && source ~/sources/flip-the-tables/ft.sh
+# rbenv configuration
+eval "$(rbenv init -)"
+alias rr="rbenv"
 
 function precmd()
 {
   vcs_info             # git info
   _z --add "$(pwd -P)" # z.sh
-  _ft_prompt_command   # flip-the-tables
 }
