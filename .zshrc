@@ -97,6 +97,7 @@ alias src="source ~/.zshrc"
 # rbenv configuration
 eval "$(rbenv init -)"
 alias rr="rbenv"
+alias rh="rbenv rehash; rehash"
 
 function precmd()
 {
