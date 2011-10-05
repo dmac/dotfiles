@@ -84,7 +84,12 @@ bindkey '^R' history-incremental-search-backward # search backwards with ^R
 bindkey '^[[Z' reverse-menu-complete             # backwards completion with shift-tab
 
 # Aliases
-alias ls="ls -G"
+if [[ $(uname) == 'Linux' ]]; then
+  LS_COMMON="--color=auto"
+elif [[ $(uname) == 'Darwin' ]]; then
+  LS_COMMON="-Gh"
+fi
+test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
 alias ll="ls -Gl"
 alias la="ls -Gla"
 alias g="git"
