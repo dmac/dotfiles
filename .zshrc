@@ -4,6 +4,10 @@ export VISUAL=vim
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR='1;32'
 
+# Make openssl work on a mac
+# http://22ideastreet.com/debug/smtp-rb14-bug-segmentation-fault
+export RUBYOPT="-ropenssl"
+
 # Path
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
 [[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"
