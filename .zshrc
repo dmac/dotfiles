@@ -1,7 +1,7 @@
 # System configuration
 export EDITOR=vim
 export VISUAL=vim
-export GREP_OPTIONS="--color=auto"
+export GREP_OPTIONS="--color=auto -n"
 export GREP_COLOR='1;32'
 
 # Make openssl work on a mac
