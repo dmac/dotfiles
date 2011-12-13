@@ -118,15 +118,17 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " Auto Commands
 " ====================
 if has("autocmd")
-  autocmd BufWinLeave * silent! mkview                     " automatically save folds
-  autocmd BufWinEnter * silent! loadview                   " automatically load folds
+  autocmd BufWinLeave * silent! mkview                       " automatically save folds
+  autocmd BufWinEnter * silent! loadview                     " automatically load folds
 
-  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close autocomplete preview when cursor moves
-  autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close autocomplete preview on insert mode exit
+  autocmd BufNewFile,BufRead *.as set filetype=actionscript  " syntax highlight actionscript files
 
-  autocmd BufWritePre * :%s/\s\+$//e                       " strip trailing whitespace on save
+  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
 
-  autocmd BufReadPost *                                    " set cursor to the last position when opening
+  autocmd BufWritePre * :%s/\s\+$//e                         " strip trailing whitespace on save
+
+  autocmd BufReadPost *                                      " set cursor to the last position when opening
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
