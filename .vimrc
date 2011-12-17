@@ -109,6 +109,7 @@ nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>s :Sscratch<CR>
 nnoremap <LEADER>S :Scratch<CR>
+nnoremap <LEADER>cd :cd %:p:h<CR>
 
 " underlining
 nnoremap <LEADER>= yyp<C-v>$r=
