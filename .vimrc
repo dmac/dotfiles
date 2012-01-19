@@ -134,6 +134,7 @@ if has("autocmd")
 
   " additional filetypes
   autocmd BufNewFile,BufRead *.ejs set filetype=html
+  autocmd BufNewFile,BufRead *.less set filetype=scss
   autocmd BufNewFile,BufRead *.as set filetype=actionscript
   autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
 endif
