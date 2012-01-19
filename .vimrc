@@ -122,8 +122,6 @@ if has("autocmd")
   autocmd BufWinLeave * silent! mkview                       " automatically save folds
   autocmd BufWinEnter * silent! loadview                     " automatically load folds
 
-  autocmd BufNewFile,BufRead *.as set filetype=actionscript  " syntax highlight actionscript files
-
   autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
   autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
 
@@ -133,6 +131,11 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  " additional filetypes
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
+  autocmd BufNewFile,BufRead *.as set filetype=actionscript
+  autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set filetype=markdown
 endif
 
 " ====================
