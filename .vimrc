@@ -9,7 +9,6 @@ filetype off " ensure pathogen will pick up plugins with ftdetect directories
 " ====================
 " Plugin Options
 " ====================
-let g:CommandTCancelMap=['<C-c>', '<C-[>']         " cancel out of CommandT
 let g:SuperTabDefaultCompletionType="context"      " contextual autocomplete
 let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with autocomplete
 
