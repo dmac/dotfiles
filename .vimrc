@@ -104,6 +104,7 @@ nnoremap <LEADER>e :e **/*
 nnoremap <LEADER>bb :ls<CR>:b
 nnoremap <LEADER>B :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
+nnoremap <LEADER>v :BuffergatorToggle<CR>
 nnoremap <LEADER>T :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
