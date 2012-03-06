@@ -18,6 +18,8 @@ let g:NERDChristmasTree=1                          " more colorful NERDTree
 let vimclojure#HighlightBuiltins=1                 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow=1                      " Rainbow parenthesis in Clojure
 
+let g:ctrlp_working_path_mode=2                    " Search for files in repository with CtrlP
+
 " android configuration for javaimp plugin
 if $ANDROID_HOME != ""
   let g:JavaImpPaths=$ANDROID_HOME."/platforms/android-7"
