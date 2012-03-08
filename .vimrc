@@ -99,13 +99,16 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
+
 " custom shortcuts
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>t :TlistToggle<CR>
-nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
+
+" delete the current buffer without closing the window
+nnoremap <LEADER>d :bp\|bd #<CR>
 
 " underlining
 nnoremap <LEADER>= yyp<C-v>$r=
@@ -145,4 +148,3 @@ if exists("+colorcolumn")                       " use colorcolumn if supported
   let &colorcolumn = &textwidth
   hi ColorColumn ctermbg=DarkGray guibg=#2D2D2D
 endif
-
