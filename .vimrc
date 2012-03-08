@@ -100,17 +100,11 @@ nnoremap j gj
 nnoremap k gk
 
 " custom shortcuts
-nnoremap <LEADER>e :e **/*
-nnoremap <LEADER>bb :ls<CR>:b
-nnoremap <LEADER>B :b *
 nnoremap <LEADER>f :NERDTreeToggle<CR>
-nnoremap <LEADER>v :BuffergatorToggle<CR>
-nnoremap <LEADER>T :TlistToggle<CR>
+nnoremap <LEADER>t :TlistToggle<CR>
 nnoremap <LEADER>d :BD<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
-nnoremap <LEADER>s :Sscratch<CR>
-nnoremap <LEADER>S :Scratch<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 
 " underlining
