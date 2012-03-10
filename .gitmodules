@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-gemfile"]
 	path = .vim/bundle/vim-gemfile
 	url = https://github.com/tobiassvn/vim-gemfile.git
+[submodule ".vim/bundle/vim-actionscript"]
+	path = .vim/bundle/vim-actionscript
+	url = https://github.com/jeroenbourgois/vim-actionscript.git
