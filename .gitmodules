@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/vim-haskell"]
 	path = .vim/bundle/vim-haskell
 	url = https://github.com/wlangstroth/vim-haskell.git
+[submodule ".vim/bundle/vjde"]
+	path = .vim/bundle/vjde
+	url = https://github.com/cespare/vjde.git
