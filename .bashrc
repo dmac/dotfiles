@@ -1,61 +1,22 @@
-#!/bin/bash
+# Load common configuration
+source ~/.shrc
 
-# ====================
-# Environment
-# ====================
-export HOME=~
-export TERM=xterm-256color
-
+# Vim navigation
 set -o vi                                         # vi mode
 bind -m vi-insert "\C-l":clear-screen             # Restore ^L to clear screen
 bind -m vi-insert "\C-p":dynamic-complete-history # ^p check for partial match in history
 bind -m vi-insert "\C-n":menu-complete            # cycle through the list of partial matches
 
-# ====================
-# Path
-# ====================
-test -d "$HOME/bin" && PATH=$HOME/bin:$PATH
-export PATH
-
-# ====================
-# Aliases
-# ====================
-if [[ $(uname) == 'Linux' ]]; then
-  LS_COMMON="--color=auto"
-elif [[ $(uname) == 'Darwin' ]]; then
-  LS_COMMON="-Gh"
-fi
-test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
-alias ll="ls -l"
-alias la="ls -la"
-alias g="git"
-alias gh="ghci"
-
-# ====================
-# EDITOR and  PAGER
-# ====================
-EDITOR=vim
-export EDITOR
-PAGER="less -FiRswX"
-MANPAGER=$PAGER
-export PAGER MANPAGER
-
-# ====================
-# LS Colors
-# ====================
+# Colors
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS="ex=31:di=36:ln=35"
 
-# ====================
-# Bash Completion
-# ====================
+# Autocompletion
 if [ -f /opt/local/etc/bash_completion ]; then
   . /opt/local/etc/bash_completion
 fi
 
-# ====================
 # Prompt
-# ====================
 K="\e[0;30m\]"
 R="\e[0;31m\]"
 G="\e[0;32m\]"
@@ -97,8 +58,5 @@ function prompt_fancy {
 
 prompt_fancy
 
-# ====================
-# Misc. setup
-# ====================
-# This must come after setting the prompt
+# Load z. This must come after setting the prompt.
 . ~/.dotfiles/scripts/z/z.sh

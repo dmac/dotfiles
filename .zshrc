@@ -1,20 +1,7 @@
-# System configuration
-export EDITOR=vim
-export VISUAL=vim
-export GREP_OPTIONS="--color=auto -n"
-export GREP_COLOR='1;32'
-
-# Make openssl work on a mac
-# http://22ideastreet.com/debug/smtp-rb14-bug-segmentation-fault
-export RUBYOPT="-ropenssl"
-
-# Path
-[[ -d ~/bin ]] && export PATH=~/bin:$PATH
-[[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"
+# Load common configuration
+source ~/.shrc
 
 # History
-HISTFILE=~/.history       # where to save history
-HISTSIZE=SAVEHIST=10000   # save last 10000 commands
 setopt INC_APPEND_HISTORY # save history as commands are entered, not when shell exits
 setopt HIST_IGNORE_DUPS   # don't save duplicate commmands in history
 setopt HIST_IGNORE_SPACE  # don't save commands that begin with a space
@@ -88,25 +75,7 @@ bindkey '^R' history-incremental-search-backward # search backwards with ^R
 bindkey '^[[Z' reverse-menu-complete             # backwards completion with shift-tab
 
 # Aliases
-if [[ $(uname) == 'Linux' ]]; then
-  LS_COMMON="--color=auto"
-elif [[ $(uname) == 'Darwin' ]]; then
-  LS_COMMON="-Gh"
-fi
-test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
-alias ll="ls -Gl"
-alias la="ls -Gla"
-alias g="git"
-alias gh="ghci"
 alias src="source ~/.zshrc"
-
-# Load z.sh
-[[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh
-
-# rbenv configuration
-eval "$(rbenv init -)"
-alias rr="rbenv"
-alias rh="rbenv rehash; rehash"
 
 function precmd()
 {
