@@ -1,5 +1,7 @@
 # Config
 config windowHintsFontSize 100
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
 
 # General aliases
 alias sox screenOriginX
@@ -47,8 +49,18 @@ bind u:cmd;ctrl move ${topLeftQuarter}
 bind i:cmd;ctrl move ${topRightQuarter}
 bind n:cmd;ctrl move ${bottomLeftQuarter}
 bind m:cmd;ctrl move ${bottomRightQuarter}
+
 bind ;:cmd;ctrl throw previous
 bind /:cmd;ctrl hint ASDFJKL
 bind 1:ctrl layout oneScreen
 bind 3:ctrl layout threeScreen
 
+bind right:cmd;ctrl resize +10% +0
+bind left:cmd;ctrl  resize -10% +0
+bind up:cmd;ctrl    resize +0 -10%
+bind down:cmd;ctrl  resize +0 +10%
+
+bind right:ctrl;alt nudge +10% +0
+bind left:ctrl;alt  nudge -10% +0
+bind up:ctrl;alt    nudge +0 -10%
+bind down:ctrl;alt  nudge +0 +10%
