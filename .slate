@@ -1,0 +1,54 @@
+# Config
+config windowHintsFontSize 100
+
+# General aliases
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+# Position aliases
+alias fullscreen ${sox};${soy} ${ssx};${ssy}
+alias leftHalf ${sox};${soy} ${ssx}/2;${ssy}
+alias bottomHalf ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
+alias topHalf ${sox};${soy} ${ssx};${ssy}/2
+alias rightHalf ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+alias topLeftQuarter ${sox};${soy} ${ssx}/2;${ssy}/2
+alias topRightQuarter ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
+alias bottomLeftQuarter ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+alias bottomRightQuarter ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+
+# Application aliases
+alias adiumContacts3 move ${sox};${soy} ${ssx}/5;${ssy}/3*2 0
+alias adiumChat3 move ${sox}+${ssx}/5;${soy}+${ssy}/3 ${ssx}/5*4;${ssy}/3 0
+
+# 1 monitor layout
+layout oneScreen 'Adium':TITLE_ORDER='Contacts' move ${sox};${soy} ${ssx}/9;${ssy}
+layout oneScreen 'Spotify' move ${fullscreen}
+layout oneScreen 'Google Chrome' move ${fullscreen}
+layout threeScreen 'MacVim' move ${rightHalf}
+layout threeScreen 'iTerm' move ${leftHalf}
+
+# 3 monitor layout
+layout threeScreen 'Adium':TITLE_ORDER='Contacts' ${adiumContacts3} | ${adiumChat3}
+layout threeScreen 'Spotify' move ${sox};${soy}+${ssy}/3*2 ${ssx};${ssy}/3 0
+layout threeScreen 'TextMate' move ${sox}+${ssx}/5;${soy} ${ssx}/5*4;${ssy}/3 0
+layout threeScreen 'Google Chrome' move ${sox};${soy} ${ssx}/2;${ssy} 1
+layout threeScreen 'MacVim' move ${ssx}/2;${soy} ${ssx}/2;${ssy} 1
+layout threeScreen 'iTerm' move ${sox};${soy} ${ssx};${ssy} 2
+
+# Bindings
+bind o:cmd;ctrl move ${fullscreen}
+bind h:cmd;ctrl move ${leftHalf}
+bind j:cmd;ctrl move ${bottomHalf}
+bind k:cmd;ctrl move ${topHalf}
+bind l:cmd;ctrl move ${rightHalf}
+bind u:cmd;ctrl move ${topLeftQuarter}
+bind i:cmd;ctrl move ${topRightQuarter}
+bind n:cmd;ctrl move ${bottomLeftQuarter}
+bind m:cmd;ctrl move ${bottomRightQuarter}
+bind ;:cmd;ctrl throw previous
+bind /:cmd;ctrl hint ASDFJKL
+bind 1:ctrl layout oneScreen
+bind 3:ctrl layout threeScreen
+
