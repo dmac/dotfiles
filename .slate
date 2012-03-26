@@ -2,6 +2,8 @@
 config windowHintsFontSize 100
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
+config windowHintsTopLeftX (windowSizeX/2)-(windowHintsWidth/2)
+config windowHintsTopLeftY (windowSizeY/2)-(windowHintsHeight/2)
 
 # General aliases
 alias sox screenOriginX
