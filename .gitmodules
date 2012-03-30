@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vjde"]
 	path = .vim/bundle/vjde
 	url = https://github.com/cespare/vjde.git
+[submodule ".vim/bundle/vim-golang"]
+	path = .vim/bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang.git
