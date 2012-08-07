@@ -25,7 +25,7 @@ elif [[ $(uname) == 'Darwin' ]]; then
   LS_COMMON="-Gh"
 fi
 test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
-alias ll="ls -Gl"
+alias ll="ls -Glh"
 alias la="ls -Gla"
 alias g="git"
 alias gh="ghci"
