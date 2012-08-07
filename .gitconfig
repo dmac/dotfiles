@@ -25,7 +25,7 @@
   co = checkout
   br = branch
   wc = whatchanged
-  cp = cherry-pick
+  cp = cherry-pick -x
   sm = submodule
   ol = log --oneline
   rb = "!bash -c 'git rebase -i HEAD~$1' -"
