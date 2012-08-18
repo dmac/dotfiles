@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/vim-golang"]
 	path = .vim/bundle/vim-golang
 	url = https://github.com/jnwhiteh/vim-golang.git
+[submodule ".vim/bundle/cocoa"]
+	path = .vim/bundle/cocoa
+	url = https://github.com/msanders/cocoa.vim.git
