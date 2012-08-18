@@ -19,6 +19,8 @@ let vimclojure#HighlightBuiltins=1                 " Highlight Clojure's builtin
 let vimclojure#ParenRainbow=1                      " Rainbow parenthesis in Clojure
 
 let g:ctrlp_working_path_mode=2                    " Search for files in repository with CtrlP
+let g:ctrlp_map = '<LEADER>g'
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
 
 " android configuration for javaimp plugin
 if $ANDROID_HOME != ""
