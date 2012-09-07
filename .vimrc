@@ -22,7 +22,7 @@ let g:tlist_clojure_settings = 'lisp;f:function'   " Use taglist lisp settings f
 let g:Tlist_Exit_OnlyWindow=1                      " Close taglist if it's the only open window
 
 let g:ctrlp_working_path_mode=2                    " Search for files in repository with CtrlP
-let g:ctrlp_map = '<LEADER>g'
+let g:ctrlp_map = '<LEADER>v'
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
 
 " android configuration for javaimp plugin
