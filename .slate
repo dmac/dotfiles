@@ -55,7 +55,7 @@ bind n:cmd;ctrl move ${bottomLeftQuarter}
 bind m:cmd;ctrl move ${bottomRightQuarter}
 
 bind ;:cmd;ctrl throw previous
-bind /:cmd;ctrl hint ASDFJKL
+bind /:cmd;ctrl hint ASDFJKLGH
 bind 1:ctrl layout oneScreen
 bind 3:ctrl layout threeScreen
 
