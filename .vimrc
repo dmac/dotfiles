@@ -106,6 +106,8 @@ nnoremap k gk
 
 
 " custom shortcuts
+nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
+nnoremap <LEADER>sv :source $MYVIMRC<CR>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>t :TlistToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
