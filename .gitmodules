@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/cocoa"]
 	path = .vim/bundle/cocoa
 	url = https://github.com/msanders/cocoa.vim.git
+[submodule ".vim/bundle/vim-css-color"]
+	path = .vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
