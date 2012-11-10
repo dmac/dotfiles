@@ -9,19 +9,19 @@ filetype off " ensure pathogen will pick up plugins with ftdetect directories
 " ====================
 " Plugin Options
 " ====================
-let g:SuperTabDefaultCompletionType="context"      " contextual autocomplete
-let g:SuperTabContextDefaultCompletionType="<C-n>" " tab complete forward with autocomplete
+let g:SuperTabDefaultCompletionType="context"       " contextual autocomplete
+let g:SuperTabContextDefaultCompletionType="<C-n>"  " tab complete forward with autocomplete
 
-let g:NERDTreeChDirMode=2                          " change pwd when NERDTree root changes
-let g:NERDChristmasTree=1                          " more colorful NERDTree
+let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
+let g:NERDChristmasTree=1                           " more colorful NERDTree
 
-let g:vimclojure#HighlightBuiltins=1               " Highlight Clojure's builtins
-let g:vimclojure#ParenRainbow=1                    " Rainbow parenthesis in Clojure
+let g:vimclojure#HighlightBuiltins=1                " Highlight Clojure's builtins
+let g:vimclojure#ParenRainbow=1                     " Rainbow parenthesis in Clojure
 
-let g:tlist_clojure_settings = 'lisp;f:function'   " Use taglist lisp settings for clojure
-let g:Tlist_Exit_OnlyWindow=1                      " Close taglist if it's the only open window
+let g:tlist_clojure_settings = 'lisp;f:function'    " Use taglist lisp settings for clojure
+let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the only open window
 
-let g:ctrlp_working_path_mode=2                    " Search for files in repository with CtrlP
+let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
 
