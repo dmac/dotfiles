@@ -82,3 +82,6 @@ function precmd()
   vcs_info             # git info
   _z --add "$(pwd -P)" # z.sh
 }
+
+# Source plugins
+source ~/sources/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
