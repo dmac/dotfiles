@@ -101,6 +101,7 @@ set textwidth=110               " wrap text at 110 columns
 " Mappings
 " ====================
 let mapleader=","
+let maplocalleader=","
 
 " treat moving vertically on a wrapped line as two different lines
 nnoremap j gj
