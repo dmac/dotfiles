@@ -125,22 +125,25 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " Auto Commands
 " ====================
 if has("autocmd")
-  autocmd BufWinLeave * silent! mkview                       " automatically save folds
-  autocmd BufWinEnter * silent! loadview                     " automatically load folds
+  augroup vimrc
+    autocmd!
+    autocmd BufWinLeave * silent! mkview                       " automatically save folds
+    autocmd BufWinEnter * silent! loadview                     " automatically load folds
 
-  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
-  autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
+    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
+    autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
 
-  autocmd BufWritePre * :%s/\s\+$//e                         " strip trailing whitespace on save
+    autocmd BufWritePre * :%s/\s\+$//e                         " strip trailing whitespace on save
 
-  autocmd BufReadPost *                                      " set cursor to the last position when opening
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    autocmd BufReadPost *                                      " set cursor to the last position when opening
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
 
-  " additional filetypes
-  autocmd BufNewFile,BufRead *.ejs set filetype=html
-  autocmd BufNewFile,BufRead *.less set filetype=scss
+    " additional filetypes
+    autocmd BufNewFile,BufRead *.ejs set filetype=html
+    autocmd BufNewFile,BufRead *.less set filetype=scss
+  augroup end
 endif
 
 " ====================
