@@ -14,6 +14,9 @@ export PROMPT_EOL_MARK="%F{red}↵%f" # no EOL mark
 dircolors > /dev/null 2>&1 && eval $(dircolors)
 gdircolors > /dev/null 2>&1 && eval $(gdircolors)
 
+# fpath
+[[ -d ~/.zsh/functions ]] && fpath=( ~/.zsh/functions $fpath)
+
 # Autocompletion
 autoload -U compinit && compinit
 
@@ -59,9 +62,6 @@ zstyle ':vcs_info:*' formats '%F{green}[%b%c%u%F{green}]'
 zstyle ':vcs_info:*' actionformats '%F{green}[%a|%b%c%u%F{green}]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-stash
 setopt prompt_subst
-
-# fpath
-[[ -d ~/.zsh/functions ]] && fpath=( ~/.zsh/functions $fpath)
 
 # Prompt
 PROMPT='%F{magenta}[%*] %F{yellow}[%n@%m] %F{cyan}[%~] ${vcs_info_msg_0_}
