@@ -19,6 +19,9 @@ let g:vimclojure#HighlightBuiltins=1                " Highlight Clojure's builti
 let g:vimclojure#ParenRainbow=1                     " Rainbow parenthesis in Clojure
 let g:vimclojure#WantNailgun=1                      " Look for nailgun server for Clojure
 let g:vimclojure#NailgunClient="/Users/dmac/bin/ng" " Path to nailgun executable
+" Correctly indent compojure and korma macros
+let g:vimclojure#FuzzyIndent = 1
+let g:vimclojure#FuzzyIndentPatterns = ",GET,POST,PUT,DELETE,select,insert,update,delete"
 
 let g:tlist_clojure_settings = 'lisp;f:function'    " Use taglist lisp settings for clojure
 let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the only open window
