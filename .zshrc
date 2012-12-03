@@ -22,7 +22,7 @@ autoload -U compinit && compinit
 
 # Case-insensitive, partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:*:*:*:*' menu yes select
+zstyle ':completion:*:*:*:*:*' menu select
 # Cache completions
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zcache
