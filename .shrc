@@ -37,4 +37,5 @@ alias gh="ghci"
 eval "$(rbenv init -)"
 alias rr="rbenv"
 alias rh="rbenv rehash; rehash"
-
+alias be="bundle exec"
+alias bi="bundle install"

@@ -75,7 +75,7 @@ bindkey '^R' history-incremental-search-backward # search backwards with ^R
 bindkey '^[[Z' reverse-menu-complete             # backwards completion with shift-tab
 
 # Aliases
-alias src="source ~/.zshrc"
+alias src="source ~/.zshrc; source ~/.zprofile"
 
 function precmd()
 {
