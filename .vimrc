@@ -137,8 +137,6 @@ nnoremap <LEADER>- yyp<C-v>$r-
 if has("autocmd")
   augroup vimrc
     autocmd!
-    autocmd BufWinLeave * silent! mkview                       " automatically save folds
-    autocmd BufWinEnter * silent! loadview                     " automatically load folds
 
     autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
     autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
