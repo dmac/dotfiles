@@ -23,6 +23,9 @@ let g:vimclojure#NailgunClient="/Users/dmac/bin/ng" " Path to nailgun executable
 let g:vimclojure#FuzzyIndent = 1
 let g:vimclojure#FuzzyIndentPatterns = ",GET,POST,PUT,DELETE,select,insert,update,delete,fact,facts"
 
+" OS X has a bug which causes MacVim to have an incorrect $PATH when running tools like ctags.
+" Run this command to fix it: sudo mv /etc/zshenv /etc/zprofile
+" See http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
 let g:tlist_clojure_settings = 'lisp;f:function'    " Use taglist lisp settings for clojure
 let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the only open window
 
@@ -44,6 +47,7 @@ set history=1000          " longer history
 set incsearch             " perform search as you type
 set autoread              " reload changed files when focus returns
 set modeline              " enable modelines
+set tags=tags;/           " Search all directoris for tags file
 syntax on                 " enable syntax highlighting
 filetype plugin indent on " detect filetypes
 
