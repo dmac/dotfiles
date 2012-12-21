@@ -11,8 +11,11 @@ export GREP_COLOR='1;32'
 export RUBYOPT="-ropenssl"
 
 # Path
-[[ -d ~/bin ]] && export PATH=~/bin:$PATH
-[[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"
+[[ -d /opt/local/bin ]]  && export PATH=/opt/local/bin:$PATH
+[[ -d /opt/local/sbin ]] && export PATH=/opt/local/sbin:$PATH
+[[ -d /usr/local/bin ]]  && export PATH=/usr/local/bin:$PATH
+[[ -d ~/bin ]]           && export PATH=$HOME/bin:$PATH
+[[ -d ~/.rbenv ]]        && export PATH=$HOME/.rbenv/bin:$PATH
 
 # History
 HISTFILE=~/.history       # where to save history
