@@ -27,9 +27,11 @@ let g:vimclojure#FuzzyIndentPatterns =
       \ . ",select,insert,update,delete" " Korma
       \ . ",fact,facts"                  " Midje
 
-" OS X has a bug which causes MacVim to have an incorrect $PATH when running tools like ctags.
-" Run this command to fix it: sudo mv /etc/zshenv /etc/zprofile
-" See http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
+" MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
+" To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
+" See https://github.com/b4winckler/macvim/wiki/Troubleshooting
+"     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
+"     https://gist.github.com/2193743
 let g:tlist_clojure_settings = 'lisp;f:function'    " Use taglist lisp settings for clojure
 let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the only open window
 
