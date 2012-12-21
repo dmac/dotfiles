@@ -1,3 +1,9 @@
+# File source order:
+# .zshenv: (always)
+# .zprofile: [[ -o login ]]
+# .zshrc: [[ -o interactive ]]
+# .zlogin: [[ -o login ]]
+
 # Load common configuration
 source ~/.shrc
 
