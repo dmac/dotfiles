@@ -19,9 +19,13 @@ let g:vimclojure#HighlightBuiltins=1                " Highlight Clojure's builti
 let g:vimclojure#ParenRainbow=1                     " Rainbow parenthesis in Clojure
 let g:vimclojure#WantNailgun=1                      " Look for nailgun server for Clojure
 let g:vimclojure#NailgunClient="/Users/dmac/bin/ng" " Path to nailgun executable
-" Correctly indent compojure and korma macros
+" Correctly indent clojure lispwords
 let g:vimclojure#FuzzyIndent = 1
-let g:vimclojure#FuzzyIndentPatterns = ",GET,POST,PUT,DELETE,select,insert,update,delete,fact,facts"
+let g:vimclojure#FuzzyIndentPatterns =
+      \   ",GET,POST,PUT,DELETE"         " Compojure
+      \ . ",deflayout,defsnippet"        " Enlive
+      \ . ",select,insert,update,delete" " Korma
+      \ . ",fact,facts"                  " Midje
 
 " OS X has a bug which causes MacVim to have an incorrect $PATH when running tools like ctags.
 " Run this command to fix it: sudo mv /etc/zshenv /etc/zprofile
