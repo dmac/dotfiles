@@ -15,17 +15,15 @@ let g:SuperTabContextDefaultCompletionType="<C-n>"  " tab complete forward with 
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
 
-let g:vimclojure#HighlightBuiltins=1                " Highlight Clojure's builtins
-let g:vimclojure#ParenRainbow=1                     " Rainbow parenthesis in Clojure
-let g:vimclojure#WantNailgun=1                      " Look for nailgun server for Clojure
-let g:vimclojure#NailgunClient="/Users/dmac/bin/ng" " Path to nailgun executable
-" Correctly indent clojure lispwords
-let g:vimclojure#FuzzyIndent = 1
-let g:vimclojure#FuzzyIndentPatterns  = ",GET,POST,PUT,DELETE"                        " Compojure
-let g:vimclojure#FuzzyIndentPatterns .= ",defsnippet,deftemplate,clone-for"           " Enlive
-let g:vimclojure#FuzzyIndentPatterns .= ",select.*,insert.*,update.*,delete.*,with.*" " Korma
-let g:vimclojure#FuzzyIndentPatterns .= ",fact,facts"                                 " Midje
-let g:vimclojure#FuzzyIndentPatterns .= ",defmigration,up,down"                       " Lobos
+" Clojure indentation
+let g:clojure_align_multiline_strings = 0
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = "with.*,def.*,let.*"
+let g:clojure_fuzzy_indent_patterns .= ",GET,POST,PUT,DELETE"                 " Compojure
+let g:clojure_fuzzy_indent_patterns .= ",clone-for"                           " Enlive
+let g:clojure_fuzzy_indent_patterns .= ",select.*,insert.*,update.*,delete.*" " Korma
+let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " Midje
+let g:clojure_fuzzy_indent_patterns .= ",up,down"                             " Lobos
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
