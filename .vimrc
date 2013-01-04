@@ -21,11 +21,11 @@ let g:vimclojure#WantNailgun=1                      " Look for nailgun server fo
 let g:vimclojure#NailgunClient="/Users/dmac/bin/ng" " Path to nailgun executable
 " Correctly indent clojure lispwords
 let g:vimclojure#FuzzyIndent = 1
-let g:vimclojure#FuzzyIndentPatterns =
-      \   ",GET,POST,PUT,DELETE"         " Compojure
-      \ . ",deflayout,defsnippet"        " Enlive
-      \ . ",select,insert,update,delete" " Korma
-      \ . ",fact,facts"                  " Midje
+let g:vimclojure#FuzzyIndentPatterns  = ",GET,POST,PUT,DELETE"                        " Compojure
+let g:vimclojure#FuzzyIndentPatterns .= ",defsnippet,deftemplate,clone-for"           " Enlive
+let g:vimclojure#FuzzyIndentPatterns .= ",select.*,insert.*,update.*,delete.*,with.*" " Korma
+let g:vimclojure#FuzzyIndentPatterns .= ",fact,facts"                                 " Midje
+let g:vimclojure#FuzzyIndentPatterns .= ",defmigration,up,down"                       " Lobos
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
