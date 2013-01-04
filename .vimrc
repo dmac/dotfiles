@@ -25,6 +25,26 @@ let g:clojure_fuzzy_indent_patterns .= ",select.*,insert.*,update.*,delete.*" " 
 let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " Midje
 let g:clojure_fuzzy_indent_patterns .= ",up,down"                             " Lobos
 
+" Rainbow parentheses
+let g:rbpt_colorpairs = [
+    \ ['gray',        'DeepPink1'],
+    \ ['black',       'pink1'],
+    \ ['darkmagenta', 'brown1'],
+    \ ['Darkblue',    'chocolate1'],
+    \ ['darkred',     'DarkOliveGreen1'],
+    \ ['darkgreen',   'DarkOrange1'],
+    \ ['darkcyan',    'yellow1'],
+    \ ['Darkblue',    'cyan1'],
+    \ ['gray',        'PaleGreen1'],
+    \ ['black',       'HotPink1'],
+    \ ['darkmagenta', 'MediumOrchid'],
+    \ ['Darkblue',    'firebrick'],
+    \ ['darkred',     'SteelBlue1'],
+    \ ['darkgreen',   'goldenrod1'],
+    \ ['darkcyan',    'LimeGreen'],
+    \ ['Darkblue',    'RoyalBlue1'],
+    \ ]
+
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
@@ -155,6 +175,14 @@ if has("autocmd")
     " additional filetypes
     autocmd BufNewFile,BufRead *.ejs set filetype=html
     autocmd BufNewFile,BufRead *.less set filetype=scss
+  augroup end
+
+  " Rainbow parentheses
+  augroup rainbow_parentheses
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
   augroup end
 endif
 
