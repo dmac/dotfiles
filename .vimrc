@@ -162,8 +162,8 @@ if has("autocmd")
   augroup vimrc
     autocmd!
 
-    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif   " close autocomplete preview when cursor moves
-    autocmd InsertLeave * if pumvisible() == 0|pclose|endif    " close autocomplete preview on insert mode exit
+    autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif   " close autocomplete preview when cursor moves
+    autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif    " close autocomplete preview on insert mode exit
 
     autocmd BufWritePre * :%s/\s\+$//e                         " strip trailing whitespace on save
 
