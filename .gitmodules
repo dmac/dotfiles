@@ -25,9 +25,6 @@
 [submodule ".vim/bundle/vim-endwise"]
 	path = .vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule ".vim/bundle/javaimp"]
-	path = .vim/bundle/javaimp
-	url = https://github.com/vim-scripts/JavaImp.vim--Lee
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -73,9 +70,6 @@
 [submodule ".vim/bundle/vim-actionscript"]
 	path = .vim/bundle/vim-actionscript
 	url = https://github.com/jeroenbourgois/vim-actionscript.git
-[submodule ".vim/bundle/vjde"]
-	path = .vim/bundle/vjde
-	url = https://github.com/cespare/vjde.git
 [submodule ".vim/bundle/vim-golang"]
 	path = .vim/bundle/vim-golang
 	url = https://github.com/jnwhiteh/vim-golang.git
