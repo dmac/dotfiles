@@ -97,3 +97,9 @@
 [submodule ".vim/bundle/neco-ghc"]
 	path = .vim/bundle/neco-ghc
 	url = git://github.com/ujihisa/neco-ghc.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule ".vim/bundle/lushtags"]
+	path = .vim/bundle/lushtags
+	url = git://github.com/bitc/lushtags.git
