@@ -97,3 +97,6 @@
 [submodule ".vim/bundle/rainbow-parentheses.vim"]
 	path = .vim/bundle/rainbow-parentheses.vim
 	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule ".vim/bundle/haskellmode-vim"]
+	path = .vim/bundle/haskellmode-vim
+	url = git://github.com/lukerandall/haskellmode-vim.git
