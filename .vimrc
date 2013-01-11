@@ -73,7 +73,7 @@ nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
-nnoremap <LEADER>tl :TlistToggle<CR>
+nnoremap <LEADER>tb :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
@@ -160,16 +160,14 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
-let g:haddock_browser = "open"
-au BufEnter *.hs compiler ghc|set cmdheight=1
+"let g:haskell_conceal = 0
+let g:haskell_conceal_wide = 1
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
 "     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
 "     https://gist.github.com/2193743
-let g:tlist_clojure_settings = 'lisp;f:function'    " Use taglist lisp settings for clojure
-let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the only open window
 
 let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
