@@ -1,14 +1,134 @@
-" ====================
-" Plugins
-" ====================
-set runtimepath+=~/.vim/bundle/vim-pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype off " ensure pathogen will pick up plugins with ftdetect directories
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
-" ====================
-" Plugin Options
-" ====================
+
+" ------------------------------------------------ General ---------------------------------------------------
+
+set nocompatible                " duh
+set history=1000                " longer history
+set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
+set textwidth=110                " wrap text at 110 columns
+set tabstop=2                    " 2 space tabs, all the time
+let &softtabstop=&tabstop
+let &shiftwidth=&tabstop
+set expandtab
+set smarttab
+set autoindent                   " continue indentation
+set backspace=indent,eol,start   " make backspace work correctly
+set smartindent                  " add indentation for code
+set incsearch                    " perform search as you type
+set nohlsearch                   " don't highlight search results
+set ignorecase                   " ignore case when searching...
+set smartcase                    " ...unless a capital letter was typed
+set showmatch                    " show matching brace when closed
+set autoread                     " reload changed files when focus returns
+set modeline                     " enable modelines
+set number                       " show line numbers
+set ruler                        " show cursor position, etc.
+set cursorline
+set showcmd                      " display commands in progress at the bottom
+set cmdheight=1
+set laststatus=2                 " show statusline with filename
+set wildmenu                     " tab completion menu for commands
+set wildmode=list:longest,full   " tab completion menu options
+set list listchars=trail:.,tab:>. " highlight trailing whitespace
+set tags=tags;/                   " Search all directories for tags file
+set nobackup                      " don't save backup files
+set nowritebackup                 " don't save backup files
+set noswapfile                    " don't create .swp files
+
+
+" ----------------------------------------- Colorscheme and Highlights ---------------------------------------
+
+colorscheme slate2
+"colorscheme lucius
+"colorscheme jellybeans
+if exists("+colorcolumn") " use colorcolumn if supported
+  let &colorcolumn = &textwidth + 1
+  hi ColorColumn ctermbg=DarkGray guibg=gray15
+endif
+
+" Better git diff colors
+hi diffAdded ctermfg=DarkGreen ctermbg=Black
+hi diffRemoved ctermfg=DarkRed ctermbg=Black
+hi diffFile ctermfg=darkcyan ctermbg=Black
+
+" Cursor line highlight
+hi CursorLine cterm=NONE ctermbg=NONE guibg=gray20
+
+
+" ----------------------------------------------- Mappings ---------------------------------------------------
+
+let mapleader=","
+
+" treat moving vertically on a wrapped line as two different lines
+nnoremap j gj
+nnoremap k gk
+
+" custom shortcuts
+nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
+nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
+nnoremap <LEADER>sv :source $MYVIMRC<CR>
+nnoremap <LEADER>sg :source $MYGVIMRC<CR>
+nnoremap <LEADER>f :NERDTreeToggle<CR>
+nnoremap <LEADER>tl :TlistToggle<CR>
+nnoremap <LEADER>h :set hlsearch!<CR>
+nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
+nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
+nnoremap <LEADER>gh :GHCi<SPACE>
+
+nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
+
+" delete the current buffer without closing the window
+nnoremap <LEADER>d :bp\|bd #<CR>
+
+" underlining
+nnoremap <LEADER>= yyp<C-v>$r=
+nnoremap <LEADER>- yyp<C-v>$r-
+
+
+" -------------------------------------------- Auto Commands -------------------------------------------------
+
+" Strip trailing whitespace on save
+augroup trailing_whitespace
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup end
+
+" Additional filetypes
+augroup filetypes
+  autocmd!
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
+  autocmd BufNewFile,BufRead *.less set filetype=scss
+augroup end
+
+" Activate rainbow parentheses
+augroup rainbow_parentheses
+  autocmd!
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadRound
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadBraces
+augroup end
+
+" Restore cursor position
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+augroup restore_cursor
+  autocmd!
+  autocmd BufReadPost * call ResCur()
+augroup end
+
+
+" -------------------------------------------- Plugin Options ------------------------------------------------
+
 let g:SuperTabDefaultCompletionType="context"       " contextual autocomplete
 let g:SuperTabContextDefaultCompletionType="<C-n>"  " tab complete forward with autocomplete
 
@@ -40,6 +160,9 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
+let g:haddock_browser = "open"
+au BufEnter *.hs compiler ghc|set cmdheight=1
+
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
@@ -51,143 +174,3 @@ let g:Tlist_Exit_OnlyWindow=1                       " Close taglist if it's the 
 let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
-
-" android configuration for javaimp plugin
-if $ANDROID_HOME != ""
-  let g:JavaImpPaths=$ANDROID_HOME."/platforms/android-7"
-  let g:JavaImpDataDir=$HOME."/.javaimp"
-end
-
-" ====================
-" General
-" ====================
-set nocompatible          " duh
-set history=1000          " longer history
-set incsearch             " perform search as you type
-set autoread              " reload changed files when focus returns
-set modeline              " enable modelines
-set tags=tags;/           " Search all directoris for tags file
-syntax on                 " enable syntax highlighting
-filetype plugin indent on " detect filetypes
-
-" ====================
-" Backups
-" ====================
-set nobackup      " don't save backup files
-set nowritebackup " don't save backup files
-set noswapfile    " don't create .swp files
-"set backupdir=~/.vim/backup
-"set backupcopy=yes
-
-" ====================
-" UI
-" ====================
-set ruler                      " show cursor position, etc.
-set laststatus=2               " show statusline with filename
-set showcmd                    " display commands in progress at the bottom
-set wildmenu                   " tab completion menu for commands
-set wildmode=list:longest,full " tab completion menu options
-set number                     " show line numbers
-
-" ====================
-" Highlights
-" ====================
-hi LineNr ctermfg=DarkGray ctermbg=Black
-"hi Comment ctermfg=cyan cterm=none
-"hi Directory ctermfg=cyan cterm=none
-" better git diff colors
-hi diffAdded ctermfg=DarkGreen ctermbg=Black
-hi diffRemoved ctermfg=DarkRed ctermbg=Black
-hi diffFile ctermfg=darkcyan ctermbg=Black
-
-" ====================
-" Visual Cues
-" ====================
-set showmatch                                " show matching brace when closed
-set ignorecase                               " ignore case when searching...
-set smartcase                                " ...unless a capital letter was typed
-set nohlsearch                               " don't highlight search results
-set list listchars=trail:.,tab:>.            " highlight trailing whitespace
-hi SpecialKey ctermfg=DarkGray ctermbg=Black
-
-" ====================
-" Text Formatting
-" ====================
-set autoindent                  " continue indentation
-set smartindent                 " add indentation for code
-set backspace=indent,eol,start  " make backspace work correctly
-set tabstop=2                   " 2 space tabs, all the time
-let &softtabstop=&tabstop
-let &shiftwidth=&tabstop
-set expandtab
-set nosmarttab
-set textwidth=110               " wrap text at 110 columns
-
-" ====================
-" Mappings
-" ====================
-let mapleader=","
-let maplocalleader=","
-
-" treat moving vertically on a wrapped line as two different lines
-nnoremap j gj
-nnoremap k gk
-
-
-" custom shortcuts
-nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
-nnoremap <LEADER>sv :source $MYVIMRC<CR>
-nnoremap <LEADER>f :NERDTreeToggle<CR>
-nnoremap <LEADER>t :TlistToggle<CR>
-nnoremap <LEADER>h :set hlsearch!<CR>
-nnoremap <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
-nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
-
-" delete the current buffer without closing the window
-nnoremap <LEADER>d :bp\|bd #<CR>
-
-" underlining
-nnoremap <LEADER>= yyp<C-v>$r=
-nnoremap <LEADER>- yyp<C-v>$r-
-
-" ====================
-" Auto Commands
-" ====================
-if has("autocmd")
-  augroup vimrc
-    autocmd!
-
-    autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif   " close autocomplete preview when cursor moves
-    autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif    " close autocomplete preview on insert mode exit
-
-    autocmd BufWritePre * :%s/\s\+$//e                         " strip trailing whitespace on save
-
-    autocmd BufReadPost *                                      " set cursor to the last position when opening
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif
-
-    " additional filetypes
-    autocmd BufNewFile,BufRead *.ejs set filetype=html
-    autocmd BufNewFile,BufRead *.less set filetype=scss
-  augroup end
-
-  " Rainbow parentheses
-  augroup rainbow_parentheses
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-  augroup end
-endif
-
-" ====================
-" Colors and Skins
-" ====================
-if &t_Co > 8
-  colorscheme jellybeans
-endif
-if exists("+colorcolumn")                       " use colorcolumn if supported
-  let &colorcolumn = &textwidth
-  hi ColorColumn ctermbg=DarkGray guibg=#2D2D2D
-endif
