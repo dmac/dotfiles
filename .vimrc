@@ -26,23 +26,18 @@ let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " 
 let g:clojure_fuzzy_indent_patterns .= ",up,down"                             " Lobos
 
 " Rainbow parentheses
+let g:rbpt_max = 10
 let g:rbpt_colorpairs = [
-    \ ['gray',        'DeepPink1'],
-    \ ['black',       'pink1'],
-    \ ['darkmagenta', 'brown1'],
-    \ ['Darkblue',    'chocolate1'],
-    \ ['darkred',     'DarkOliveGreen1'],
-    \ ['darkgreen',   'DarkOrange1'],
-    \ ['darkcyan',    'yellow1'],
-    \ ['Darkblue',    'cyan1'],
-    \ ['gray',        'PaleGreen1'],
-    \ ['black',       'HotPink1'],
-    \ ['darkmagenta', 'MediumOrchid'],
-    \ ['Darkblue',    'firebrick'],
-    \ ['darkred',     'SteelBlue1'],
-    \ ['darkgreen',   'goldenrod1'],
-    \ ['darkcyan',    'LimeGreen'],
-    \ ['Darkblue',    'RoyalBlue1'],
+    \ ['gray',      'HotPink1'],
+    \ ['darkred',   'cyan1'],
+    \ ['darkcyan',  'brown1'],
+    \ ['darkgreen', 'yellow1'],
+    \ ['darkblue',  'MediumOrchid'],
+    \ ['gray',      'DeepSkyBlue1'],
+    \ ['darkred',   'DarkOrange1'],
+    \ ['darkcyan',  'LimeGreen'],
+    \ ['darkgreen', 'goldenrod1'],
+    \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
