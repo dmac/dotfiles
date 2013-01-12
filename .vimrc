@@ -85,14 +85,6 @@ nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
 nnoremap <LEADER>gh :GHCi<SPACE>
-
-" Activate rainbow parentheses
-function! RainbowParenthesesReset()
-  RainbowParenthesesToggle
-  RainbowParenthesesLoadRound
-  RainbowParenthesesLoadSquare
-  RainbowParenthesesLoadBraces
-endfunction
 nnoremap <LEADER>rp :call RainbowParenthesesReset()<CR>
 
 nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
@@ -132,6 +124,20 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
+" Activate rainbow parentheses
+function! RainbowParenthesesReset()
+  RainbowParenthesesToggle
+  RainbowParenthesesLoadRound
+  RainbowParenthesesLoadSquare
+  RainbowParenthesesLoadBraces
+endfunction
+augroup rainbow_parentheses
+  autocmd!
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadRound
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadBraces
+augroup end
 
 " -------------------------------------------- Plugin Options ------------------------------------------------
 
