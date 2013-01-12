@@ -6,33 +6,34 @@ filetype plugin indent on
 
 " ------------------------------------------------ General ---------------------------------------------------
 
-set nocompatible                " duh
-set history=1000                " longer history
+set nocompatible                  " duh
+set history=1000                  " longer history
 set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
-set textwidth=110                " wrap text at 110 columns
-set tabstop=2                    " 2 space tabs, all the time
+set textwidth=110                 " wrap text at 110 columns
+set tabstop=2                     " 2 space tabs, all the time
 let &softtabstop=&tabstop
 let &shiftwidth=&tabstop
 set expandtab
 set smarttab
-set autoindent                   " continue indentation
-set backspace=indent,eol,start   " make backspace work correctly
-set smartindent                  " add indentation for code
-set incsearch                    " perform search as you type
-set nohlsearch                   " don't highlight search results
-set ignorecase                   " ignore case when searching...
-set smartcase                    " ...unless a capital letter was typed
-set showmatch                    " show matching brace when closed
-set autoread                     " reload changed files when focus returns
-set modeline                     " enable modelines
-set number                       " show line numbers
-set ruler                        " show cursor position, etc.
+set smartindent                   " add indentation for code
+set autoindent                    " continue indentation
+set backspace=indent,eol,start    " make backspace work correctly
+set incsearch                     " perform search as you type
+set nohlsearch                    " don't highlight search results
+set ignorecase                    " ignore case when searching...
+set smartcase                     " ...unless a capital letter was typed
+set showmatch                     " show matching brace when closed
+set autoread                      " reload changed files when focus returns
+set modeline                      " enable modelines
+set number                        " show line numbers
+set ruler                         " show cursor position, etc.
 set cursorline
-set showcmd                      " display commands in progress at the bottom
+set showcmd                       " display commands in progress at the bottom
 set cmdheight=1
-set laststatus=2                 " show statusline with filename
-set wildmenu                     " tab completion menu for commands
-set wildmode=list:longest,full   " tab completion menu options
+set laststatus=2                  " show statusline with filename
+set wildmenu                      " command tab completion menu
+set wildmode=list:longest,full    " command tab completion menu options
+set completeopt=longest,menuone   " popup menu completion options
 set list listchars=trail:.,tab:>. " highlight trailing whitespace
 set tags=tags;/                   " Search all directories for tags file
 set nobackup                      " don't save backup files
