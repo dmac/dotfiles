@@ -168,7 +168,6 @@ let g:rbpt_colorpairs = [
 
 let g:haddock_browser = "open"
 let g:haskell_conceal = 0      " Don't use unicode characters
-"let g:haskell_conceal_wide = 1 " Enable for fancy unicode characters
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
