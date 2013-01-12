@@ -79,7 +79,7 @@ nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
-nnoremap <LEADER>tb :TagbarToggle<CR>
+nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
