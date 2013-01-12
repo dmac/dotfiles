@@ -166,6 +166,7 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
+let g:haddock_browser = "open"
 let g:haskell_conceal = 0      " Don't use unicode characters
 "let g:haskell_conceal_wide = 1 " Enable for fancy unicode characters
 
