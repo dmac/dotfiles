@@ -73,6 +73,10 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
+" easy newline insertion
+nnoremap <ENTER> O<ESC>j
+nnoremap <S-ENTER> o<ESC>k
+
 " custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
