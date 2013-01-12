@@ -103,3 +103,6 @@
 [submodule ".vim/bundle/haskellmode-vim"]
 	path = .vim/bundle/haskellmode-vim
 	url = git://github.com/lukerandall/haskellmode-vim.git
+[submodule ".vim/bundle/unicode-haskell"]
+	path = .vim/bundle/unicode-haskell
+	url = git://github.com/frerich/unicode-haskell.git
