@@ -86,6 +86,15 @@ nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
 nnoremap <LEADER>gh :GHCi<SPACE>
 
+" Activate rainbow parentheses
+function! RainbowParenthesesReset()
+  RainbowParenthesesToggle
+  RainbowParenthesesLoadRound
+  RainbowParenthesesLoadSquare
+  RainbowParenthesesLoadBraces
+endfunction
+nnoremap <LEADER>rp :call RainbowParenthesesReset()<CR>
+
 nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
 
 " delete the current buffer without closing the window
@@ -109,15 +118,6 @@ augroup filetypes
   autocmd!
   autocmd BufNewFile,BufRead *.ejs set filetype=html
   autocmd BufNewFile,BufRead *.less set filetype=scss
-augroup end
-
-" Activate rainbow parentheses
-augroup rainbow_parentheses
-  autocmd!
-  autocmd VimEnter * RainbowParenthesesToggle
-  autocmd Syntax * RainbowParenthesesLoadRound
-  autocmd Syntax * RainbowParenthesesLoadSquare
-  autocmd Syntax * RainbowParenthesesLoadBraces
 augroup end
 
 " Restore cursor position
