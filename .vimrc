@@ -77,6 +77,13 @@ nnoremap k gk
 nnoremap <ENTER> O<ESC>j
 nnoremap <S-ENTER> o<ESC>k
 
+" delete the current buffer without closing the window
+nnoremap <LEADER>d :bp\|bd #<CR>
+
+" underlining
+nnoremap <LEADER>= yyp<C-v>$r=
+nnoremap <LEADER>- yyp<C-v>$r-
+
 " custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
@@ -92,13 +99,6 @@ nnoremap <LEADER>gh :GHCi<SPACE>
 nnoremap <LEADER>rp :call RainbowParenthesesReset()<CR>
 
 nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
-
-" delete the current buffer without closing the window
-nnoremap <LEADER>d :bp\|bd #<CR>
-
-" underlining
-nnoremap <LEADER>= yyp<C-v>$r=
-nnoremap <LEADER>- yyp<C-v>$r-
 
 
 " -------------------------------------------- Auto Commands -------------------------------------------------
