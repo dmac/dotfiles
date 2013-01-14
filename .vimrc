@@ -85,7 +85,6 @@ nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
-nnoremap <LEADER>gh :GHCi<SPACE>
 nnoremap <LEADER>rp :call RainbowParenthesesReset()<CR>
 
 nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
@@ -166,8 +165,7 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
-let g:haddock_browser = "open"
-let g:haskell_conceal = 0      " Don't use unicode characters
+let g:haskell_conceal = 0      " Don't use unicode characters (vim2hs)
 
 let g:ghcmod_ghc_options = ['-isrc', '-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf']
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
