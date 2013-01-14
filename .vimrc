@@ -57,10 +57,6 @@ hi diffFile ctermfg=darkcyan ctermbg=Black
 " Cursor line highlight
 hi CursorLine cterm=NONE ctermbg=NONE guibg=gray20
 
-" Autocomplete menu colors
-hi Pmenu ctermbg=black guibg=black
-hi PmenuSel ctermfg=black guifg=black
-
 
 " ----------------------------------------------- Mappings ---------------------------------------------------
 
