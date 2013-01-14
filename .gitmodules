@@ -100,9 +100,6 @@
 [submodule ".vim/bundle/lushtags"]
 	path = .vim/bundle/lushtags
 	url = git://github.com/bitc/lushtags.git
-[submodule ".vim/bundle/haskellmode-vim"]
-	path = .vim/bundle/haskellmode-vim
-	url = git://github.com/lukerandall/haskellmode-vim.git
 [submodule ".vim/bundle/vim-tomorrow-theme"]
 	path = .vim/bundle/vim-tomorrow-theme
 	url = git://github.com/chriskempson/vim-tomorrow-theme.git
