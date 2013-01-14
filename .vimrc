@@ -39,6 +39,7 @@ set tags=tags;/                   " Search all directories for tags file
 set nobackup                      " don't save backup files
 set nowritebackup                 " don't save backup files
 set noswapfile                    " don't create .swp files
+set foldlevel=99                  " open all folds by default
 
 
 " ----------------------------------------- Colorscheme and Highlights ---------------------------------------
