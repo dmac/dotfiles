@@ -109,3 +109,6 @@
 [submodule ".vim/bundle/Insertlessly"]
 	path = .vim/bundle/Insertlessly
 	url = https://github.com/dahu/Insertlessly
+[submodule ".vim/bundle/dwm.vim"]
+	path = .vim/bundle/dwm.vim
+	url = https://github.com/spolu/dwm.vim
