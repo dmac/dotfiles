@@ -106,3 +106,6 @@
 [submodule ".vim/bundle/unicode-haskell"]
 	path = .vim/bundle/unicode-haskell
 	url = git://github.com/frerich/unicode-haskell.git
+[submodule ".vim/bundle/vim-tomorrow-theme"]
+	path = .vim/bundle/vim-tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git

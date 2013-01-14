@@ -44,9 +44,7 @@ set nofoldenable                  " no folds
 
 " ----------------------------------------- Colorscheme and Highlights ---------------------------------------
 
-colorscheme slate2
-"colorscheme lucius
-"colorscheme jellybeans
+colorscheme Tomorrow-Night
 if exists("+colorcolumn") " use colorcolumn if supported
   let &colorcolumn = &textwidth + 1
   hi ColorColumn ctermbg=DarkGray guibg=gray15
