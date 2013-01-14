@@ -70,10 +70,6 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
-" easy newline insertion
-nnoremap <ENTER> O<ESC>j
-nnoremap <S-ENTER> o<ESC>k
-
 " delete the current buffer without closing the window
 nnoremap <LEADER>d :bp\|bd #<CR>
 
