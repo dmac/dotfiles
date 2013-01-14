@@ -168,6 +168,9 @@ let g:rbpt_colorpairs = [
 let g:haddock_browser = "open"
 let g:haskell_conceal = 0      " Don't use unicode characters
 
+let g:ghcmod_ghc_options = ['-isrc', '-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf']
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
 let g:tagbar_iconchars = ['▸', '▾']
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
