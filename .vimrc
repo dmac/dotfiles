@@ -132,6 +132,7 @@ augroup rainbow_parentheses
   autocmd Syntax * RainbowParenthesesLoadBraces
 augroup end
 
+
 " -------------------------------------------- Plugin Options ------------------------------------------------
 
 let g:SuperTabDefaultCompletionType="context"       " contextual autocomplete
@@ -165,14 +166,11 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
-let g:haskell_conceal = 0      " Don't use unicode characters (vim2hs)
-
-let g:ghcmod_ghc_options = ['-isrc', '-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf']
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
 
 let g:tagbar_iconchars = ['▸', '▾']
 
-let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
+let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
 
