@@ -172,12 +172,12 @@ autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 let g:tagbar_iconchars = ['▸', '▾']
 
+let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
+let g:ctrlp_map = '<LEADER>v'
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
+
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
 "     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
 "     https://gist.github.com/2193743
-
-let g:ctrlp_working_path_mode=2                     " Search for files in repository with CtrlP
-let g:ctrlp_map = '<LEADER>v'
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
