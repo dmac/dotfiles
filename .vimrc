@@ -141,6 +141,8 @@ let g:SuperTabContextDefaultCompletionType="<C-n>"  " tab complete forward with 
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
 
+let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
+
 " Clojure indentation
 let g:clojure_align_multiline_strings = 0
 let g:clojure_fuzzy_indent = 1
