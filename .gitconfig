@@ -27,6 +27,7 @@
   wc = whatchanged
   cp = cherry-pick -x
   sm = submodule
+  sh = stash
   ol = log --oneline
   rb = "!bash -c 'git rebase -i HEAD~$1' -"
   ;last = "!git log | head -n 1 | cut -c 8- | xargs echo -n | pbcopy"
