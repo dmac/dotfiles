@@ -139,8 +139,14 @@ augroup end
 
 " -------------------------------------------- Plugin Options ------------------------------------------------
 
-let g:SuperTabDefaultCompletionType="context"       " contextual autocomplete
-let g:SuperTabContextDefaultCompletionType="<C-n>"  " tab complete forward with autocomplete
+" Autocompletion
+let g:SuperTabDefaultCompletionType="<c-x><c-u>"
+autocmd FileType clojure setlocal omnifunc=foreplay#omnicomplete
+autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, '<c-n>') |
+    \ endif
+
 
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
