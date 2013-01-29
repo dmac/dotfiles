@@ -181,7 +181,23 @@ let g:rbpt_colorpairs = [
 
 let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
 
+" TagBar configuration
 let g:tagbar_iconchars = ['▸', '▾']
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
 
 let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
