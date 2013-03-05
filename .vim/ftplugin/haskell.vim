@@ -14,4 +14,5 @@ function! s:set_ghcmod_options()
   endif
 endfunction
 autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+nnoremap <LEADER>m :GhcModCheckAndLintAsync<CR>
