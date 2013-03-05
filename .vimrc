@@ -123,14 +123,14 @@ augroup end
 
 " Activate rainbow parentheses
 function! RainbowParenthesesReset()
-  RainbowParenthesesToggle
+  RainbowParenthesesActivate
   RainbowParenthesesLoadRound
   RainbowParenthesesLoadSquare
   RainbowParenthesesLoadBraces
 endfunction
 augroup rainbow_parentheses
   autocmd!
-  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Filetype clojure RainbowParenthesesActivate
   autocmd Syntax * RainbowParenthesesLoadRound
   autocmd Syntax * RainbowParenthesesLoadSquare
   autocmd Syntax * RainbowParenthesesLoadBraces
