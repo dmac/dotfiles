@@ -90,7 +90,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-vnoremap <LEADER>cc :CoffeeCompile {20}<CR>
 
 nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
 
