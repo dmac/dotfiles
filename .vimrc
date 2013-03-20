@@ -200,7 +200,7 @@ endif
 
 let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
 let g:ctrlp_map = '<LEADER>v'
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$'
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
