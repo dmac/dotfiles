@@ -1,3 +1,4 @@
 --type-add=css=.less
 --type-add=js=.coffee
+--type-set=md=.md
 --ignore-dir=asset-cache
