@@ -24,8 +24,8 @@ alias bottomLeftQuarter ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 alias bottomRightQuarter ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 
 # Application aliases
-alias adiumContacts3 move ${sox};${soy} ${ssx}/5;${ssy}/3*2 0
-alias adiumChat3 move ${sox}+${ssx}/5;${soy}+${ssy}/3 ${ssx}/5*4;${ssy}/3 0
+alias adiumContacts3 move ${sox};${soy} ${ssx}/10;${ssy} 0
+alias adiumChat3 move ${topRightQuarter} 0
 
 # 1 monitor layout
 layout oneScreen 'Adium':TITLE_ORDER='Contacts' move ${sox};${soy} ${ssx}/9;${ssy}
@@ -36,11 +36,11 @@ layout threeScreen 'iTerm' move ${leftHalf}
 
 # 3 monitor layout
 layout threeScreen 'Adium':TITLE_ORDER='Contacts' ${adiumContacts3} | ${adiumChat3}
-layout threeScreen 'Spotify' move ${sox};${soy}+${ssy}/3*2 ${ssx};${ssy}/3 0
-layout threeScreen 'TextMate' move ${sox}+${ssx}/5;${soy} ${ssx}/5*4;${ssy}/3 0
-layout threeScreen 'Google Chrome' move ${sox};${soy} ${ssx}/2;${ssy} 1
-layout threeScreen 'MacVim' move ${ssx}/2;${soy} ${ssx}/2;${ssy} 1
-layout threeScreen 'iTerm' move ${sox};${soy} ${ssx};${ssy} 2
+layout threeScreen 'Spotify' move ${fullscreen} 0
+layout threeScreen 'TextMate' move ${rightHalf} 0
+layout threeScreen 'Google Chrome' move ${rightHalf} 2
+layout threeScreen 'MacVim' move ${fullscreen} 1
+layout threeScreen 'iTerm' move ${leftHalf} 2
 
 # Bindings
 bind g:cmd;ctrl move ${centered}
