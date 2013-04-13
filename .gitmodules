@@ -67,9 +67,6 @@
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule ".vim/bundle/vim-foreplay"]
-	path = .vim/bundle/vim-foreplay
-	url = git://github.com/tpope/vim-foreplay.git
 [submodule ".vim/bundle/vim-clojure-static"]
 	path = .vim/bundle/vim-clojure-static
 	url = git://github.com/guns/vim-clojure-static.git
