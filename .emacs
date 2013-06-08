@@ -1,6 +1,6 @@
 (if (display-graphic-p) (menu-bar-mode 1) (menu-bar-mode -1))
-(when (boundp 'tool-bar-mode) (tool-bar-mode -1))
-(when (boundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(when (and (fboundp 'tool-bar-mode) tool-bar-mode) (tool-bar-mode -1))
+(when (and (fboundp 'scroll-bar-mode) scroll-bar-mode) (scroll-bar-mode -1))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
