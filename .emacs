@@ -83,6 +83,10 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; Disable org-mode keybinding that interferes with custom window switching.
+(eval-after-load 'org
+  '(define-key org-mode-map (kbd "M-h") nil))
+
 (global-undo-tree-mode t)
 
 (global-whitespace-mode t)
