@@ -122,21 +122,22 @@
 (setq uniquify-buffer-name-style 'forward)
 
 (require 'auto-complete)
-(global-auto-complete-mode t)
+(add-hook 'prog-mode-hook 'auto-complete-mode)
 (setq ac-auto-start nil)
 (ac-set-trigger-key "TAB")
 (ac-linum-workaround)
 
 ;; Automatic syntax checking
-(global-flycheck-mode t)
+(add-hook 'prog-mode-hook 'flycheck-mode)
 (eval-after-load 'flycheck
   '(setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers)))
 
 (require 'smart-tab)
-(global-smart-tab-mode t)
+(add-hook 'prog-mode-hook 'smart-tab-mode)
 
 ;; Snippets
-(yas-global-mode t)
+(eval-after-load 'yasnippet '(yas-reload-all))
+(add-hook 'prog-mode-hook 'yas-minor-mode)
 
 (global-surround-mode t)
 (global-rainbow-delimiters-mode t)
