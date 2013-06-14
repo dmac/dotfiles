@@ -112,3 +112,9 @@
 [submodule ".vim/bundle/vim-fireplace"]
 	path = .vim/bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule ".vim/bundle/vim-orgmode"]
+	path = .vim/bundle/vim-orgmode
+	url = git://github.com/jceb/vim-orgmode.git
+[submodule ".vim/bundle/universal-text-linking"]
+	path = .vim/bundle/universal-text-linking
+	url = git://github.com/vim-scripts/utl.vim.git
