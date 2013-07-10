@@ -1,0 +1,3 @@
+dep "${1:dep_name}" do
+  $0
+end
