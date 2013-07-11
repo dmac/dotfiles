@@ -123,6 +123,8 @@
 
 (require 'auto-complete)
 (add-hook 'prog-mode-hook 'auto-complete-mode)
+(define-key ac-complete-mode-map "\C-n" 'ac-next)
+(define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-auto-start nil)
 (ac-set-trigger-key "TAB")
 (ac-linum-workaround)
@@ -183,10 +185,11 @@
 ;; Autocompletion in nrepl
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-mode-hook 'auto-complete-mode)
 (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load 'auto-complete '(add-to-list 'ac-modes 'nrepl-mode))
-
+(add-hook 'nrepl-interaction-mode-hook 'auto-complete-mode)
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+(eval-after-load 'auto-complete '(add-to-list 'ac-modes 'nrepl-mode))
 
 ;; Count hyphens, etc. as word characters in lisps
 (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?- "w")))
