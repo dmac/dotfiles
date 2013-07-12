@@ -178,6 +178,11 @@
   '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache" "Build"))
                                (files (".#*" "*.so" ".DS_Store")))))
 
+(eval-after-load 'fiplr
+  '(progn
+     (define-key *grizzl-keymap* "\C-n" 'grizzl-set-selection-1)
+     (define-key *grizzl-keymap* "\C-p" 'grizzl-set-selection+1)))
+
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
 (eval-after-load 'clojure-mode
   '(define-key clojure-mode-map "\C-c\M-r" 'nrepl-switch-to-repl-buffer))
