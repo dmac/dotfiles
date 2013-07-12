@@ -56,6 +56,7 @@
 (setq split-window-preferred-function 'split-window-sensibly-reverse)
 (setq vc-follow-symlinks t)
 
+(global-undo-tree-mode t)
 (global-font-lock-mode t)
 (global-auto-revert-mode t)
 (global-hl-line-mode t)
@@ -82,11 +83,14 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+(global-surround-mode t)
+(global-rainbow-delimiters-mode t)
+
 ;; Disable org-mode keybinding that interferes with custom window switching.
 (eval-after-load 'org
   '(define-key org-mode-map (kbd "M-h") nil))
 
-(global-undo-tree-mode t)
+;; Whitespace settings
 
 (global-whitespace-mode t)
 (eval-after-load 'whitespace
@@ -137,9 +141,6 @@
 (eval-after-load 'yasnippet '(yas-reload-all))
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 
-(global-surround-mode t)
-(global-rainbow-delimiters-mode t)
-
 ;; Evil
 
 (evil-mode t)
@@ -170,6 +171,7 @@
 (evilnc-default-hotkeys)
 
 ;; Fuzzy project file finding
+
 (eval-after-load 'fiplr
   '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache" "Build"))
                                (files (".#*" "*.so" ".DS_Store")))))
@@ -178,6 +180,8 @@
   '(progn
      (define-key *grizzl-keymap* "\C-n" 'grizzl-set-selection-1)
      (define-key *grizzl-keymap* "\C-p" 'grizzl-set-selection+1)))
+
+;; Clojure
 
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
 (eval-after-load 'clojure-mode
