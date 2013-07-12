@@ -31,7 +31,6 @@
                       paredit-menu
                       rainbow-delimiters
                       slime
-                      smart-tab
                       smex
                       surround
                       undo-tree
@@ -133,9 +132,6 @@
 (add-hook 'prog-mode-hook 'flycheck-mode)
 (eval-after-load 'flycheck
   '(setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers)))
-
-(require 'smart-tab)
-(add-hook 'prog-mode-hook 'smart-tab-mode)
 
 ;; Snippets
 (eval-after-load 'yasnippet '(yas-reload-all))
