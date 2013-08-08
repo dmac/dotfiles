@@ -187,11 +187,11 @@
 ;; Clojure indentation rules
 (eval-after-load 'clojure-mode
   '(define-clojure-indent
-     (send-off 1)                                  ; Core
-     (GET 2) (POST 2) (PUT 2) (PATCH 2) (DELETE 2) ; Compojure
-     (select 1) (insert 1) (update 1) (delete 1)   ; Korma
-     (clone-for 1)                                 ; Enlive
-     (up 1) (down 1)                               ; Lobos
+     (send-off 1)                                              ; Core
+     (GET 2) (POST 2) (PUT 2) (PATCH 2) (DELETE 2) (context 2) ; Compojure
+     (select 1) (insert 1) (update 1) (delete 1) (upsert 1)    ; Korma
+     (clone-for 1)                                             ; Enlive
+     (up 1) (down 1) (alter 1) (table 1)                       ; Lobos
      ))
 
 ;; Autocompletion in nrepl
