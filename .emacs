@@ -21,6 +21,7 @@
                       evil-paredit
                       fiplr
                       flycheck
+                      gitconfig-mode
                       ido-ubiquitous
                       ido-vertical-mode
                       magit
