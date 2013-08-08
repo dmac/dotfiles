@@ -27,6 +27,7 @@
                       magit
                       markdown-mode
                       midje-mode
+                      mo-git-blame
                       nrepl
                       paredit
                       paredit-menu
