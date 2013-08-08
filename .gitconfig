@@ -20,6 +20,7 @@
   ignoreSubmodules = untracked
 
 [alias]
+  di = diff
   st = status
   ci = commit
   co = checkout
@@ -31,7 +32,6 @@
   ol = log --oneline
   rb = "!bash -c 'git rebase -i HEAD~$1' -"
   last = "!git log --oneline -n 1 --format='%H'"
-
 
 [github]
   user = dmacdougall
