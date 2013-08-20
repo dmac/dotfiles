@@ -230,7 +230,7 @@
 
 (defun open-emacs-config ()
   (interactive)
-  (find-file-other-window "~/.emacs"))
+  (find-file-other-window "~/.emacs.d/init.el"))
 
 (defun split-window-sensibly-reverse (&optional window)
   "Identical to the built-in function split-window-sensibly, but prefers horizontal splits over vertical splits."
