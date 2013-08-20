@@ -144,7 +144,7 @@ let g:SuperTabDefaultCompletionType="<c-x><c-u>"
 autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
 autocmd FileType *
     \ if &omnifunc != '' |
-    \   call SuperTabChain(&omnifunc, '<c-n>') |
+    \   call SuperTabChain(&omnifunc, '<c-x><c-u>') |
     \ endif
 
 
