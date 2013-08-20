@@ -77,7 +77,7 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
-nnoremap <LEADER>sv :source $MYVIMRC<CR>
+nnoremap <LEADER>sv :source $MYVIMRC<CR>:call RainbowParenthesesReset()<CR>:edit<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
