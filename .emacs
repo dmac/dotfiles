@@ -170,6 +170,9 @@
      (define-key evil-normal-state-map (kbd "M-,") nil)
      (define-key evil-normal-state-map (kbd "M-.") nil)))
 
+;; TODO Disable some evil keys in mo-git-blame-mode
+;; (add-hook 'mo-git-blame-mode 'e)
+
 (evilnc-default-hotkeys)
 
 ;; Fuzzy project file finding
