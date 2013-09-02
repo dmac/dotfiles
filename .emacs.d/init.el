@@ -218,7 +218,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook (lambda ()
                                (setq haskell-indentation-left-offset 4)
-                               (setq haskell-program-name "cabal-dev ghci")))
+                               (setq haskell-program-name "cabal repl")))
 
 ;; Filetypes
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
