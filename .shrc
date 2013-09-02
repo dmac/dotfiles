@@ -3,8 +3,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -FiRswX"
 export MANPAGER=$PAGER
-export GREP_OPTIONS="--color=auto -n -I"
-export GREP_COLOR='1;32'
 export GOPATH=~/go
 
 # Make openssl work on a mac
