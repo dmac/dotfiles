@@ -170,7 +170,10 @@
      (setq evil-leader/leader ",")
      ;; Unbind these keys in evil so they can instead be used for code navigation.
      (define-key evil-normal-state-map (kbd "M-,") nil)
-     (define-key evil-normal-state-map (kbd "M-.") nil)))
+     (define-key evil-normal-state-map (kbd "M-.") nil)
+     ;; Navigate by visual lines instead of absolute lines
+     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)))
 
 ;; TODO Disable some evil keys in mo-git-blame-mode
 ;; (add-hook 'mo-git-blame-mode 'e)
