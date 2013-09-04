@@ -33,6 +33,7 @@
                       paredit
                       paredit-menu
                       rainbow-delimiters
+                      ruby-electric
                       slime
                       smex
                       surround
