@@ -217,6 +217,9 @@
 (add-hook 'scheme-mode-hook (lambda () (modify-syntax-entry ?- "w")))
 (add-hook 'scheme-mode-hook (lambda () (modify-syntax-entry ?> "w")))
 
+;; Treat underscores as word characters everywhere
+(add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
