@@ -183,7 +183,7 @@
 ;; Fuzzy project file finding
 (eval-after-load 'fiplr
   '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache" "Build"))
-                               (files (".#*" "*.so" ".DS_Store")))))
+                               (files (".#*" "*.so" "*.class" ".DS_Store")))))
 
 ;; Clojure
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
