@@ -65,6 +65,7 @@
 (global-auto-revert-mode t)
 (global-hl-line-mode t)
 (global-linum-mode t)
+(global-visual-line-mode t)
 (line-number-mode 1)
 (column-number-mode 1)
 
