@@ -239,7 +239,8 @@
   (find-file-other-window "~/.emacs.d/init.el"))
 
 (defun split-window-sensibly-reverse (&optional window)
-  "Identical to the built-in function split-window-sensibly, but prefers horizontal splits over vertical splits."
+  "Identical to the built-in function split-window-sensibly,
+but prefers horizontal splits over vertical splits."
   (let ((window (or window (selected-window))))
     (or (and (window-splittable-p window t)
        ;; Split window horizontally.
