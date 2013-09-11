@@ -87,6 +87,10 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "M--") 'text-scale-decrease)
+(global-set-key (kbd "M-+") 'text-scale-increase)
+(global-set-key (kbd "M-0") (lambda () (interactive) (text-scale-set 0)))
+
 
 (global-surround-mode t)
 (global-rainbow-delimiters-mode t)
