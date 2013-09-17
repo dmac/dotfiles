@@ -14,6 +14,7 @@
                       base16-theme
                       clojure-mode
                       clojure-test-mode
+                      coffee-mode
                       color-theme
                       evil
                       evil-leader
