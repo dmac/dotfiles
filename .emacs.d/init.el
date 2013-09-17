@@ -233,6 +233,8 @@
 (add-hook 'haskell-mode-hook (lambda ()
                                (setq haskell-indentation-left-offset 4)
                                (setq haskell-program-name "cabal repl")))
+(eval-after-load 'inf-haskell
+  '(define-key inferior-haskell-mode-map (kbd "TAB") 'dabbrev-expand))
 
 ;; Filetypes
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
