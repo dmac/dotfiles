@@ -134,13 +134,15 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(require 'auto-complete)
+;; Autocompletion
 (add-hook 'prog-mode-hook 'auto-complete-mode)
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
-(ac-linum-workaround)
+(eval-after-load 'auto-complete
+  '(progn
+     (define-key ac-complete-mode-map "\C-n" 'ac-next)
+     (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+     (setq ac-auto-start nil)
+     (ac-set-trigger-key "TAB")
+     (ac-linum-workaround)))
 
 ;; Automatic syntax checking
 (add-hook 'prog-mode-hook 'flycheck-mode)
