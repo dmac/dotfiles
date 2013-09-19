@@ -234,9 +234,15 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'ghc-init)
-(add-hook 'haskell-mode-hook (lambda ()
-                               (setq haskell-indentation-left-offset 4)
-                               (setq haskell-program-name "cabal repl")))
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (setq haskell-program-name "cabal repl")
+            (setq haskell-indentation-left-offset 4)
+            (setq haskell-indentation-cycle-warn nil)
+            (setq haskell-indent-after-keywords (quote (("where" 2 0) ("of" 4) ("do" 4) ("mdo" 4) ("rec" 4)
+                                                        ("in" 4 4) ("{" 4) "if" "then" "else" "let")))
+            (setq haskell-indent-look-past-empty-line nil)))
+
 (eval-after-load 'inf-haskell
   '(define-key inferior-haskell-mode-map (kbd "TAB") 'dabbrev-expand))
 
