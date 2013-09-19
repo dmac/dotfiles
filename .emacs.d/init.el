@@ -102,12 +102,16 @@
   '(define-key org-mode-map (kbd "M-h") nil))
 
 ;; Whitespace settings
-
 (global-whitespace-mode t)
 (eval-after-load 'whitespace
   '(progn
      (setq whitespace-line-column 110)
-     (setq whitespace-style '(face empty trailing tabs tab-mark lines-tail))))
+     (setq whitespace-style '(face empty trailing tabs tab-mark))
+     (add-hook 'prog-mode-hook
+               (lambda () (setq whitespace-style '(face empty trailing tabs tab-mark lines-tail))))
+     (add-hook 'org-mode-hook
+               (lambda () (setq whitespace-style '(face empty trailing tabs tab-mark))))))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default tab-width 2)
 (setq-default evil-shift-width 2)
