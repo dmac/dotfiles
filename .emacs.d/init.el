@@ -148,7 +148,10 @@
 ;; Automatic syntax checking
 (add-hook 'prog-mode-hook 'flycheck-mode)
 (eval-after-load 'flycheck
-  '(setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers)))
+  '(progn
+    (define-key flycheck-mode-map (kbd "M-n") 'flycheck-next-error)
+    (define-key flycheck-mode-map (kbd "M-p") 'flycheck-previous-error)
+    (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))))
 
 ;; Snippets
 (eval-after-load 'yasnippet '(yas-reload-all))
