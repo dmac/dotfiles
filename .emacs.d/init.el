@@ -200,7 +200,8 @@
 
 ;; Fuzzy project file finding
 (eval-after-load 'fiplr
-  '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache" "Build"))
+  '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache"
+                                             ".cabal-sandbox" "dist" "Build"))
                                (files (".#*" "*.so" "*.class" ".DS_Store")))))
 
 ;; Clojure
