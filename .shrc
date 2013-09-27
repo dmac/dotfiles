@@ -33,6 +33,8 @@ alias la="ls -Gla"
 alias g="git"
 alias gh="ghci"
 alias v="vagrant"
+alias a="ansible"
+alias ap="ansible-playbook"
 
 # Load z.sh
 [[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh
