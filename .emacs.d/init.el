@@ -10,6 +10,7 @@
   (package-refresh-contents))
 
 (defvar my-packages '(ac-nrepl
+                      ack-and-a-half
                       auto-complete
                       base16-theme
                       clojure-mode
