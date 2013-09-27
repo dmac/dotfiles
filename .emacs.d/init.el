@@ -20,7 +20,7 @@
                       evil-leader
                       evil-nerd-commenter
                       evil-paredit
-                      fiplr
+                      flx-ido
                       flycheck
                       ghc
                       gitconfig-mode
@@ -128,13 +128,20 @@
             nil))
 
 (ido-mode t)
+(ido-everywhere t)
 (ido-ubiquitous-mode t)
 (ido-vertical-mode t)
 (eval-after-load 'ido
   '(progn
-     (setq ido-enable-flex-matching t)
      (setq ido-use-virtual-buffers t)
-     (setq ido-everywhere t)))
+     (setq ido-use-faces nil)))
+
+;; Better ido-mode completion
+(flx-ido-mode t)
+(eval-after-load 'flx-ido
+  '(setq flx-ido-use-faces nil))
+
+(projectile-global-mode)
 
 ;; Include path information in duplicate buffer names (e.g. a/foo.txt b/foo.txt)
 (require 'uniquify)
@@ -175,7 +182,7 @@
   "gs" 'magit-status
   "gl" 'magit-log
   "b" 'ido-switch-buffer
-  "v" 'fiplr-find-file)
+  "v" 'projectile-find-file)
 
 (evil-leader/set-key-for-mode 'clojure-mode
   "eb" 'nrepl-load-current-buffer
@@ -197,12 +204,6 @@
 ;; (add-hook 'mo-git-blame-mode 'e)
 
 (evilnc-default-hotkeys)
-
-;; Fuzzy project file finding
-(eval-after-load 'fiplr
-  '(setq fiplr-ignored-globs '((directories (".git" ".svn" "target" "log" ".sass-cache"
-                                             ".cabal-sandbox" "dist" "Build"))
-                               (files (".#*" "*.so" "*.class" ".DS_Store")))))
 
 ;; Clojure
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
