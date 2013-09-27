@@ -40,6 +40,7 @@
                       smex
                       surround
                       undo-tree
+                      yaml-mode
                       yasnippet))
 
 (dolist (p my-packages)
