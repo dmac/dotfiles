@@ -208,7 +208,6 @@
 
 ;; Clojure
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
-(add-hook 'clojure-mode-hook (lambda () (setq lisp-indent-offset 2)))
 (eval-after-load 'clojure-mode
   '(define-key clojure-mode-map "\C-c\M-r" 'nrepl-switch-to-repl-buffer))
 
