@@ -67,6 +67,10 @@
 (setq split-width-threshold 200)
 (setq split-window-preferred-function 'split-window-sensibly-reverse)
 (setq vc-follow-symlinks t)
+(setq-default require-final-newline t)
+(setq scroll-step 1)                                ; keyboard scroll one line at a time
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; mouse scroll one line at a time
+(setq mouse-wheel-progressive-speed nil)            ; don't accelerate scrolling
 
 (global-undo-tree-mode t)
 (global-font-lock-mode t)
@@ -76,6 +80,9 @@
 (global-visual-line-mode t)
 (line-number-mode 1)
 (column-number-mode 1)
+(add-hook 'dired-mode (lambda ()
+                        (message ">> reverting!")
+                        (revert-buffer)))
 
 (eval-after-load 'paren
   '(setq show-paren-delay 0))
@@ -83,7 +90,6 @@
 
 (set-face-attribute 'default nil :font "Inconsolata\ Bold-14")
 
-(global-set-key (kbd "RET") 'comment-indent-new-line)
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-j") 'windmove-down)
 (global-set-key (kbd "M-k") 'windmove-up)
@@ -98,7 +104,6 @@
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "M-+") 'text-scale-increase)
 (global-set-key (kbd "M-0") (lambda () (interactive) (text-scale-set 0)))
-
 
 (global-surround-mode t)
 (global-rainbow-delimiters-mode t)
@@ -126,14 +131,9 @@
 ;; Makefile-mode already does that, for example.
 ;; If indent-tabs-mode is off, untabify before saving.
 (setq-default indent-tabs-mode nil)
-(add-hook 'write-file-hooks
-          (lambda ()
-            (if (not indent-tabs-mode)
-                (untabify (point-min) (point-max)))
-            nil))
+(add-hook 'write-file-hooks (lambda () (if (not indent-tabs-mode) (untabify (point-min) (point-max)))))
 
 (ido-mode t)
-(ido-everywhere t)
 (ido-ubiquitous-mode t)
 (ido-vertical-mode t)
 (eval-after-load 'ido
@@ -203,6 +203,7 @@
      ;; Navigate by visual lines instead of absolute lines
      (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
      (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+     (define-key evil-insert-state-map (kbd "RET") 'comment-indent-new-line)
      (define-key evil-insert-state-map (kbd "C-e") 'end-of-visual-line)))
 
 ;; TODO Disable some evil keys in mo-git-blame-mode
@@ -269,6 +270,7 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt$" . scheme-mode))
 
