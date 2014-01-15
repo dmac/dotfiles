@@ -178,7 +178,10 @@
     (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))))
 
 ;; Snippets
-(eval-after-load 'yasnippet '(yas-reload-all))
+(eval-after-load 'yasnippet
+  '(progn
+     (setq yas-snippet-dirs "~/.emacs.d/snippets") ; Only load my snippets
+     (yas-reload-all)))
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 
 ;; Org mode
