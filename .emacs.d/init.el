@@ -176,6 +176,24 @@
 (eval-after-load 'yasnippet '(yas-reload-all))
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 
+;; Org mode
+
+(eval-after-load 'org
+  '(progn
+     (setq org-hide-leading-stars t)
+     (setq org-startup-indented t)
+     (add-to-list 'org-agenda-files "~/org/notes.org")
+     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+     (setq org-mobile-inbox-for-pull "~/org/notes.org")
+     (setq org-default-notes-file "~/org/refile.org")
+     (setq org-mobile-files '("notes.org"))
+     ; Disable org-mode keybinding that interferes with custom window switching.
+     (define-key org-mode-map (kbd "M-h") nil)))
+     ;; TODO: Figure out how to make "o" insert new heading
+     ;; also see org-M-RET-may-split-line
+     ;; (define-key evil-normal-state-map (kbd "o") 'org-meta-return)))
+
+
 ;; Evil
 
 (evil-mode t)
@@ -183,6 +201,7 @@
 
 (evil-leader/set-key
   "ee" 'open-emacs-config
+  "ss" 'open-notes-org-mode
   "eb" 'eval-buffer
   "es" 'eval-last-sexp
   "ex" 'eval-expression
@@ -282,6 +301,10 @@
 (defun open-emacs-config ()
   (interactive)
   (find-file-other-window "~/.emacs.d/init.el"))
+
+(defun open-notes-org-mode ()
+  (interactive)
+  (find-file "~/org/notes.org"))
 
 (defun split-window-sensibly-reverse (&optional window)
   "Identical to the built-in function split-window-sensibly,
