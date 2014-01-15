@@ -25,6 +25,7 @@
                       flycheck
                       ghc
                       gitconfig-mode
+                      go-mode
                       haskell-mode
                       ido-ubiquitous
                       ido-vertical-mode
@@ -259,6 +260,9 @@
 
 (eval-after-load 'inf-haskell
   '(define-key inferior-haskell-mode-map (kbd "TAB") 'dabbrev-expand))
+
+;; Go
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Filetypes
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
