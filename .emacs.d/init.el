@@ -276,17 +276,20 @@
 (add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
 
 ;; Haskell
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'ghc-init)
-(add-hook 'haskell-mode-hook
-          (lambda ()
-            (setq haskell-program-name "cabal repl")
-            (setq haskell-indentation-left-offset 4)
-            (setq haskell-indentation-cycle-warn nil)
-            (setq haskell-indent-after-keywords (quote (("where" 2 0) ("of" 4) ("do" 4) ("mdo" 4) ("rec" 4)
-                                                        ("in" 4 4) ("{" 4) "if" "then" "else" "let")))
-            (setq haskell-indent-look-past-empty-line nil)))
+(eval-after-load 'haskell-mode
+  '(progn
+     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+     (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+     (add-hook 'haskell-mode-hook 'ghc-init)
+     (add-hook 'haskell-mode-hook
+               (lambda ()
+                 (setq haskell-program-name "cabal repl")
+                 (setq haskell-indentation-left-offset 4)
+                 (setq haskell-indentation-cycle-warn nil)
+                 (setq haskell-indent-after-keywords (quote (("where" 2 0) ("of" 4) ("do" 4) ("mdo" 4)
+                                                             ("rec" 4) ("in" 4 4) ("{" 4)
+                                                             "if" "then" "else" "let")))
+                 (setq haskell-indent-look-past-empty-line nil)))))
 
 (eval-after-load 'inf-haskell
   '(define-key inferior-haskell-mode-map (kbd "TAB") 'dabbrev-expand))
@@ -389,15 +392,14 @@ but doesn't treat single semicolons as right-hand-side comments."
 ; Compose with C-x m
 ; Send with C-c C-c
 ; http://obfuscatedcode.wordpress.com/2007/04/26/configuring-emacs-for-gmails-smtp/
-(setq user-mail-address "dmacdougall@gmail.com"
-      send-mail-function 'smtpmail-send-it
-      message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials (expand-file-name "~/.authinfo")
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      smtpmail-debug-info t)
+(require 'smtpmail)
+(eval-after-load 'smtpmail
+  '(setq user-mail-address "dmacdougall@gmail.com"
+         send-mail-function 'smtpmail-send-it
+         smtpmail-default-smtp-server "smtp.gmail.com"
+         smtpmail-smtp-server "smtp.gmail.com"
+         smtpmail-smtp-service 587
+         smtpmail-debug-info t))
 
 ;; Create parent directories when saving a new file.
 (add-hook 'before-save-hook
