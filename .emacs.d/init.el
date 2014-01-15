@@ -36,6 +36,7 @@
                       nrepl
                       paredit
                       paredit-menu
+                      projectile
                       rainbow-delimiters
                       ruby-electric
                       slime
