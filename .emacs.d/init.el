@@ -160,6 +160,15 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; Create parent directories when saving a new file.
+(add-hook 'before-save-hook
+          (lambda ()
+            (when buffer-file-name
+              (let ((dir (file-name-directory buffer-file-name)))
+                (when (and (not (file-exists-p dir))
+                           (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
+                  (make-directory dir t))))))
+
 ;; Autocompletion
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (eval-after-load 'auto-complete
@@ -319,12 +328,3 @@
          smtpmail-smtp-server "smtp.gmail.com"
          smtpmail-smtp-service 587
          smtpmail-debug-info t))
-
-;; Create parent directories when saving a new file.
-(add-hook 'before-save-hook
-          (lambda ()
-            (when buffer-file-name
-              (let ((dir (file-name-directory buffer-file-name)))
-                (when (and (not (file-exists-p dir))
-                           (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
-                  (make-directory dir t))))))
