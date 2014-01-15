@@ -134,7 +134,11 @@
 ;; Makefile-mode already does that, for example.
 ;; If indent-tabs-mode is off, untabify before saving.
 (setq-default indent-tabs-mode nil)
-(add-hook 'write-file-hooks (lambda () (if (not indent-tabs-mode) (untabify (point-min) (point-max)))))
+(add-hook 'write-file-hooks
+          (lambda ()
+            (if (not indent-tabs-mode)
+                (untabify (point-min) (point-max)))
+            nil))
 
 (ido-mode t)
 (ido-ubiquitous-mode t)
