@@ -272,6 +272,9 @@
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt$" . scheme-mode))
 
+;; Nimrod
+(load "~/.emacs.d/vendor/nimrod-mode.el")
+
 (defun open-emacs-config ()
   (interactive)
   (find-file-other-window "~/.emacs.d/init.el"))
