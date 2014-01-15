@@ -51,6 +51,9 @@
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file t)
 
+(setq custom-safe-themes t)
+(load-theme 'base16-default)
+
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 (setq ring-bell-function 'ignore)
