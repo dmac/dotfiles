@@ -235,9 +235,6 @@
      (define-key evil-insert-state-map (kbd "RET") 'comment-indent-new-line)
      (define-key evil-insert-state-map (kbd "C-e") 'end-of-visual-line)))
 
-;; TODO Disable some evil keys in mo-git-blame-mode
-;; (add-hook 'mo-git-blame-mode 'e)
-
 (evilnc-default-hotkeys)
 
 ;; Clojure
