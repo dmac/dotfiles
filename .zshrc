@@ -93,7 +93,7 @@ autoload -U select-word-style
 select-word-style bash
 
 # Aliases
-alias src="source ~/.zshrc; source ~/.zprofile"
+alias src="source ~/.zshrc; source ~/.zlogin"
 
 function precmd()
 {
