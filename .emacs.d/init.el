@@ -13,6 +13,7 @@
                       ack-and-a-half
                       auto-complete
                       base16-theme
+                      cider
                       clojure-mode
                       clojure-test-mode
                       coffee-mode
@@ -33,7 +34,6 @@
                       markdown-mode
                       midje-mode
                       mo-git-blame
-                      nrepl
                       paredit
                       paredit-menu
                       projectile
@@ -215,8 +215,8 @@
   "v" 'projectile-find-file)
 
 (evil-leader/set-key-for-mode 'clojure-mode
-  "eb" 'nrepl-load-current-buffer
-  "es" 'nrepl-eval-last-expression)
+  "eb" 'cider-load-current-buffer
+  "es" 'cider-eval-last-expression)
 
 (eval-after-load 'evil
   '(progn
@@ -236,7 +236,7 @@
 ;; Clojure
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
 (eval-after-load 'clojure-mode
-  '(define-key clojure-mode-map "\C-c\M-r" 'nrepl-switch-to-repl-buffer))
+  '(define-key clojure-mode-map "\C-c\M-r" 'cider-switch-to-repl-buffer))
 
 ;; Clojure indentation rules
 (eval-after-load 'clojure-mode
@@ -250,14 +250,14 @@
 
 (add-hook 'clojure-mode-hook '(lambda () (setq indent-line-function 'lisp-indent-line-single-semicolon-fix)))
 
-;; Autocompletion in nrepl
+;; Autocompletion in cider
 (require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-mode-hook 'auto-complete-mode)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'auto-complete-mode)
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-(eval-after-load 'auto-complete '(add-to-list 'ac-modes 'nrepl-mode))
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'auto-complete-mode)
+(add-hook 'cider-interaction-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-interaction-mode-hook 'auto-complete-mode)
+(add-hook 'cider-interaction-mode-hook 'turn-on-eldoc-mode)
+(eval-after-load 'auto-complete '(add-to-list 'ac-modes 'cider-mode))
 
 ;; Count hyphens, etc. as word characters in lisps
 (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?- "w")))
