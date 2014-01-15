@@ -36,6 +36,7 @@
                       mo-git-blame
                       paredit
                       paredit-menu
+                      powerline
                       projectile
                       rainbow-delimiters
                       ruby-electric
@@ -58,6 +59,7 @@
 
 (setq custom-safe-themes t)
 (load-theme 'base16-default)
+(powerline-custom-theme)
 
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
