@@ -109,10 +109,6 @@
 (global-surround-mode t)
 (global-rainbow-delimiters-mode t)
 
-;; Disable org-mode keybinding that interferes with custom window switching.
-(eval-after-load 'org
-  '(define-key org-mode-map (kbd "M-h") nil))
-
 ;; Whitespace settings
 (global-whitespace-mode t)
 (eval-after-load 'whitespace
