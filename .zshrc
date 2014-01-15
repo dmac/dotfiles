@@ -40,11 +40,6 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# Edit command line with v in normal mode
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd 'v' edit-command-line
-
 # Git information on prompt
 autoload -Uz vcs_info
 
@@ -77,11 +72,25 @@ RPROMPT="\`if [ \$? != 0 ]; then echo \"%F{red}!%f\"; fi\`"
 # Ensure PATH contains no duplicates
 typeset -U PATH
 
-# Vim key bindings
+# Vim key bindings (http://dougblack.io/words/zsh-vi-mode.html)
+export KEYTIMEOUT=1 # reduce lag to 0.1s when pressing <esc>
 bindkey -v
-bindkey "^?" backward-delete-char                # vi-backward-delete-char
-bindkey '^R' history-incremental-search-backward # search backwards with ^R
+bindkey '^p' up-history
+bindkey '^n' down-history
+bindkey "^h" backward-delete-char
+bindkey "^w" backward-kill-word
+bindkey '^r' history-incremental-search-backward
 bindkey '^[[Z' reverse-menu-complete             # backwards completion with shift-tab
+
+# Edit command line with v in normal mode
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+
+# Bash-style word selection treats path elements and hyphens as separate words.
+# http://stackoverflow.com/q/444951/46237
+autoload -U select-word-style
+select-word-style bash
 
 # Aliases
 alias src="source ~/.zshrc; source ~/.zprofile"
