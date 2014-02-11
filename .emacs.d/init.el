@@ -143,6 +143,9 @@
                 (untabify (point-min) (point-max)))
             nil))
 
+;; Minibuffer keybindings
+(define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+
 (ido-mode t)
 (ido-ubiquitous-mode t)
 (ido-vertical-mode t)
@@ -150,6 +153,9 @@
   '(progn
      (setq ido-use-virtual-buffers t)
      (setq ido-use-faces nil)))
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-completion-map (kbd "C-w") 'backward-kill-word)))
 
 ;; Better ido-mode completion
 (flx-ido-mode t)
