@@ -228,6 +228,10 @@
 (evil-mode t)
 (global-evil-leader-mode)
 
+;; Note that there is a bug where Evil-leader isn't properly bound to the initial buffers Emacs opens
+;; with. We work around this by killing them. See https://github.com/cofi/evil-leader/issues/10.
+(kill-buffer "*Messages*")
+
 (evil-leader/set-key
   "ee" 'open-emacs-config
   "ss" 'open-notes-org-mode
