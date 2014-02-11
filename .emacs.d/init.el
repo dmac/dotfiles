@@ -61,6 +61,7 @@
 (load-theme 'base16-default)
 (powerline-custom-theme)
 
+(setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 (setq ring-bell-function 'ignore)
@@ -77,6 +78,7 @@
 (setq scroll-step 1)                                ; keyboard scroll one line at a time
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; mouse scroll one line at a time
 (setq mouse-wheel-progressive-speed nil)            ; don't accelerate scrolling
+(setq scroll-margin 10)
 
 (global-undo-tree-mode t)
 (global-font-lock-mode t)
