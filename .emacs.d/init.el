@@ -233,15 +233,15 @@
 (kill-buffer "*Messages*")
 
 (evil-leader/set-key
-  "ee" 'open-emacs-config
-  "ss" 'open-notes-org-mode
+  "b" 'ido-switch-buffer
+  "t" 'projectile-find-file
+  "ve" 'view-emacs-config
+  "vo" 'view-notes-org-mode
   "eb" 'eval-buffer
   "es" 'eval-last-sexp
   "ex" 'eval-expression
   "gs" 'magit-status
-  "gl" 'magit-log
-  "b" 'ido-switch-buffer
-  "v" 'projectile-find-file)
+  "gl" 'magit-log)
 
 (evil-leader/set-key-for-mode 'clojure-mode
   "eb" 'cider-load-current-buffer
