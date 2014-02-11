@@ -210,7 +210,7 @@
 (eval-after-load 'org
   '(progn
      (setq org-hide-leading-stars t)
-     (setq org-startup-indented t)
+     (setq org-odd-levels-only t)
      (add-to-list 'org-agenda-files "~/org/notes.org")
      (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
      (setq org-mobile-inbox-for-pull "~/org/notes.org")
