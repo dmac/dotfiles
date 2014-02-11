@@ -51,15 +51,15 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-(add-to-list 'load-path "~/.emacs.d/user")
-(load "custom-functions.el")
+(add-to-list 'load-path "~/.emacs.d/user/")
+(require 'my-functions)
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file t)
 
 (setq custom-safe-themes t)
-(load-theme 'base16-default)
-(powerline-custom-theme)
+(load-theme 'base16-chalk)
+(my-powerline-theme)
 
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
@@ -91,6 +91,9 @@
 (add-hook 'dired-mode (lambda ()
                         (message ">> reverting!")
                         (revert-buffer)))
+
+(require 'osx-keys-minor-mode)
+(osx-keys-minor-mode t)
 
 (eval-after-load 'paren
   '(setq show-paren-delay 0))
