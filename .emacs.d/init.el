@@ -92,8 +92,8 @@
                         (message ">> reverting!")
                         (revert-buffer)))
 
-(require 'osx-keys-minor-mode)
-(osx-keys-minor-mode t)
+(require 'osx-keys-mode)
+(osx-keys-mode t)
 
 (eval-after-load 'paren
   '(setq show-paren-delay 0))
