@@ -149,6 +149,8 @@
 
 ;; Minibuffer keybindings
 (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+(define-key minibuffer-local-map (kbd "C-a") 'beginning-of-visual-line)
+(define-key minibuffer-local-map (kbd "C-e") 'end-of-visual-line)
 
 (ido-mode t)
 (ido-ubiquitous-mode t)
@@ -159,7 +161,9 @@
      (setq ido-use-faces nil)))
 (add-hook 'ido-setup-hook
           (lambda ()
-            (define-key ido-completion-map (kbd "C-w") 'backward-kill-word)))
+            (define-key ido-completion-map (kbd "C-w") 'backward-kill-word)
+            (define-key ido-completion-map (kbd "C-a") 'beginning-of-visual-line)
+            (define-key ido-completion-map (kbd "C-e") 'end-of-visual-line)))
 
 ;; Better ido-mode completion
 (flx-ido-mode t)
