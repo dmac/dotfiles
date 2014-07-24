@@ -79,7 +79,7 @@
 (setq scroll-step 1)                                ; keyboard scroll one line at a time
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; mouse scroll one line at a time
 (setq mouse-wheel-progressive-speed nil)            ; don't accelerate scrolling
-(setq scroll-margin 10)
+(setq scroll-margin 5)
 
 (global-undo-tree-mode t)
 (global-font-lock-mode t)
