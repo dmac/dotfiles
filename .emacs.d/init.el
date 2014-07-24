@@ -223,10 +223,18 @@
      (setq org-mobile-files '("notes.org"))
      ; Disable org-mode keybinding that interferes with custom window switching.
      (define-key org-mode-map (kbd "M-h") nil)))
-     ;; TODO: Figure out how to make "o" insert new heading
-     ;; also see org-M-RET-may-split-line
-     ;; (define-key evil-normal-state-map (kbd "o") 'org-meta-return)))
 
+(defun evil-org-insert-heading-after-current ()
+  (interactive)
+  (evil-append-line nil)
+  (org-insert-heading))
+
+(add-hook 'org-mode-hook (lambda ()
+  (define-key evil-normal-state-local-map (kbd "o") 'evil-org-insert-heading-after-current)
+  (define-key evil-normal-state-local-map (kbd "C-t") 'org-todo)
+  ;; (define-key evil-visual-state-local-map (kbd ">") 'org-shiftmetaright)
+  ;; (define-key evil-visual-state-local-map (kbd "<") 'org-shiftmetaleft)
+  ))
 
 ;; Evil
 
