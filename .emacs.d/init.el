@@ -40,6 +40,7 @@
                       projectile
                       rainbow-delimiters
                       ruby-electric
+                      rust-mode
                       slime
                       smex
                       surround
