@@ -100,7 +100,7 @@
   '(setq show-paren-delay 0))
 (show-paren-mode t)
 
-(set-face-attribute 'default nil :font "Inconsolata\ Bold-14")
+(set-face-attribute 'default nil :font "Inconsolata Bold-14")
 
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-j") 'windmove-down)
