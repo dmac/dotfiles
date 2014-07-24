@@ -26,7 +26,8 @@ alias bottomRightQuarter ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 
 # Application aliases
 alias adiumContacts3 move ${sox};${soy} ${ssx}/10;${ssy} 0
-alias adiumChat3 move ${topRightQuarter} 0
+alias adiumChat3 move ${topLeftQuarter} 0
+alias chromePrat3 move ${rightHalf} 0
 
 # 1 monitor layout
 layout oneScreen 'Adium':TITLE_ORDER='Contacts' move ${sox};${soy} ${ssx}/9;${ssy}
@@ -39,7 +40,7 @@ layout threeScreen 'iTerm' move ${leftHalf}
 layout threeScreen 'Adium':TITLE_ORDER='Contacts' ${adiumContacts3} | ${adiumChat3}
 layout threeScreen 'Spotify' move ${fullscreen} 0
 layout threeScreen 'TextMate' move ${rightHalf} 0
-layout threeScreen 'Google Chrome' move ${rightHalf} 2
+layout threeScreen 'Google Chrome':TITLE_ORDER='prat' ${chromePrat3} | move ${rightHalf} 2
 layout threeScreen 'MacVim' move ${fullscreen} 1
 layout threeScreen 'iTerm' move ${leftHalf} 2
 
