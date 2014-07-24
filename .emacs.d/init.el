@@ -291,7 +291,7 @@
      (GET 2) (POST 2) (PUT 2) (PATCH 2) (DELETE 2) (context 2)       ; Compojure
      (select 1) (insert 1) (update 1) (delete 1) (upsert 1) (join 1) ; Korma
      (clone-for 1)                                                   ; Enlive
-     (up 1) (down 1) (alter 1) (create 1) (table 1)                  ; Lobos
+     (up 1) (down 1) (alter 1) (table 1)                             ; Lobos
      ))
 
 (add-hook 'clojure-mode-hook '(lambda () (setq indent-line-function 'lisp-indent-line-single-semicolon-fix)))
