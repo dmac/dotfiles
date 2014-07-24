@@ -296,6 +296,9 @@
 
 (add-hook 'clojure-mode-hook '(lambda () (setq indent-line-function 'lisp-indent-line-single-semicolon-fix)))
 
+(setq cider-repl-pop-to-buffer-on-connect nil)
+(setq cider-popup-stacktraces nil)
+
 ;; Autocompletion in cider
 (require 'ac-nrepl)
 (add-hook 'cider-mode-hook 'ac-nrepl-setup)
