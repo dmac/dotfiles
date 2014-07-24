@@ -249,7 +249,7 @@
   "b" 'ido-switch-buffer
   "t" 'projectile-find-file
   "ve" 'view-emacs-config
-  "vo" 'view-notes-org-mode
+  "vn" 'view-notes-org-mode
   "eb" 'eval-buffer
   "es" 'eval-last-sexp
   "ex" 'eval-expression
@@ -258,7 +258,11 @@
 
 (evil-leader/set-key-for-mode 'clojure-mode
   "eb" 'cider-load-current-buffer
-  "es" 'cider-eval-last-expression)
+  "es" 'cider-eval-last-sexp-to-repl
+  "rs" 'cider-jack-in
+  "rn" 'cider-repl-set-ns
+  "rc" 'cider-find-and-clear-repl-buffer
+  "rk" 'nrepl-close)
 
 (eval-after-load 'evil
   '(progn
