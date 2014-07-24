@@ -46,3 +46,6 @@ alias rh="rbenv rehash; rehash"
 alias be="bundle exec"
 alias bi="bundle install"
 alias gmacs="open -a /Applications/Emacs.app $1"
+
+# Clear local DNS cache on OSX
+alias clear-dns="sudo killall -HUP mDNSResponder"
