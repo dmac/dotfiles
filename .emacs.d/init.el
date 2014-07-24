@@ -125,13 +125,13 @@
 (eval-after-load 'whitespace
   '(progn
      (setq whitespace-line-column 110)
-     (setq whitespace-style '(face empty trailing tabs tab-mark))
+     (setq whitespace-style '(face empty tabs tab-mark))
      (add-hook 'prog-mode-hook
                (lambda () (set (make-local-variable 'whitespace-style)
-                               '(face empty trailing tabs tab-mark lines-tail))))
+                               '(face empty tabs tab-mark lines-tail))))
      (add-hook 'go-mode-hook
                (lambda () (set (make-local-variable 'whitespace-style)
-                               '(face empty trailing lines-tail))))))
+                               '(face empty lines-tail))))))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default tab-width 2)
