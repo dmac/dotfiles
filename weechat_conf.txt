@@ -1,0 +1,35 @@
+brew install weechat --with-perl --with-python --with-ruby
+
+/set irc.look.display_host_join off
+/set irc.look.display_host_quit off
+/set irc.look.display_host_join_local off
+/set irc.color.message_join gray
+/set irc.color.message_quit gray
+/set irc.color.reason_quit gray
+/set irc.server_default.nicks "dmac,dmac_,dmac__,dmac___"
+
+/set weechat.bar.status.items "[time],buffer_number+:+buffer_name,scroll"
+/set weechat.color.chat_delimiters default
+/set weechat.color.chat_channel default
+/set weechat.color.chat_prefix_join gray
+/set weechat.color.chat_prefix_quit gray
+/set weechat.color.chat_prefix_network gray
+/set weechat.color.chat_nick_colors "1,2,3,4,5,6,7,9,10,11,12,13,14,15,25,28,29,30,31,33,39,42,45,47,49,50,58,59,61,63,65,67,69,70,75,80,84,90,94,105,127,130,136,141,149,153,159,160,178,184,198,204,214,220,228,255"
+
+/server add freenode chat.freenode.net/6667
+/set irc.server.freenode.autoconnect on
+/set irc.server.freenode.autorejoin "#go-nuts"
+/set irc.server.freenode.command "/msg nickserv identify *********"
+
+/server add mozilla irc.mozilla.org/6667
+/set irc.server.mozilla autoconnect on
+/set irc.server.mozilla.autorejoin "#rust,#rust-gamedev"
+/set irc.server.mozilla.command "/msg nickserv identify *********"
+
+/script install buffers.pl
+/set buffers.color.current_bg darkgray
+/set buffers.color.current_fg gray
+/set buffers.look.hide_merged_buffers "server"
+/set weechat.bar.buffers.position top
+/set weechat.bar.buffers.separator off
+
