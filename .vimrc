@@ -1,11 +1,42 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
+" --------------------------------------------- Vundle / Plugins ---------------------------------------------
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'Raimondi/delimitMate'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'bitc/lushtags'
+Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
+Plugin 'dag/vim2hs'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
+Plugin 'garbas/vim-snipmate'
+Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
+Plugin 'gmarik/Vundle.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'skammer/vim-css-color'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'wting/rust.vim'
+
+call vundle#end()
+filetype plugin indent on
+syntax on
 
 " ------------------------------------------------ General ---------------------------------------------------
-
 set nocompatible                  " duh
 set history=1000                  " longer history
 set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
@@ -44,7 +75,8 @@ set foldlevel=99                  " open all folds by default
 
 " ----------------------------------------- Colorscheme and Highlights ---------------------------------------
 
-colorscheme Tomorrow-Night
+set background=dark
+colorscheme base16-chalk
 if exists("+colorcolumn") " use colorcolumn if supported
   let &colorcolumn = &textwidth + 1
   hi ColorColumn ctermbg=DarkGray guibg=gray15
