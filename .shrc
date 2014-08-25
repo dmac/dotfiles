@@ -10,12 +10,13 @@ export GOPATH=~/go
 export RUBYOPT="-ropenssl"
 
 # Path
-[[ -d /opt/local/bin ]]  && export PATH=/opt/local/bin:$PATH
-[[ -d /opt/local/sbin ]] && export PATH=/opt/local/sbin:$PATH
-[[ -d /usr/local/bin ]]  && export PATH=/usr/local/bin:$PATH
-[[ -d ~/bin ]]           && export PATH=$HOME/bin:$PATH
-[[ -d ~/.rbenv ]]        && export PATH=$HOME/.rbenv/bin:$PATH
-[[ -d $GOPATH ]]         && export PATH=$GOPATH/bin:$PATH
+[[ -d /opt/local/bin ]]     && export PATH=/opt/local/bin:$PATH
+[[ -d /opt/local/sbin ]]    && export PATH=/opt/local/sbin:$PATH
+[[ -d /usr/local/bin ]]     && export PATH=/usr/local/bin:$PATH
+[[ -d ~/bin ]]              && export PATH=$HOME/bin:$PATH
+[[ -d ~/.rbenv ]]           && export PATH=$HOME/.rbenv/bin:$PATH
+[[ -d /usr/local/go/bin ]]  && export PATH=/usr/local/go/bin:$PATH
+[[ -d $GOPATH ]]            && export PATH=$GOPATH/bin:$PATH
 
 # History
 HISTFILE=~/.history       # where to save history
@@ -35,6 +36,7 @@ alias gh="ghci"
 alias v="vagrant"
 alias a="ansible"
 alias ap="ansible-playbook"
+alias c="cargo"
 
 # Load z.sh
 [[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh

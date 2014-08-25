@@ -4,3 +4,5 @@
 .irssi/scripts/twirssi.oauth
 .vim/.netrwhist
 .vim/view
+.vim/bundle/*
+!.vim/bundle/Vundle.vim
