@@ -4,3 +4,4 @@
 --type-set=nim=.nim
 --type-set=rust=.rs
 --ignore-dir=asset-cache
+--ignore-dir=log
