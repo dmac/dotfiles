@@ -2,6 +2,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'bitc/lushtags'
@@ -15,7 +16,6 @@ Plugin 'fatih/vim-go'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
-Plugin 'gmarik/Vundle.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
@@ -31,6 +31,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'wting/rust.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-classpath'
 
 call vundle#end()
 filetype plugin indent on
