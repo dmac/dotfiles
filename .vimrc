@@ -113,7 +113,7 @@ nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>
-nnoremap <LEADER>f :NERDTreeToggle<CR>
+nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
@@ -229,7 +229,7 @@ if executable('coffeetags')
 endif
 
 let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
-let g:ctrlp_map = '<LEADER>v'
+let g:ctrlp_map = '<LEADER>f'
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
