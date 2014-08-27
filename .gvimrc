@@ -1,7 +1,7 @@
-if has('unix')
-  set guifont=Inconsolata\ for\ Powerline\ 12
-else
+if has('mac')
   set guifont=Inconsolata\ for\ Powerline:h16
+else
+  set guifont=Inconsolata\ for\ Powerline\ 12
 endif
 set guioptions-=T                            " hide gui toolbar
 set guioptions-=m                            " hide gui menu
