@@ -53,6 +53,7 @@ set autoindent                    " continue indentation
 set backspace=indent,eol,start    " make backspace work correctly
 set incsearch                     " perform search as you type
 set nohlsearch                    " don't highlight search results
+set scrolloff=5                   " scroll when 5 lines away from edge of screen
 set ignorecase                    " ignore case when searching...
 set smartcase                     " ...unless a capital letter was typed
 set showmatch                     " show matching brace when closed
