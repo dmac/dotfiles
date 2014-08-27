@@ -124,8 +124,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <F2> :autocmd BufEnter handler.clj edit \| set filetype=clojure<CR>
-
 
 " -------------------------------------------- Auto Commands -------------------------------------------------
 
@@ -190,7 +188,7 @@ let g:clojure_fuzzy_indent_patterns .= ",GET,POST,PUT,PATCH,DELETE,context"   " 
 let g:clojure_fuzzy_indent_patterns .= ",clone-for"                           " Enlive
 let g:clojure_fuzzy_indent_patterns .= ",select,insert,update,delete,with.*"  " Korma
 let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " Midje
-let g:clojure_fuzzy_indent_patterns .= ",up,down"                             " Lobos
+let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " Lobos
 let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
 
 " Rainbow parentheses
