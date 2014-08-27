@@ -111,7 +111,7 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
-nnoremap <LEADER>sv :source $MYVIMRC<CR>:call RainbowParenthesesReset()<CR>:edit<CR>
+nnoremap <LEADER>sv :source $MYVIMRC<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>
 nnoremap <LEADER>f :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
@@ -119,7 +119,6 @@ nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
-nnoremap <LEADER>rp :call RainbowParenthesesReset()<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -155,13 +154,6 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
-" Activate rainbow parentheses
-function! RainbowParenthesesReset()
-  RainbowParenthesesActivate
-  RainbowParenthesesLoadRound
-  RainbowParenthesesLoadSquare
-  RainbowParenthesesLoadBraces
-endfunction
 augroup rainbow_parentheses
   autocmd!
   autocmd Filetype clojure RainbowParenthesesActivate
