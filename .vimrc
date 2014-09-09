@@ -33,6 +33,7 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-classpath'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on
