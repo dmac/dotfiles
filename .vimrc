@@ -34,6 +34,7 @@ Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-classpath'
 Plugin 'cespare/vim-toml'
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on
@@ -140,6 +141,7 @@ augroup filetypes
   autocmd!
   autocmd BufNewFile,BufRead *.ejs set filetype=html
   autocmd BufNewFile,BufRead *.less set filetype=scss
+  autocmd BufNewFile,BufRead *.yml set filetype=ansible
 augroup end
 
 " Restore cursor position
