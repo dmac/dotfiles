@@ -44,7 +44,6 @@ syntax on
 set nocompatible                  " duh
 set history=1000                  " longer history
 set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
-set textwidth=110                 " wrap text at 110 columns
 set tabstop=2                     " 2 space tabs, all the time
 let &softtabstop=&tabstop
 let &shiftwidth=&tabstop
@@ -83,7 +82,7 @@ set foldlevel=99                  " open all folds by default
 set background=dark
 colorscheme base16-chalk
 if exists("+colorcolumn") " use colorcolumn if supported
-  let &colorcolumn = &textwidth + 1
+  let &colorcolumn = 111
   hi ColorColumn ctermbg=DarkGray guibg=gray15
 endif
 
