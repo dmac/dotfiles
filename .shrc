@@ -39,7 +39,7 @@ alias ap="ansible-playbook"
 alias c="cargo"
 
 # Load z.sh
-[[ -a ~/.dotfiles/scripts/z/z.sh ]] && source ~/.dotfiles/scripts/z/z.sh
+[[ -a ~/.dotfiles/vendor/z/z.sh ]] && source ~/.dotfiles/vendor/z/z.sh
 
 # rbenv configuration
 eval "$(rbenv init -)"

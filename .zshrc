@@ -107,4 +107,4 @@ function precmd()
 }
 
 # Source plugins
-source ~/sources/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $DOTFILES/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
