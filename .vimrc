@@ -174,7 +174,6 @@ let g:airline_powerline_fonts = 1
 
 " Autocompletion
 let g:SuperTabDefaultCompletionType="<c-x><c-u>"
-autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
 autocmd FileType *
     \ if &omnifunc != '' |
     \   call SuperTabChain(&omnifunc, '<c-x><c-u>') |
