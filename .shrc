@@ -1,4 +1,5 @@
 # System configuration
+export DOTFILES=~/.dotfiles
 export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -FiRswX"
