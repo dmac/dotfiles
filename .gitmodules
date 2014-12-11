@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim
+[submodule "vendor/powerline-fonts"]
+	path = vendor/powerline-fonts
+	url = https://github.com/powerline/fonts
