@@ -43,9 +43,9 @@ alias c="cargo"
 [[ -a ~/.dotfiles/vendor/z/z.sh ]] && source ~/.dotfiles/vendor/z/z.sh
 
 # rbenv configuration
-eval "$(rbenv init -)"
+which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 alias rr="rbenv"
-alias rh="rbenv rehash; rehash"
+alias rh="which rbenv > /dev/null 2>&1 && rbenv rehash; rehash"
 alias be="bundle exec"
 alias bi="bundle install"
 alias gmacs="open -a /Applications/Emacs.app $1"
