@@ -172,13 +172,8 @@ augroup end
 " Airline (Powerline)
 let g:airline_powerline_fonts = 1
 
-" Autocompletion
-let g:SuperTabDefaultCompletionType="<c-x><c-u>"
-autocmd FileType *
-    \ if &omnifunc != '' |
-    \   call SuperTabChain(&omnifunc, '<c-x><c-u>') |
-    \ endif
-
+ "Autocompletion
+let g:SuperTabDefaultCompletionType = "context"
 
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
