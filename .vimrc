@@ -235,3 +235,55 @@ let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
 "     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
 "     https://gist.github.com/2193743
+
+
+" -------------------------------------------- Language Options ------------------------------------------------
+""" Go
+setlocal nolist
+setlocal tabstop=8
+let b:softtabstop=8
+let b:shiftwidth=8
+
+let g:go_auto_type_info = 1
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+
+nnoremap <LEADER>b :GoBuild<CR>
+nnoremap <LEADER>d :GoDoc<CR>
+nnoremap <LEADER>F :GoFmt<CR>
+nnoremap <LEADER>r :GoRun<CR>
+
+""" Clojure
+autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
+let g:ycm_semantic_triggers = {'clojure': ['(']}
+
+nnoremap <LEADER>e :%Eval<CR>
+nnoremap <LEADER>E :Eval<CR>
+
+""" Coffeescript
+vnoremap <LEADER>m :CoffeeCompile {20}<CR>
+
+""" Haskell
+setlocal omnifunc=necoghc#omnifunc
+setlocal tabstop=4
+let b:softtabstop=4
+setlocal shiftwidth=2
+
+" ghc-mod compiler options
+function! s:set_ghcmod_options()
+  if !exists('b:ghcmod_ghc_options')
+    let b:ghcmod_ghc_options = []
+  endif
+  if isdirectory("cabal-dev")
+    call add(b:ghcmod_ghc_options, '-isrc')
+    call add(b:ghcmod_ghc_options, '-i-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf')
+  endif
+endfunction
+autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
+
+nnoremap <LEADER>m :GhcModCheckAndLintAsync<CR>
+
+""" Python
+setlocal tabstop=4
+let b:softtabstop=4
+let b:shiftwidth=4
