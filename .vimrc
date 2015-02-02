@@ -167,9 +167,9 @@ augroup rainbow_parentheses
 augroup end
 
 
-" -------------------------------------------- Plugin Options ------------------------------------------------
+" ------------------------------------------ Global Plugin Options -------------------------------------------
 
-" Airline (Powerline)
+" (vim-airline)
 let g:airline_powerline_fonts = 1
 
  "Autocompletion
@@ -180,18 +180,11 @@ let g:NERDChristmasTree=1                           " more colorful NERDTree
 
 let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
 
-" Clojure indentation
-let g:clojure_align_multiline_strings = 0
-let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = "with.*,def.*,let.*,send.*"
-let g:clojure_fuzzy_indent_patterns .= ",GET,POST,PUT,PATCH,DELETE,context"   " Compojure
-let g:clojure_fuzzy_indent_patterns .= ",clone-for"                           " Enlive
-let g:clojure_fuzzy_indent_patterns .= ",select,insert,update,delete,with.*"  " Korma
-let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " Midje
-let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " Lobos
-let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
+" (nerdtree)
+let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
+let g:NERDChristmasTree=1                           " more colorful NERDTree
 
-" Rainbow parentheses
+" (rainbow_parentheses)
 let g:rbpt_max = 10
 let g:rbpt_colorpairs = [
     \ ['gray',      'HotPink1'],
@@ -206,10 +199,58 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
-let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
-
-" TagBar configuration
+" (tagbar)
 let g:tagbar_iconchars = ['▸', '▾']
+
+" (ctrlp)
+let g:ctrlp_map = '<LEADER>f'
+let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
+
+" MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
+" To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
+" See https://github.com/b4winckler/macvim/wiki/Troubleshooting
+"     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
+"     https://gist.github.com/2193743
+
+
+" ---------------------------------------- Language-Specific Options -----------------------------------------
+" -- Go --
+setlocal nolist
+setlocal tabstop=8
+setlocal softtabstop=8
+setlocal shiftwidth=8
+
+let g:go_auto_type_info = 1
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+
+autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
+autocmd FileType go nnoremap <buffer> <LEADER>b :GoBuild<CR>
+autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
+autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
+
+" -- Clojure --
+autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
+autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
+autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
+let g:ycm_semantic_triggers = {'clojure': ['(']}
+
+" indentation
+let g:clojure_align_multiline_strings = 0
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = "with.*,def.*,let.*,send.*"
+let g:clojure_fuzzy_indent_patterns .= ",GET,POST,PUT,PATCH,DELETE,context"   " Compojure
+let g:clojure_fuzzy_indent_patterns .= ",clone-for"                           " Enlive
+let g:clojure_fuzzy_indent_patterns .= ",select,insert,update,delete,with.*"  " Korma
+let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " Midje
+let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " Lobos
+let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
+
+" -- Coffeescript --
+autocmd FileType coffeescript vnoremap <buffer> <LEADER>m :CoffeeCompile {20}<CR>
+
+" (tagbar)
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',
@@ -226,50 +267,16 @@ if executable('coffeetags')
         \ }
 endif
 
-let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
-let g:ctrlp_map = '<LEADER>f'
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
-
-" MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
-" To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
-" See https://github.com/b4winckler/macvim/wiki/Troubleshooting
-"     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
-"     https://gist.github.com/2193743
-
-
-" -------------------------------------------- Language Options ------------------------------------------------
-""" Go
-setlocal nolist
-setlocal tabstop=8
-let b:softtabstop=8
-let b:shiftwidth=8
-
-let g:go_auto_type_info = 1
-let g:go_fmt_autosave = 0
-let g:go_fmt_command = "goimports"
-
-nnoremap <LEADER>b :GoBuild<CR>
-nnoremap <LEADER>d :GoDoc<CR>
-nnoremap <LEADER>F :GoFmt<CR>
-nnoremap <LEADER>r :GoRun<CR>
-
-""" Clojure
-autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
-let g:ycm_semantic_triggers = {'clojure': ['(']}
-
-nnoremap <LEADER>e :%Eval<CR>
-nnoremap <LEADER>E :Eval<CR>
-
-""" Coffeescript
-vnoremap <LEADER>m :CoffeeCompile {20}<CR>
-
-""" Haskell
+" -- Haskell --
 setlocal omnifunc=necoghc#omnifunc
 setlocal tabstop=4
-let b:softtabstop=4
+setlocal softtabstop=4
 setlocal shiftwidth=2
 
-" ghc-mod compiler options
+let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
+let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
+
+" (ghc-mod)
 function! s:set_ghcmod_options()
   if !exists('b:ghcmod_ghc_options')
     let b:ghcmod_ghc_options = []
@@ -281,9 +288,9 @@ function! s:set_ghcmod_options()
 endfunction
 autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
 
-nnoremap <LEADER>m :GhcModCheckAndLintAsync<CR>
+autocmd FileType haskell nnoremap <buffer> <LEADER>m :GhcModCheckAndLintAsync<CR>
 
-""" Python
+" -- Python --
 setlocal tabstop=4
-let b:softtabstop=4
-let b:shiftwidth=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
