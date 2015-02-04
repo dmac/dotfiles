@@ -221,13 +221,13 @@ setlocal tabstop=8
 setlocal softtabstop=8
 setlocal shiftwidth=8
 
-let g:go_auto_type_info = 1
 let g:go_fmt_autosave = 0
 let g:go_fmt_command = "goimports"
 
 autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
 autocmd FileType go nnoremap <buffer> <LEADER>b :GoBuild<CR>
 autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
+autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
 autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
 
 " -- Clojure --
