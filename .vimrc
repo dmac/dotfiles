@@ -216,24 +216,30 @@ let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 
 " ---------------------------------------- Language-Specific Options -----------------------------------------
 " -- Go --
-setlocal nolist
-setlocal tabstop=8
-setlocal softtabstop=8
-setlocal shiftwidth=8
+augroup golang
+  autocmd!
+  autocmd FileType go setlocal nolist
+  autocmd FileType go setlocal tabstop=8
+  autocmd FileType go setlocal softtabstop=8
+  autocmd FileType go setlocal shiftwidth=8
+  autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>b :GoBuild<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
+augroup END
 
 let g:go_fmt_autosave = 0
 let g:go_fmt_command = "goimports"
 
-autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
-autocmd FileType go nnoremap <buffer> <LEADER>b :GoBuild<CR>
-autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
-autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
-autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
-
 " -- Clojure --
-autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
-autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
-autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
+augroup clojure
+  autocmd!
+  autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
+  autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
+  autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
+augroup END
+
 let g:ycm_semantic_triggers = {'clojure': ['(']}
 
 " indentation
@@ -248,7 +254,10 @@ let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " 
 let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
 
 " -- Coffeescript --
-autocmd FileType coffeescript vnoremap <buffer> <LEADER>m :CoffeeCompile {20}<CR>
+augroup coffeescript
+  autocmd!
+  autocmd FileType coffeescript vnoremap <buffer> <LEADER>m :CoffeeCompile {20}<CR>
+augroup END
 
 " (tagbar)
 if executable('coffeetags')
@@ -268,10 +277,15 @@ if executable('coffeetags')
 endif
 
 " -- Haskell --
-setlocal omnifunc=necoghc#omnifunc
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=2
+augroup haskell
+  autocmd!
+  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+  autocmd FileType haskell setlocal tabstop=4
+  autocmd FileType haskell setlocal softtabstop=4
+  autocmd FileType haskell setlocal shiftwidth=2
+  autocmd FileType haskell nnoremap <buffer> <LEADER>m :GhcModCheckAndLintAsync<CR>
+  autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
+augroup END
 
 let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
 let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
@@ -286,11 +300,11 @@ function! s:set_ghcmod_options()
     call add(b:ghcmod_ghc_options, '-i-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf')
   endif
 endfunction
-autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
-
-autocmd FileType haskell nnoremap <buffer> <LEADER>m :GhcModCheckAndLintAsync<CR>
 
 " -- Python --
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
+augroup python
+  autocmd!
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType python setlocal softtabstop=4
+  autocmd FileType python setlocal shiftwidth=4
+augroup END
