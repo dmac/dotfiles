@@ -37,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-classpath'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'dmac/vim-cljfmt'
+"Plugin 'file:///Users/dmac/projects/vim-cljfmt'
 
 call vundle#end()
 filetype plugin indent on
@@ -224,6 +226,7 @@ augroup clojure
   autocmd!
   autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
   autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
+  autocmd FileType clojure nnoremap <buffer> <LEADER>F :CljFmt<CR>
   autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
 augroup END
 
