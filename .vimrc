@@ -14,7 +14,6 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
-Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
@@ -106,9 +105,6 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
-" delete the current buffer without closing the window
-nnoremap <LEADER>d :bp\|bd #<CR>
-
 " underlining
 nnoremap <LEADER>= yyp<C-v>$r=
 nnoremap <LEADER>- yyp<C-v>$r-
@@ -128,7 +124,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
 
 " -------------------------------------------- Auto Commands -------------------------------------------------
 
@@ -171,14 +166,6 @@ augroup end
 
 " (vim-airline)
 let g:airline_powerline_fonts = 1
-
- "Autocompletion
-let g:SuperTabDefaultCompletionType = "context"
-
-let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
-let g:NERDChristmasTree=1                           " more colorful NERDTree
-
-let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
 
 " (nerdtree)
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
