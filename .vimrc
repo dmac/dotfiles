@@ -37,6 +37,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-classpath'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'rking/ag.vim'
 Plugin 'dmac/vim-cljfmt'
 "Plugin 'file:///Users/dmac/projects/vim-cljfmt'
 
