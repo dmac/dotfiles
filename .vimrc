@@ -128,6 +128,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
 " -------------------------------------------- Auto Commands -------------------------------------------------
 
 " Strip trailing whitespace on save
