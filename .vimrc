@@ -133,6 +133,10 @@ cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 
+" note taking
+nnoremap <LEADER>ne :e ~/Dropbox/notes/
+nnoremap <LEADER>ns :Ag  ~/Dropbox/notes<S-Left><Left>
+
 " -------------------------------------------- Auto Commands -------------------------------------------------
 
 " Strip trailing whitespace on save
