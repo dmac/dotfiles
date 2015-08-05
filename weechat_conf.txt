@@ -18,13 +18,17 @@ brew install weechat --with-perl --with-python --with-ruby
 
 /server add freenode chat.freenode.net/6667
 /set irc.server.freenode.autoconnect on
-/set irc.server.freenode.autorejoin "#go-nuts"
+/set irc.server.freenode.autojoin "#go-nuts"
 /set irc.server.freenode.command "/msg nickserv identify *********"
 
 /server add mozilla irc.mozilla.org/6667
 /set irc.server.mozilla autoconnect on
-/set irc.server.mozilla.autorejoin "#rust,#rust-gamedev"
+/set irc.server.mozilla.autojoin "#rust,#rust-gamedev"
 /set irc.server.mozilla.command "/msg nickserv identify *********"
+
+/server add efnet irc.efnet.org/6667
+/set irc.server.efnet autoconnect on
+/set irc.server.efnet.autojoin "#mtg,#mtgrules,#mtgjudge"
 
 /script install buffers.pl
 /set buffers.color.current_bg darkgray
