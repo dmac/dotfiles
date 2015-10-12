@@ -1,12 +1,14 @@
 brew install weechat --with-perl --with-python --with-ruby
 
-/set irc.look.display_host_join off
-/set irc.look.display_host_quit off
-/set irc.look.display_host_join_local off
 /set irc.color.message_join gray
 /set irc.color.message_quit gray
 /set irc.color.reason_quit gray
 /set irc.server_default.nicks "dmac,dmac_,dmac__,dmac___"
+/set irc.look.display_host_join off
+/set irc.look.display_host_quit off
+/set irc.look.display_host_join_local off
+/set irc.look.smart_filter on
+/filter add irc_smart * irc_smart_filter *
 
 /set weechat.bar.status.items "[time],buffer_number+:+buffer_name,scroll"
 /set weechat.color.chat_delimiters default
