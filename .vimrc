@@ -151,6 +151,7 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.less set filetype=scss
   autocmd BufNewFile,BufRead *.yml set filetype=ansible
   autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.tpl set filetype=gotexttmpl
 augroup end
 
 " Restore cursor position
