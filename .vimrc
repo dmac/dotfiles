@@ -218,6 +218,15 @@ let g:syntastic_always_populate_loc_list = 1
 
 
 " ---------------------------------------- Language-Specific Options -----------------------------------------
+
+" -- C --
+augroup c
+  autocmd!
+  autocmd FileType c setlocal tabstop=4
+  autocmd FileType c setlocal softtabstop=4
+  autocmd FileType c setlocal shiftwidth=4
+augroup END
+
 " -- Go --
 augroup golang
   autocmd!
