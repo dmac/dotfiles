@@ -122,6 +122,7 @@ nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
+nnoremap <LEADER>r :make run<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -226,6 +227,24 @@ augroup c
   autocmd FileType c setlocal softtabstop=4
   autocmd FileType c setlocal shiftwidth=4
 augroup END
+
+augroup cpp
+  autocmd!
+  autocmd FileType cpp setlocal tabstop=4
+  autocmd FileType cpp setlocal softtabstop=4
+  autocmd FileType cpp setlocal shiftwidth=4
+augroup END
+
+function! SwapHeader()
+  let ext = expand("%:e")
+  if ext == "h"
+    execute "edit" expand("%:r") . ".c"
+  elseif ext == "c" || ext == "cpp"
+    execute "edit" expand("%:r") . ".h"
+  endif
+endfunction
+
+nnoremap <LEADER>g :call SwapHeader()<CR>
 
 " -- Go --
 augroup golang
