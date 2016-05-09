@@ -277,6 +277,7 @@ augroup clojure
   autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
 augroup END
 
+let g:cljfmt_on_save = 0
 let g:ycm_semantic_triggers = {'clojure': ['(']}
 
 " indentation
