@@ -37,7 +37,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
 Plugin 'dmac/vim-cljfmt'
-"Plugin 'file:///Users/dmac/projects/vim-cljfmt'
+Plugin 'Rip-Rip/clang_complete'
 
 call vundle#end()
 filetype plugin indent on
@@ -224,6 +224,9 @@ let g:syntastic_mode_map = {
 
 
 " ---------------------------------------- Language-Specific Options -----------------------------------------
+
+let g:clang_library_path = $CLANG_LIBRARY_PATH
+let g:clang_complete_macros = 1
 
 " -- C --
 augroup c
