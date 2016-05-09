@@ -22,7 +22,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skammer/vim-css-color'
@@ -36,6 +35,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-classpath'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
 Plugin 'dmac/vim-cljfmt'
 "Plugin 'file:///Users/dmac/projects/vim-cljfmt'
@@ -123,6 +123,8 @@ nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
 nnoremap <LEADER>r :make run<CR>
+nnoremap <LEADER>cc :Commentary<CR>
+vnoremap <LEADER>cc :Commentary<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -319,7 +321,6 @@ augroup haskell
   autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
 augroup END
 
-let g:NERD_haskell_alt_style=1 " Use -- for haskell comments
 let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
 
 " (ghc-mod)
