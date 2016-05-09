@@ -211,6 +211,10 @@ let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 
 " (syntastic)
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = {
+      \ "mode": "active",
+      \ "passive_filetypes": ["go"] }
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
@@ -248,7 +252,7 @@ endfunction
 nnoremap <LEADER>g :call SwapHeader()<CR>
 
 " -- Go --
-augroup golang
+augroup go
   autocmd!
   autocmd FileType go setlocal nolist
   autocmd FileType go setlocal tabstop=8
