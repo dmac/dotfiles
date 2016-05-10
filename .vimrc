@@ -43,7 +43,7 @@ syntax on
 " --------------------------------- General -----------------------------------
 set nocompatible                  " duh
 set history=1000                  " longer history
-set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
+set hidden " Allows buffers to be put in bg without saving and allows undoes when put in fg.
 set tabstop=2                     " 2 space tabs by default
 set softtabstop=2
 set shiftwidth=2
@@ -134,7 +134,7 @@ cnoremap <C-f> <Right>
 nnoremap <LEADER>ne :e ~/Dropbox/notes/
 nnoremap <LEADER>ns :Ag  ~/Dropbox/notes<S-Left><Left>
 
-" --------------------------------- Autocommands -------------------------------
+" ------------------------------- Autocommands ---------------------------------
 
 " Strip trailing whitespace on save
 augroup trailing_whitespace
@@ -165,53 +165,7 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
-" -------------------------------- Plugin Options ------------------------------
-
-" vim-airline
-let g:airline_powerline_fonts = 1
-
-" nerdtree
-let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
-let g:NERDChristmasTree=1                           " more colorful NERDTree
-
-" rainbow_parentheses
-let g:rbpt_max = 10
-let g:rbpt_colorpairs = [
-    \ ['gray',      'HotPink1'],
-    \ ['darkred',   'cyan1'],
-    \ ['darkcyan',  'brown1'],
-    \ ['darkgreen', 'yellow1'],
-    \ ['darkblue',  'MediumOrchid'],
-    \ ['gray',      'DeepSkyBlue1'],
-    \ ['darkred',   'DarkOrange1'],
-    \ ['darkcyan',  'LimeGreen'],
-    \ ['darkgreen', 'goldenrod1'],
-    \ ['darkblue',  'RoyalBlue1'],
-    \ ]
-
-" tagbar
-let g:tagbar_iconchars = ['▸', '▾']
-
-" ctrlp
-let g:ctrlp_map = '<LEADER>f'
-let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = {
-      \ "mode": "active",
-      \ "passive_filetypes": ["go"] }
-
-" MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
-" To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
-" See https://github.com/b4winckler/macvim/wiki/Troubleshooting
-"     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
-"     https://gist.github.com/2193743
-
-
-" ------------------------------- Language Options -----------------------------
+" ----------------------------- Language Options -------------------------------
 
 " -- C/C++ --
 let g:clang_library_path = $CLANG_LIBRARY_PATH
@@ -358,3 +312,48 @@ augroup markdown
   autocmd!
   autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 augroup END
+
+" ------------------------------ Plugin Options --------------------------------
+
+" vim-airline
+let g:airline_powerline_fonts = 1
+
+" nerdtree
+let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
+let g:NERDChristmasTree=1                           " more colorful NERDTree
+
+" rainbow_parentheses
+let g:rbpt_max = 10
+let g:rbpt_colorpairs = [
+    \ ['gray',      'HotPink1'],
+    \ ['darkred',   'cyan1'],
+    \ ['darkcyan',  'brown1'],
+    \ ['darkgreen', 'yellow1'],
+    \ ['darkblue',  'MediumOrchid'],
+    \ ['gray',      'DeepSkyBlue1'],
+    \ ['darkred',   'DarkOrange1'],
+    \ ['darkcyan',  'LimeGreen'],
+    \ ['darkgreen', 'goldenrod1'],
+    \ ['darkblue',  'RoyalBlue1'],
+    \ ]
+
+" tagbar
+let g:tagbar_iconchars = ['▸', '▾']
+
+" ctrlp
+let g:ctrlp_map = '<LEADER>f'
+let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = {
+      \ "mode": "active",
+      \ "passive_filetypes": ["go"] }
+
+" MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
+" To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
+" See https://github.com/b4winckler/macvim/wiki/Troubleshooting
+"     http://vim.1045645.n5.nabble.com/MacVim-and-PATH-td3388705.html
+"     https://gist.github.com/2193743
