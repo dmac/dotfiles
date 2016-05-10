@@ -44,9 +44,9 @@ syntax on
 set nocompatible                  " duh
 set history=1000                  " longer history
 set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
-set tabstop=2                     " 2 space tabs, all the time
-let &softtabstop=&tabstop
-let &shiftwidth=&tabstop
+set tabstop=2                     " 2 space tabs by default
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set smartindent                   " add indentation for code
@@ -62,7 +62,7 @@ set autoread                      " reload changed files when focus returns
 set modeline                      " enable modelines
 set number                        " show line numbers
 set ruler                         " show cursor position, etc.
-set cursorline
+set cursorline                    " highlight cursor line
 set showcmd                       " display commands in progress at the bottom
 set cmdheight=1
 set laststatus=2                  " show statusline with filename
@@ -83,16 +83,16 @@ set background=dark
 colorscheme base16-chalk
 if exists("+colorcolumn") " use colorcolumn if supported
   let &colorcolumn = 111
-  hi ColorColumn ctermbg=DarkGray guibg=gray15
+  highlight ColorColumn ctermbg=DarkGray guibg=gray15
 endif
 
 " Better git diff colors
-hi diffAdded ctermfg=DarkGreen ctermbg=Black
-hi diffRemoved ctermfg=DarkRed ctermbg=Black
-hi diffFile ctermfg=darkcyan ctermbg=Black
+highlight diffAdded ctermfg=DarkGreen ctermbg=Black
+highlight diffRemoved ctermfg=DarkRed ctermbg=Black
+highlight diffFile ctermfg=darkcyan ctermbg=Black
 
 " Cursor line highlight
-hi CursorLine cterm=NONE ctermbg=NONE guibg=gray20
+highlight CursorLine cterm=NONE ctermbg=NONE guibg=gray20
 
 
 " ----------------------------------------------- Mappings ---------------------------------------------------
@@ -107,7 +107,7 @@ nnoremap k gk
 nnoremap <LEADER>= yyp<C-v>$r=
 nnoremap <LEADER>- yyp<C-v>$r-
 
-" custom shortcuts
+" global custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>
@@ -115,17 +115,13 @@ nnoremap <LEADER>sg :source $MYGVIMRC<CR>
 nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
-nnoremap <LEADER>M :%w ! markdown_doctor \| bcat<CR><CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <LEADER>m :make<CR><CR>:cwindow<CR>
-nnoremap <LEADER>r :make run<CR>
 nnoremap <LEADER>cc :Commentary<CR>
 vnoremap <LEADER>cc :Commentary<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
@@ -166,25 +162,16 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
-augroup rainbow_parentheses
-  autocmd!
-  autocmd Filetype clojure RainbowParenthesesActivate
-  autocmd Syntax clojure RainbowParenthesesLoadRound
-  autocmd Syntax clojure RainbowParenthesesLoadSquare
-  autocmd Syntax clojure RainbowParenthesesLoadBraces
-augroup end
+" ------------------------------------------ Plugin Options --------------------------------------------------
 
-
-" ------------------------------------------ Global Plugin Options -------------------------------------------
-
-" (vim-airline)
+" vim-airline
 let g:airline_powerline_fonts = 1
 
-" (nerdtree)
+" nerdtree
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
 
-" (rainbow_parentheses)
+" rainbow_parentheses
 let g:rbpt_max = 10
 let g:rbpt_colorpairs = [
     \ ['gray',      'HotPink1'],
@@ -199,15 +186,15 @@ let g:rbpt_colorpairs = [
     \ ['darkblue',  'RoyalBlue1'],
     \ ]
 
-" (tagbar)
+" tagbar
 let g:tagbar_iconchars = ['▸', '▾']
 
-" (ctrlp)
+" ctrlp
 let g:ctrlp_map = '<LEADER>f'
 let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
 
-" (syntastic)
+" syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map = {
@@ -221,19 +208,21 @@ let g:syntastic_mode_map = {
 "     https://gist.github.com/2193743
 
 
-" ---------------------------------------- Language-Specific Options -----------------------------------------
+" ---------------------------------------- Language Options --------------------------------------------------
 
+" -- C/C++ --
 let g:clang_library_path = $CLANG_LIBRARY_PATH
 let g:clang_complete_macros = 1
 
-" -- C --
 augroup c
   autocmd!
   autocmd FileType c,cpp setlocal tabstop=4
   autocmd FileType c,cpp setlocal softtabstop=4
   autocmd FileType c,cpp setlocal shiftwidth=4
   autocmd FileType c,cpp setlocal commentstring=//\ %s
-  autocmd FileType c,cpp nnoremap <LEADER>g :call SwapHeader()<CR>
+  autocmd FileType c,cpp nnoremap <buffer> <LEADER>m :make<CR><CR>:cwindow<CR>
+  autocmd FileType c,cpp nnoremap <buffer> <LEADER>r :make run<CR>
+  autocmd FileType c,cpp nnoremap <buffer> <LEADER>g :call SwapHeader()<CR>
 augroup END
 
 function! SwapHeader()
@@ -260,6 +249,9 @@ function! SwapHeader()
 endfunction
 
 " -- Go --
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
+
 augroup go
   autocmd!
   autocmd FileType go setlocal nolist
@@ -274,20 +266,23 @@ augroup go
   autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
 augroup END
 
-let g:go_fmt_autosave = 0
-let g:go_fmt_command = "goimports"
-
 " -- Clojure --
+let g:cljfmt_on_save = 0
+let g:ycm_semantic_triggers = {'clojure': ['(']}
+
 augroup clojure
   autocmd!
   autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
   autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
   autocmd FileType clojure nnoremap <buffer> <LEADER>F :CljFmt<CR>
   autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
-augroup END
 
-let g:cljfmt_on_save = 0
-let g:ycm_semantic_triggers = {'clojure': ['(']}
+  " Rainbow Parentheses
+  autocmd Filetype clojure RainbowParenthesesActivate
+  autocmd Syntax clojure RainbowParenthesesLoadRound
+  autocmd Syntax clojure RainbowParenthesesLoadSquare
+  autocmd Syntax clojure RainbowParenthesesLoadBraces
+augroup END
 
 " indentation
 let g:clojure_align_multiline_strings = 0
@@ -306,7 +301,7 @@ augroup coffeescript
   autocmd FileType coffeescript vnoremap <buffer> <LEADER>m :CoffeeCompile {20}<CR>
 augroup END
 
-" (tagbar)
+" tagbar
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',
@@ -324,6 +319,8 @@ if executable('coffeetags')
 endif
 
 " -- Haskell --
+let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
+
 augroup haskell
   autocmd!
   autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -333,8 +330,6 @@ augroup haskell
   autocmd FileType haskell nnoremap <buffer> <LEADER>m :GhcModCheckAndLintAsync<CR>
   autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
 augroup END
-
-let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
 
 " (ghc-mod)
 function! s:set_ghcmod_options()
@@ -353,4 +348,10 @@ augroup python
   autocmd FileType python setlocal tabstop=4
   autocmd FileType python setlocal softtabstop=4
   autocmd FileType python setlocal shiftwidth=4
+augroup END
+
+" -- Markdown --
+augroup markdown
+  autocmd!
+  autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
 augroup END
