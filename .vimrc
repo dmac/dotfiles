@@ -51,6 +51,9 @@ set expandtab
 set smarttab
 set smartindent                   " add indentation for code
 set autoindent                    " continue indentation
+set textwidth=0                   " never auto-wrap text
+set wrapmargin=0
+set nowrap
 set backspace=indent,eol,start    " make backspace work correctly
 set incsearch                     " perform search as you type
 set nohlsearch                    " don't highlight search results
