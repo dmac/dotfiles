@@ -5,39 +5,39 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
+Plugin 'Rip-Rip/clang_complete'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'bitc/lushtags'
 Plugin 'bling/vim-airline'
+Plugin 'cespare/vim-toml'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'chriskempson/base16-vim'
 Plugin 'dag/vim2hs'
+Plugin 'dmac/vim-cljfmt'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'fatih/vim-go'
 Plugin 'garbas/vim-snipmate'
-Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
+Plugin 'gmarik/Vundle.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skammer/vim-css-color'
+Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'wting/rust.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'cespare/vim-toml'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'tpope/vim-commentary'
-Plugin 'rking/ag.vim'
-Plugin 'dmac/vim-cljfmt'
-Plugin 'Rip-Rip/clang_complete'
 
 call vundle#end()
 filetype plugin indent on
