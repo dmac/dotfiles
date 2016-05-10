@@ -1,4 +1,4 @@
-" --------------------------------------------- Vundle / Plugins ---------------------------------------------
+" ---------------------------- Vundle / Plugins --------------------------------
 set nocompatible
 filetype off
 
@@ -40,7 +40,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-" ------------------------------------------------ General ---------------------------------------------------
+" --------------------------------- General -----------------------------------
 set nocompatible                  " duh
 set history=1000                  " longer history
 set hidden " This allows vim to put buffers in the bg without saving, and then allows undoes when you fg them.
@@ -80,7 +80,7 @@ set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 
 
-" ----------------------------------------- Colorscheme and Highlights ---------------------------------------
+" ------------------------ Colorscheme and Highlights --------------------------
 
 set background=dark
 colorscheme base16-chalk
@@ -98,7 +98,7 @@ highlight diffFile ctermfg=darkcyan ctermbg=Black
 highlight CursorLine cterm=NONE ctermbg=NONE guibg=gray20
 
 
-" ----------------------------------------------- Mappings ---------------------------------------------------
+" ------------------------------- Mappings -------------------------------------
 
 let mapleader=","
 
@@ -134,7 +134,7 @@ cnoremap <C-f> <Right>
 nnoremap <LEADER>ne :e ~/Dropbox/notes/
 nnoremap <LEADER>ns :Ag  ~/Dropbox/notes<S-Left><Left>
 
-" -------------------------------------------- Auto Commands -------------------------------------------------
+" --------------------------------- Autocommands -------------------------------
 
 " Strip trailing whitespace on save
 augroup trailing_whitespace
@@ -165,7 +165,7 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
-" ------------------------------------------ Plugin Options --------------------------------------------------
+" -------------------------------- Plugin Options ------------------------------
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -211,7 +211,7 @@ let g:syntastic_mode_map = {
 "     https://gist.github.com/2193743
 
 
-" ---------------------------------------- Language Options --------------------------------------------------
+" ------------------------------- Language Options -----------------------------
 
 " -- C/C++ --
 let g:clang_library_path = $CLANG_LIBRARY_PATH
