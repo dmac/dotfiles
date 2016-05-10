@@ -5,7 +5,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'bitc/lushtags'
@@ -18,7 +17,6 @@ Plugin 'dmac/vim-cljfmt'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'fatih/vim-go'
-Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kchmck/vim-coffee-script'
@@ -29,7 +27,6 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skammer/vim-css-color'
-Plugin 'tomtom/tlib_vim'              " dependency for vim-snipmate
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fireplace'
