@@ -267,7 +267,8 @@ augroup go
   autocmd FileType go setlocal softtabstop=8
   autocmd FileType go setlocal shiftwidth=8
   autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
-  autocmd FileType go nnoremap <buffer> <LEADER>b :GoBuild<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>m :GoInstall<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>v :GoVet<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
