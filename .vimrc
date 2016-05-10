@@ -149,6 +149,7 @@ augroup end
 " Additional filetypes
 augroup filetypes
   autocmd!
+  autocmd BufNewFile,BufRead *.h set filetype=c
   autocmd BufNewFile,BufRead *.ejs set filetype=html
   autocmd BufNewFile,BufRead *.less set filetype=scss
   autocmd BufNewFile,BufRead *.yml set filetype=ansible
@@ -231,28 +232,35 @@ let g:clang_complete_macros = 1
 " -- C --
 augroup c
   autocmd!
-  autocmd FileType c setlocal tabstop=4
-  autocmd FileType c setlocal softtabstop=4
-  autocmd FileType c setlocal shiftwidth=4
-augroup END
-
-augroup cpp
-  autocmd!
-  autocmd FileType cpp setlocal tabstop=4
-  autocmd FileType cpp setlocal softtabstop=4
-  autocmd FileType cpp setlocal shiftwidth=4
+  autocmd FileType c,cpp setlocal tabstop=4
+  autocmd FileType c,cpp setlocal softtabstop=4
+  autocmd FileType c,cpp setlocal shiftwidth=4
+  autocmd FileType c,cpp setlocal commentstring=//\ %s
+  autocmd FileType c,cpp nnoremap <LEADER>g :call SwapHeader()<CR>
 augroup END
 
 function! SwapHeader()
+  let base = expand("%:r")
   let ext = expand("%:e")
-  if ext == "h"
-    execute "edit" expand("%:r") . ".c"
-  elseif ext == "c" || ext == "cpp"
-    execute "edit" expand("%:r") . ".h"
+  let fname = ""
+  if ext == "c" || ext == "cpp"
+    let fname = base.".h"
+  elseif ext == "h"
+    let list = glob(base.".c*", 0, 1)
+    if len(list) > 0
+      let fname = list[0]
+    endif
+  endif
+  if findfile(fname) != ""
+    execute "edit" fname
+  else
+    if ext == "h"
+      echom base.".c* not found"
+    else
+      echom fname." not found"
+    endif
   endif
 endfunction
-
-nnoremap <LEADER>g :call SwapHeader()<CR>
 
 " -- Go --
 augroup go
