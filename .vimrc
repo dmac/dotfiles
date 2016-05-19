@@ -221,6 +221,7 @@ augroup go
   autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>T :GoTest<CR>
 augroup END
 
 " -- Clojure --
