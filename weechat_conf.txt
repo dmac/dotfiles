@@ -22,6 +22,8 @@ brew install weechat --with-perl --with-python --with-ruby
 /set irc.server.freenode.autoconnect on
 /set irc.server.freenode.autojoin "#go-nuts,##c"
 /set irc.server.freenode.command "/msg nickserv identify *********"
+/set irc.server.freenode.sasl_username dmac
+/set irc.server.freenode.sasl_password *********
 
 /server add mozilla irc.mozilla.org/6667
 /set irc.server.mozilla autoconnect on
@@ -39,3 +41,4 @@ brew install weechat --with-perl --with-python --with-ruby
 /set weechat.bar.buffers.position top
 /set weechat.bar.buffers.separator off
 
+/save
