@@ -23,6 +23,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -311,8 +312,13 @@ augroup END
 " -- Markdown --
 augroup markdown
   autocmd!
-  autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdown_doctor \| bcat<CR><CR>
+  autocmd FileType markdown setlocal tabstop=4
+  autocmd FileType markdown setlocal softtabstop=4
+  autocmd FileType markdown setlocal shiftwidth=4
+  autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdownd -s<CR><CR>
 augroup END
+
+let g:vim_markdown_conceal = 0
 
 " ------------------------------ Plugin Options --------------------------------
 
