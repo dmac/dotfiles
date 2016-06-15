@@ -166,6 +166,12 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
+" -------------------------------- OS Config -----------------------------------
+if has('win32')
+  let $PYTHONPATH = "C:\\Python27\\Lib;C:\\Python27\\DLLs;C:\\Python27\\Lib\\lib-tk"
+  let $CLANG_LIBRARY_PATH="C:\\Program Files (x86)\\LLVM\\bin"
+endif
+
 " ----------------------------- Language Options -------------------------------
 
 " -- C/C++ --
