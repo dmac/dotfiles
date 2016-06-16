@@ -35,7 +35,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'wlangstroth/vim-racket'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 
 call vundle#end()
 filetype plugin indent on
@@ -325,6 +326,20 @@ augroup markdown
 augroup END
 
 let g:vim_markdown_conceal = 0
+
+" -- Protobuf --
+augroup proto
+  autocmd!
+  autocmd FileType markdown setlocal tabstop=4
+  autocmd FileType markdown setlocal softtabstop=4
+  autocmd FileType markdown setlocal shiftwidth=4
+augroup END
+
+" -- Rust --
+augroup rust
+  autocmd!
+  autocmd FileType rust nnoremap <buffer> <LEADER>r :!cargo run<CR>
+augroup END
 
 " ------------------------------ Plugin Options --------------------------------
 
