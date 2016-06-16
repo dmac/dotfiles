@@ -24,7 +24,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'racer-rust/vim-racer'
+Plugin 'rhysd/vim-clang-format'
 Plugin 'rking/ag.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skammer/vim-css-color'
@@ -35,8 +38,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'wlangstroth/vim-racket'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
 
 call vundle#end()
 filetype plugin indent on
@@ -188,6 +189,7 @@ augroup c
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>m :make<CR><CR>:cwindow<CR>
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>r :make run<CR>
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>g :call SwapHeader()<CR>
+  autocmd FileType c,cpp nnoremap <buffer> <LEADER>F :ClangFormat<CR>
 augroup END
 
 function! SwapHeader()
