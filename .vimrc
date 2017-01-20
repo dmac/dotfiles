@@ -80,20 +80,21 @@ set foldlevel=99                  " open all folds by default
 
 " ------------------------ Colorscheme and Highlights --------------------------
 
-set background=dark
-colorscheme base16-chalk
-if exists("+colorcolumn") " use colorcolumn if supported
+function! GoDark()
+  set background=dark
+  colorscheme base16-solarized-dark
+endfunction
+
+function! GoLight()
+  set background=light
+  colorscheme base16-solarized-light
+endfunction
+
+call GoDark()
+
+if exists("+colorcolumn")
   let &colorcolumn = 111
-  highlight ColorColumn ctermbg=DarkGray guibg=gray15
 endif
-
-" Better git diff colors
-highlight diffAdded ctermfg=DarkGreen ctermbg=Black
-highlight diffRemoved ctermfg=DarkRed ctermbg=Black
-highlight diffFile ctermfg=darkcyan ctermbg=Black
-
-" Cursor line highlight
-highlight CursorLine cterm=NONE ctermbg=NONE guibg=gray20
 
 
 " ------------------------------- Mappings -------------------------------------
