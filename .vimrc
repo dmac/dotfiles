@@ -64,14 +64,13 @@ set autoread                      " reload changed files when focus returns
 set modeline                      " enable modelines
 set number                        " show line numbers
 set ruler                         " show cursor position, etc.
-set cursorline                    " highlight cursor line
+set nocursorline                  " don't highlight cursor line
 set showcmd                       " display commands in progress at the bottom
 set cmdheight=1
 set laststatus=2                  " show statusline with filename
 set wildmenu                      " command tab completion menu
 set wildmode=list:longest,full    " command tab completion menu options
 set completeopt=longest,menuone   " popup menu completion options
-set list listchars=trail:.,tab:>. " highlight trailing whitespace
 set tags=tags;/                   " Search all directories for tags file
 set nobackup                      " don't save backup files
 set nowritebackup                 " don't save backup files
