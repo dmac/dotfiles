@@ -182,6 +182,7 @@ augroup c
   autocmd FileType c,cpp setlocal shiftwidth=4
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>m :make<CR><CR>:cwindow<CR>
+  autocmd FileType c,cpp nnoremap <buffer> <LEADER>M :make<CR>
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>r :make run<CR>
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>g :call SwapHeader()<CR>
   autocmd FileType c,cpp nnoremap <buffer> <LEADER>F :ClangFormat<CR>
