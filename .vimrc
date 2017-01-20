@@ -6,16 +6,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'Rip-Rip/clang_complete'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'bitc/lushtags'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'chriskempson/base16-vim'
-Plugin 'dag/vim2hs'
 Plugin 'dmac/vim-cljfmt'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
 Plugin 'fatih/vim-go'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'guns/vim-clojure-static'
@@ -26,10 +22,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'racer-rust/vim-racer'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'rking/ag.vim'
+Plugin 'rking/ag.vim' " note this package has been deprecated
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'skammer/vim-css-color'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
@@ -37,6 +32,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wlangstroth/vim-racket'
 
 call vundle#end()
@@ -374,13 +370,6 @@ let g:tagbar_iconchars = ['▸', '▾']
 let g:ctrlp_map = '<LEADER>f'
 let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = {
-      \ "mode": "active",
-      \ "passive_filetypes": ["go"] }
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
