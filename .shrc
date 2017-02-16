@@ -43,8 +43,7 @@ alias a="ansible"
 alias ap="ansible-playbook"
 alias c="cargo"
 
-# Load z.sh
-[[ -a ~/.dotfiles/vendor/z/z.sh ]] && source ~/.dotfiles/vendor/z/z.sh
+CDPATH=$CDPATH:~/p
 
 # rbenv configuration
 which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"

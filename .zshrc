@@ -103,7 +103,6 @@ alias src="
 function precmd()
 {
   vcs_info             # git info
-  _z --add "$(pwd -P)" # z.sh
 }
 
 # Source plugins
