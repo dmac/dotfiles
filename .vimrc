@@ -326,14 +326,6 @@ augroup END
 
 let g:vim_markdown_conceal = 0
 
-" -- Protobuf --
-augroup proto
-  autocmd!
-  autocmd FileType markdown setlocal tabstop=4
-  autocmd FileType markdown setlocal softtabstop=4
-  autocmd FileType markdown setlocal shiftwidth=4
-augroup END
-
 " -- Rust --
 augroup rust
   autocmd!
