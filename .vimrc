@@ -342,27 +342,28 @@ let g:NERDTreeChDirMode=2                           " change pwd when NERDTree r
 let g:NERDChristmasTree=1                           " more colorful NERDTree
 
 " rainbow_parentheses
-let g:rbpt_max = 10
-let g:rbpt_colorpairs = [
-    \ ['gray',      'HotPink1'],
-    \ ['darkred',   'cyan1'],
-    \ ['darkcyan',  'brown1'],
-    \ ['darkgreen', 'yellow1'],
-    \ ['darkblue',  'MediumOrchid'],
-    \ ['gray',      'DeepSkyBlue1'],
-    \ ['darkred',   'DarkOrange1'],
-    \ ['darkcyan',  'LimeGreen'],
-    \ ['darkgreen', 'goldenrod1'],
-    \ ['darkblue',  'RoyalBlue1'],
-    \ ]
+"let g:rbpt_max = 10
+"let g:rbpt_colorpairs = [
+"    \ ['gray',      'HotPink1'],
+"    \ ['darkred',   'cyan1'],
+"    \ ['darkcyan',  'brown1'],
+"    \ ['darkgreen', 'yellow1'],
+"    \ ['darkblue',  'MediumOrchid'],
+"    \ ['gray',      'DeepSkyBlue1'],
+"    \ ['darkred',   'DarkOrange1'],
+"    \ ['darkcyan',  'LimeGreen'],
+"    \ ['darkgreen', 'goldenrod1'],
+"    \ ['darkblue',  'RoyalBlue1'],
+"    \ ]
 
 " tagbar
 let g:tagbar_iconchars = ['▸', '▾']
 
 " ctrlp
 let g:ctrlp_map = '<LEADER>f'
-let g:ctrlp_working_path_mode=2 " Search for files in repository with CtrlP
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$'
+let g:ctrlp_working_path_mode='r' " Search for files in repository with CtrlP
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$\|/target/\|/node_modules/\|/MopubSDK/\|/mopub-sdk/'
+let g:ctrlp_max_files = 0
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
