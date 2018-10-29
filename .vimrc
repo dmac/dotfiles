@@ -46,8 +46,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
-set smartindent                   " add indentation for code
-set autoindent                    " continue indentation
 set textwidth=0                   " never auto-wrap text
 set wrapmargin=0
 set nowrap
