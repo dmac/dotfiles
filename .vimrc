@@ -16,7 +16,6 @@ Plugin 'fatih/vim-go'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'racer-rust/vim-racer'
@@ -240,12 +239,6 @@ augroup clojure
   autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
   autocmd FileType clojure nnoremap <buffer> <LEADER>F :CljFmt<CR>
   autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
-
-  " Rainbow Parentheses
-  autocmd Filetype clojure RainbowParenthesesActivate
-  autocmd Syntax clojure RainbowParenthesesLoadRound
-  autocmd Syntax clojure RainbowParenthesesLoadSquare
-  autocmd Syntax clojure RainbowParenthesesLoadBraces
 augroup END
 
 " indentation
