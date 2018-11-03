@@ -37,6 +37,8 @@ set nowritebackup                 " don't save backup files
 set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 
+helptags ALL
+
 
 " ------------------------ Colorscheme and Highlights --------------------------
 
