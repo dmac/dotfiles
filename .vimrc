@@ -114,8 +114,6 @@ nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <LEADER>cc :Commentary<CR>
-vnoremap <LEADER>cc :Commentary<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
