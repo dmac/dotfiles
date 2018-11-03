@@ -7,7 +7,7 @@ call vundle#begin()
 
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'chriskempson/base16-vim'
