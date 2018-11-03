@@ -331,21 +331,6 @@ let g:airline_powerline_fonts = 1
 let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1                           " more colorful NERDTree
 
-" rainbow_parentheses
-"let g:rbpt_max = 10
-"let g:rbpt_colorpairs = [
-"    \ ['gray',      'HotPink1'],
-"    \ ['darkred',   'cyan1'],
-"    \ ['darkcyan',  'brown1'],
-"    \ ['darkgreen', 'yellow1'],
-"    \ ['darkblue',  'MediumOrchid'],
-"    \ ['gray',      'DeepSkyBlue1'],
-"    \ ['darkred',   'DarkOrange1'],
-"    \ ['darkcyan',  'LimeGreen'],
-"    \ ['darkgreen', 'goldenrod1'],
-"    \ ['darkblue',  'RoyalBlue1'],
-"    \ ]
-
 " tagbar
 let g:tagbar_iconchars = ['▸', '▾']
 
