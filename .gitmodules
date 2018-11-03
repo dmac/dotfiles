@@ -4,9 +4,78 @@
 [submodule "vendor/xcape"]
 	path = vendor/xcape
 	url = https://github.com/alols/xcape
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
 [submodule "vendor/powerline-fonts"]
 	path = vendor/powerline-fonts
 	url = https://github.com/powerline/fonts
+[submodule ".vim/pack/plugins/start/clang_complete"]
+	path = .vim/pack/plugins/start/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete
+[submodule ".vim/pack/plugins/start/vim-colors-solarized"]
+	path = .vim/pack/plugins/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule ".vim/pack/plugins/start/vim-airline"]
+	path = .vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/plugins/start/vim-toml"]
+	path = .vim/pack/plugins/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule ".vim/pack/plugins/start/vim-ansible-yaml"]
+	path = .vim/pack/plugins/start/vim-ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml
+[submodule ".vim/pack/plugins/start/base16-vim"]
+	path = .vim/pack/plugins/start/base16-vim
+	url = https://github.com/chriskempson/base16-vim
+[submodule ".vim/pack/plugins/start/vim-cljfmt"]
+	path = .vim/pack/plugins/start/vim-cljfmt
+	url = https://github.com/dmac/vim-cljfmt
+[submodule ".vim/pack/plugins/start/vim-go"]
+	path = .vim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule ".vim/pack/plugins/start/vim-clojure-static"]
+	path = .vim/pack/plugins/start/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static
+[submodule ".vim/pack/plugins/start/ctrlp.vim"]
+	path = .vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule ".vim/pack/plugins/start/tagbar"]
+	path = .vim/pack/plugins/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule ".vim/pack/plugins/start/vim-markdown"]
+	path = .vim/pack/plugins/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule ".vim/pack/plugins/start/vim-clang-format"]
+	path = .vim/pack/plugins/start/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format
+[submodule ".vim/pack/plugins/start/ack.vim"]
+	path = .vim/pack/plugins/start/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule ".vim/pack/plugins/start/rust.vim"]
+	path = .vim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule ".vim/pack/plugins/start/nerdtree"]
+	path = .vim/pack/plugins/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/pack/plugins/start/vim-css-color"]
+	path = .vim/pack/plugins/start/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule ".vim/pack/plugins/start/vim-commentary"]
+	path = .vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".vim/pack/plugins/start/vim-endwise"]
+	path = .vim/pack/plugins/start/vim-endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule ".vim/pack/plugins/start/vim-fireplace"]
+	path = .vim/pack/plugins/start/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace
+[submodule ".vim/pack/plugins/start/vim-fugitive"]
+	path = .vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/plugins/start/vim-repeat"]
+	path = .vim/pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule ".vim/pack/plugins/start/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/plugins/start/vim-airline-themes"]
+	path = .vim/pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

@@ -1,43 +1,7 @@
-" ---------------------------- Vundle / Plugins --------------------------------
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline'
-Plugin 'cespare/vim-toml'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'chriskempson/base16-vim'
-Plugin 'dmac/vim-cljfmt'
-Plugin 'fatih/vim-go'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'racer-rust/vim-racer'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'mileszs/ack.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'skammer/vim-css-color'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'wlangstroth/vim-racket'
-
-call vundle#end()
-filetype plugin indent on
-syntax on
 
 " --------------------------------- General -----------------------------------
+filetype plugin indent on
+syntax on
 set nocompatible                  " duh
 set history=1000                  " longer history
 set hidden " Allows buffers to be put in bg without saving and allows undoes when put in fg.
