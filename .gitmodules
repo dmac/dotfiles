@@ -10,9 +10,6 @@
 [submodule ".vim/pack/plugins/start/clang_complete"]
 	path = .vim/pack/plugins/start/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete
-[submodule ".vim/pack/plugins/start/vim-colors-solarized"]
-	path = .vim/pack/plugins/start/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
 [submodule ".vim/pack/plugins/start/vim-airline"]
 	path = .vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
