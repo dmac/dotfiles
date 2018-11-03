@@ -34,6 +34,6 @@
   last = "!git log --oneline -n 1 --format='%H'"
 
 [credential]
-  helper = osxkeychain
+  #helper = osxkeychain
 [github]
 	user = dmac
