@@ -1,10 +1,10 @@
 
-" --------------------------------- General -----------------------------------
+" --------------------------------- General ------------------------------------
 filetype plugin indent on
 syntax on
 set nocompatible                  " duh
 set history=1000                  " longer history
-set hidden " Allows buffers to be put in bg without saving and allows undoes when put in fg.
+set hidden " allow buffers to be bg'ed without saving and allows undo when fg'ed
 set tabstop=2                     " 2 space tabs by default
 set softtabstop=2
 set shiftwidth=2
@@ -53,7 +53,7 @@ endfunction
 call GoDark()
 
 if exists("+colorcolumn")
-  let &colorcolumn = 111
+  let &colorcolumn = 81
 endif
 
 
@@ -193,7 +193,6 @@ augroup END
 
 " -- Clojure --
 let g:cljfmt_on_save = 0
-let g:ycm_semantic_triggers = {'clojure': ['(']}
 
 augroup clojure
   autocmd!
@@ -292,8 +291,8 @@ augroup END
 let g:airline_powerline_fonts = 1
 
 " nerdtree
-let g:NERDTreeChDirMode=2                           " change pwd when NERDTree root changes
-let g:NERDChristmasTree=1                           " more colorful NERDTree
+let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
+let g:NERDChristmasTree=1 " more colorful NERDTree
 
 " tagbar
 let g:tagbar_iconchars = ['▸', '▾']
