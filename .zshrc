@@ -46,19 +46,19 @@ autoload -Uz vcs_info
 # Additional vcs_info hooks
 function +vi-git-untracked() {
   if git status --porcelain | grep '??' > /dev/null 2>&1 ; then
-    hook_com[unstaged]+='%F{red}●'
+    hook_com[unstaged]+='%F{red}🞄'
   fi
 }
 function +vi-git-stash() {
 if [[ $(git stash list) != "" ]]; then
-  hook_com[unstaged]+='%F{white}●'
+  hook_com[unstaged]+='%F{white}🞄'
   fi
 }
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '%F{green}●'
-zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
+zstyle ':vcs_info:*' stagedstr '%F{green}🞄'
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}🞄'
 zstyle ':vcs_info:*' formats '%F{green}[%b%c%u%F{green}]'
 zstyle ':vcs_info:*' actionformats '%F{green}[%a|%b%c%u%F{green}]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-stash
