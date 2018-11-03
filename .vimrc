@@ -20,7 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'racer-rust/vim-racer'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'rking/ag.vim' " note this package has been deprecated
+Plugin 'mileszs/ack.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'skammer/vim-css-color'
@@ -127,7 +127,9 @@ cnoremap <C-f> <Right>
 
 " note taking
 nnoremap <LEADER>ne :e ~/Dropbox/notes/
-nnoremap <LEADER>ns :Ag  ~/Dropbox/notes<S-Left><Left>
+nnoremap <LEADER>ns :Ack  ~/Dropbox/notes<S-Left><Left>
+
+let g:ackprg = "ag --vimgrep"
 
 " ------------------------------- Autocommands ---------------------------------
 
