@@ -215,53 +215,6 @@ let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " 
 let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " Lobos
 let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
 
-" -- Coffeescript --
-augroup coffeescript
-  autocmd!
-  autocmd FileType coffeescript vnoremap <buffer> <LEADER>m :CoffeeCompile {20}<CR>
-augroup END
-
-" tagbar
-if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-        \ }
-endif
-
-" -- Haskell --
-let g:haskell_conceal = 0 " Don't use unicode characters (vim2hs)
-
-augroup haskell
-  autocmd!
-  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-  autocmd FileType haskell setlocal tabstop=4
-  autocmd FileType haskell setlocal softtabstop=4
-  autocmd FileType haskell setlocal shiftwidth=2
-  autocmd FileType haskell nnoremap <buffer> <LEADER>m :GhcModCheckAndLintAsync<CR>
-  autocmd BufRead,BufNewFile *.hs call s:set_ghcmod_options()
-augroup END
-
-" (ghc-mod)
-function! s:set_ghcmod_options()
-  if !exists('b:ghcmod_ghc_options')
-    let b:ghcmod_ghc_options = []
-  endif
-  if isdirectory("cabal-dev")
-    call add(b:ghcmod_ghc_options, '-isrc')
-    call add(b:ghcmod_ghc_options, '-i-package-conf'.getcwd().'/cabal-dev/packages-7.4.2.conf')
-  endif
-endfunction
-
 " -- Python --
 augroup python
   autocmd!
