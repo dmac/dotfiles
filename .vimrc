@@ -1,4 +1,3 @@
-
 " --------------------------------- General ------------------------------------
 filetype plugin indent on
 syntax on
@@ -252,7 +251,7 @@ augroup END
 let g:loaded_matchparen=1
 
 " vim-airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 
 " nerdtree
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
