@@ -19,7 +19,6 @@ set nohlsearch                    " don't highlight search results
 set scrolloff=5                   " scroll when 5 lines away from edge of screen
 set ignorecase                    " ignore case when searching...
 set smartcase                     " ...unless a capital letter was typed
-set showmatch                     " show matching brace when closed
 set autoread                      " reload changed files when focus returns
 set modeline                      " enable modelines
 set number                        " show line numbers
@@ -242,6 +241,9 @@ augroup rust
 augroup END
 
 " ------------------------------ Plugin Options --------------------------------
+
+" Disable standard plugin highlighting matching paren.
+let g:loaded_matchparen=1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
