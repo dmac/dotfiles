@@ -50,7 +50,7 @@ function! GoLight()
   colorscheme base16-solarized-light
 endfunction
 
-call GoDark()
+colors dmac-solarized-dark
 
 if exists("+colorcolumn")
   let &colorcolumn = 81
@@ -72,12 +72,14 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " global custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
+nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/dmac-solarized-dark.vim<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>:e<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>:e<CR>
 nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <LEADER>S :echo join(reverse(map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')),' ')<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -96,6 +98,7 @@ inoremap <C-f> <Right>
 " note taking
 nnoremap <LEADER>ne :e ~/Dropbox/notes/
 nnoremap <LEADER>ns :Ack  ~/Dropbox/notes<S-Left><Left>
+
 
 let g:ackprg = "ag --vimgrep"
 
