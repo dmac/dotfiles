@@ -58,9 +58,6 @@
 [submodule ".vim/pack/plugins/start/vim-commentary"]
 	path = .vim/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".vim/pack/plugins/start/vim-endwise"]
-	path = .vim/pack/plugins/start/vim-endwise
-	url = https://github.com/tpope/vim-endwise
 [submodule ".vim/pack/plugins/start/vim-fireplace"]
 	path = .vim/pack/plugins/start/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace
