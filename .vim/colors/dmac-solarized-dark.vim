@@ -7,72 +7,39 @@ let g:colors_name = "dmac-solarized-dark"
 
 " GUI color definitions
 let s:gui00        = "002b36" " #002b36
-let g:base16_gui00 = "002b36" " #002b36
 let s:gui01        = "073642" " #073642
-let g:base16_gui01 = "073642" " #073642
 let s:gui02        = "586e75" " #586e75
-let g:base16_gui02 = "586e75" " #586e75
 let s:gui03        = "657b83" " #657b83
-let g:base16_gui03 = "657b83" " #657b83
 let s:gui04        = "839496" " #839496
-let g:base16_gui04 = "839496" " #839496
 let s:gui05        = "93a1a1" " #93a1a1
-let g:base16_gui05 = "93a1a1" " #93a1a1
 let s:gui06        = "eee8d5" " #eee8d5
-let g:base16_gui06 = "eee8d5" " #eee8d5
 let s:gui07        = "fdf6e3" " #fdf6e3
-let g:base16_gui07 = "fdf6e3" " #fdf6e3
 let s:gui08        = "dc322f" " #dc322f
-let g:base16_gui08 = "dc322f" " #dc322f
 let s:gui09        = "cb4b16" " #cb4b16
-let g:base16_gui09 = "cb4b16" " #cb4b16
 let s:gui0A        = "b58900" " #b58900
-let g:base16_gui0A = "b58900" " #b58900
 let s:gui0B        = "859900" " #859900
-let g:base16_gui0B = "859900" " #859900
 let s:gui0C        = "2aa198" " #2aa198
-let g:base16_gui0C = "2aa198" " #2aa198
 let s:gui0D        = "268bd2" " #268bd2
-let g:base16_gui0D = "268bd2" " #268bd2
 let s:gui0E        = "6c71c4" " #6c71c4
-let g:base16_gui0E = "6c71c4" " #6c71c4
 let s:gui0F        = "d33682" " #d33682
-let g:base16_gui0F = "d33682" " #d33682
 
 " Terminal color definitions
 let s:cterm00        = "00"
-let g:base16_cterm00 = "00"
-let s:cterm03        = "08"
-let g:base16_cterm03 = "08"
-let s:cterm05        = "07"
-let g:base16_cterm05 = "07"
-let s:cterm07        = "15"
-let g:base16_cterm07 = "15"
-let s:cterm08        = "01"
-let g:base16_cterm08 = "01"
-let s:cterm0A        = "03"
-let g:base16_cterm0A = "03"
-let s:cterm0B        = "02"
-let g:base16_cterm0B = "02"
-let s:cterm0C        = "06"
-let g:base16_cterm0C = "06"
-let s:cterm0D        = "04"
-let g:base16_cterm0D = "04"
-let s:cterm0E        = "05"
-let g:base16_cterm0E = "05"
-
 let s:cterm01        = "10"
-let g:base16_cterm01 = "10"
 let s:cterm02        = "11"
-let g:base16_cterm02 = "11"
+let s:cterm03        = "08"
 let s:cterm04        = "12"
-let g:base16_cterm04 = "12"
+let s:cterm05        = "07"
 let s:cterm06        = "13"
-let g:base16_cterm06 = "13"
+let s:cterm07        = "15"
+let s:cterm08        = "01"
 let s:cterm09        = "09"
-let g:base16_cterm09 = "09"
+let s:cterm0A        = "03"
+let s:cterm0B        = "02"
+let s:cterm0C        = "06"
+let s:cterm0D        = "04"
+let s:cterm0E        = "05"
 let s:cterm0F        = "14"
-let g:base16_cterm0F = "14"
 
 let g:terminal_ansi_colors = [
       \ "#002b36",
@@ -189,7 +156,7 @@ call <sid>hi("Special",      s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("Statement",    s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("StorageClass", s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("String",       s:gui05, "", s:cterm05, "", "", "") " 0B
+call <sid>hi("String",       s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("Structure",    s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("Tag",          s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Todo",         s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
