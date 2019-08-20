@@ -260,6 +260,10 @@ let g:airline_theme='base16_grayscale'
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
+" Hexokinase
+let g:Hexokinase_highlighters = ['background']
+let g:Hexokinase_ftAutoload = ['vim', 'css']
+
 " nerdtree
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1 " more colorful NERDTree
