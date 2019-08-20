@@ -51,7 +51,7 @@ function! GoLight()
   colorscheme base16-solarized-light
 endfunction
 
-colors dmac-solarized-dark
+colors dmac-snes-dark
 
 if exists("+colorcolumn")
   let &colorcolumn = 81
@@ -73,7 +73,7 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " global custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
-nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/dmac-solarized-dark.vim<CR>
+nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/dmac-snes-dark.vim<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>:e<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>:e<CR>
 nnoremap <LEADER>tt :NERDTreeToggle<CR>
@@ -256,6 +256,7 @@ let g:loaded_matchparen=1
 
 " vim-airline
 let g:airline_powerline_fonts=1
+let g:airline_theme='base16_grayscale'
 
 " nerdtree
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
