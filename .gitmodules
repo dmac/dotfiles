@@ -52,9 +52,6 @@
 [submodule ".vim/pack/plugins/start/nerdtree"]
 	path = .vim/pack/plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule ".vim/pack/plugins/start/vim-css-color"]
-	path = .vim/pack/plugins/start/vim-css-color
-	url = https://github.com/ap/vim-css-color
 [submodule ".vim/pack/plugins/start/vim-commentary"]
 	path = .vim/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
