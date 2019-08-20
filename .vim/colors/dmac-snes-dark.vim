@@ -14,30 +14,26 @@ let g:colors_name = "dmac-snes-dark"
 " AirlineTheme tomorrow
 " AirlineTheme understated
 
-let s:gui00 = "181818" " #181818
-let s:gui01 = "242424" " #242424
-let s:gui02 = "54585a" " #54585a
-let s:gui03 = "707372" " #707372
-let s:gui04 = "b2b4b2" " #b2b4b2
-let s:gui05 = "dae0f0" " #dae0f0
-let s:gui06 = "514689" " #514689
-let s:gui07 = "a7a4e0" " #a7a4e0
-let s:gui08 = "c1121c" " #c1121c
-let s:gui09 = "f7ba0b" " #f7ba0b
-let s:gui10 = "007243" " #007243
-let s:gui11 = "00387b" " #00387b
+let s:gui00 = "#181818"
+let s:gui01 = "#242424"
+let s:gui02 = "#54585a"
+let s:gui03 = "#707372"
+let s:gui04 = "#b2b4b2"
+let s:gui05 = "#dae0f0"
+let s:gui06 = "#514689"
+let s:gui07 = "#a7a4e0"
+let s:gui08 = "#c1121c"
+let s:gui09 = "#f7ba0b"
+let s:gui10 = "#007243"
+let s:gui11 = "#00387b"
 
 " Highlighting function
-" Optional variables are attributes and guisp
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  let l:attr = get(a:, 1, "")
-  let l:guisp = get(a:, 2, "")
-
   if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . a:guifg
+    exec "hi " . a:group . " guifg=" . a:guifg
   endif
   if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . a:guibg
+    exec "hi " . a:group . " guibg=" . a:guibg
   endif
   if a:ctermfg != ""
     exec "hi " . a:group . " ctermfg=" . a:ctermfg
@@ -45,13 +41,13 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:ctermbg != ""
     exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
-  if l:attr != ""
-    exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
   else
-    exec "hi " . a:group . " gui=none cterm=none"
+    exec "hi " . a:group . " gui=NONE cterm=NONE"
   endif
-  if l:guisp != ""
-    exec "hi " . a:group . " guisp=#" . l:guisp
+  if a:guisp != ""
+    exec "hi " . a:group . " guisp=" . a:guisp
   endif
 endfun
 
@@ -62,6 +58,7 @@ call <sid>hi("Normal",        s:gui04, s:gui00, "", "", "", "")
 call <sid>hi("IncSearch",     s:gui00, s:gui09, "", "", "", "")
 call <sid>hi("LineNr",        s:gui03, s:gui01, "", "", "", "")
 call <sid>hi("VertSplit",     s:gui01, s:gui01, "", "", "", "")
+call <sid>hi("SignColumn",    s:gui01, s:gui01, "", "", "", "")
 call <sid>hi("Directory",     s:gui07, s:gui00, "", "", "", "")
 call <sid>hi("Visual",        "",      s:gui01, "", "", "", "")
 call <sid>hi("ColorColumn",   "",      s:gui01, "", "", "", "")
@@ -83,6 +80,7 @@ call <sid>hi("MoreMsg",       s:gui07, "", "", "", "", "")
 call <sid>hi("StatusLine",    s:gui05, s:gui04, "", "", "", "")
 call <sid>hi("StatusLineNC",  s:gui00, s:gui02, "", "", "", "")
 call <sid>hi("Title",         s:gui07, "", "", "", "", "")
+call <sid>hi("MatchParen",    s:gui00, s:gui07, "", "", "", "")
 call <sid>hi("WarningMsg",    s:gui09, "", "", "", "", "")
 call <sid>hi("WildMenu",      s:gui00, s:gui09, "", "", "", "")
 "DiffAdd
@@ -127,8 +125,8 @@ call <sid>hi("SpecialChar",   s:gui04, s:gui00, "", "", "", "")
 call <sid>hi("Tag",           s:gui07, s:gui00, "", "", "", "")
 call <sid>hi("Delimiter",     s:gui04, s:gui00, "", "", "", "")
 call <sid>hi("Debug",         s:gui04, s:gui00, "", "", "", "")
-call <sid>hi("Todo",          s:gui06, s:gui07, "", "", "", "")
-call <sid>hi("Underlined",    s:gui11, s:gui00, "", "", "", "")
+call <sid>hi("Todo",          s:gui07, s:gui00, "", "", "", "")
+call <sid>hi("Underlined",    s:gui04, s:gui00, "", "", "underline", "")
 
 delf <sid>hi
 unlet s:gui00 s:gui01 s:gui02 s:gui03 s:gui04 s:gui05 s:gui06 s:gui07 s:gui08 s:gui09 s:gui10 s:gui11
