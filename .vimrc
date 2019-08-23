@@ -81,6 +81,7 @@ nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>S :echo join(reverse(map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')),' ')<CR>
+nnoremap <LEADER>gb :Gblame -w<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -199,7 +200,7 @@ augroup go
   autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>i :GoInfo<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>r :GoRun<CR>
-  autocmd FileType go nnoremap <buffer> <LEADER>T :GoTest<CR>
+  autocmd FileType go nnoremap <buffer> <LEADER>t :GoTest<CR>
 augroup END
 
 " -- Clojure --
