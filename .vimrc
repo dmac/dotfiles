@@ -275,7 +275,7 @@ let g:tagbar_iconchars = ['▸', '▾']
 " ctrlp
 let g:ctrlp_map = '<LEADER>f'
 let g:ctrlp_working_path_mode='r' " Search for files in repository with CtrlP
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$\|/target/\|/node_modules/\|/MopubSDK/\|/mopub-sdk/'
+let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$\|/target/\|/node_modules/\|/MopubSDK/\|/mopub-sdk/\|/vendor/\|/_ansible_repo/'
 let g:ctrlp_max_files = 0
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
