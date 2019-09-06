@@ -258,6 +258,7 @@ let g:loaded_matchparen=1
 " vim-airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_grayscale'
+let g:airline_section_z='%3p%% • %l/%L • %v'
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
