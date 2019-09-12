@@ -253,6 +253,12 @@ augroup rust
   autocmd FileType rust nnoremap <buffer> <LEADER>r :!cargo run<CR>
 augroup END
 
+" -- ASM --
+augroup asm
+  autocmd!
+  autocmd FileType asm setlocal commentstring=\;\ %s
+augroup END
+
 " ------------------------------ Plugin Options --------------------------------
 
 " Disable standard plugin highlighting matching paren.
