@@ -145,6 +145,9 @@ endif
 " -- C/C++ --
 let g:clang_library_path = $CLANG_LIBRARY_PATH
 let g:clang_complete_macros = 1
+let g:clang_complete_auto = 0
+let g:clang_sort_algo = "alpha"
+let g:clang_jumpto_declaration_key = "gd"
 
 augroup c
   autocmd!
