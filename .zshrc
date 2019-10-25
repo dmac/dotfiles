@@ -13,7 +13,6 @@ setopt HIST_IGNORE_DUPS   # don't save duplicate commmands in history
 setopt HIST_IGNORE_SPACE  # don't save commands that begin with a space
 
 # Miscellaneous options
-setopt AUTO_CD                        # cd if no command and directory present
 export PROMPT_EOL_MARK="%F{red}↵%f" # no EOL mark
 
 # Colors
