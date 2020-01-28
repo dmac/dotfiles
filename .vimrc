@@ -190,6 +190,8 @@ let g:go_fmt_autosave = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_options = "-local liftoff/"
 let g:go_search_bin_path_first = 0
+let g:go_highlight_diagnostic_errors = 0
+let g:go_highlight_diagnostic_warnings = 0
 
 augroup go
   autocmd!
