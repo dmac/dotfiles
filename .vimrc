@@ -244,6 +244,7 @@ augroup markdown
   autocmd FileType markdown setlocal tabstop=4
   autocmd FileType markdown setlocal softtabstop=4
   autocmd FileType markdown setlocal shiftwidth=4
+  autocmd FileType markdown setlocal textwidth=80
   autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdownd -s<CR><CR>
 augroup END
 
