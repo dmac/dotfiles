@@ -276,7 +276,8 @@ let g:airline_section_warning = ''
 
 " Hexokinase
 let g:Hexokinase_highlighters = ['background']
-let g:Hexokinase_ftAutoload = ['vim', 'css']
+let g:Hexokinase_ftEnabled = ['vim', 'css', 'html', 'javascript']
+let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla', 'colour_names']
 
 " nerdtree
 let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
