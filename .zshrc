@@ -66,7 +66,6 @@ setopt prompt_subst
 # Prompt
 PROMPT='%F{magenta}[%*] %F{yellow}[%n@%m] %F{cyan}[%~] ${vcs_info_msg_0_}
 %F{white}>%f '
-RPROMPT="\`if [ \$? != 0 ]; then echo \"%F{red}!%f\"; fi\`"
 
 # Ensure PATH contains no duplicates
 typeset -U PATH
