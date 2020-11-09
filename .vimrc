@@ -102,7 +102,7 @@ nnoremap <LEADER>ne :e ~/Dropbox/notes/
 nnoremap <LEADER>ns :Ack  ~/Dropbox/notes<S-Left><Left>
 
 
-let g:ackprg = "ag --vimgrep"
+let g:ackprg = "rg --vimgrep"
 
 " ------------------------------- Autocommands ---------------------------------
 
