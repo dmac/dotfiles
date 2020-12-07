@@ -35,7 +35,11 @@ BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Attach
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
-ColumnLimit:     0
+# We want no line length limit, but setting ColumnLimit to 0 behaves strangely
+# in some cases. For example, this line:
+#     FOO(int *) n = 0;
+# has a line break inserted between ')' and 'n'.
+ColumnLimit: 999999
 CommentPragmas:  ''
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
