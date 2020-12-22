@@ -11,7 +11,8 @@ set expandtab
 set smarttab
 set textwidth=0                   " never auto-wrap text
 set wrapmargin=0
-set nowrap
+set wrap linebreak                " wrap long lines
+set nolist                        " don't show whitespace
 set backspace=indent,eol,start    " make backspace work correctly
 set incsearch                     " perform search as you type
 set nohlsearch                    " don't highlight search results
