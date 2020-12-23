@@ -92,6 +92,7 @@ nnoremap <LEADER>sv :source $MYVIMRC<CR>:e<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>:e<CR>
 nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
+nnoremap <LEADER>TL :TagbarOpen fj<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>S :echo join(reverse(map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')),' ')<CR>
