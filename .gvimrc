@@ -1,9 +1,9 @@
 if has('mac')
-  set guifont=Inconsolata\ for\ Powerline:h14
+  set guifont=Inconsolata:h14
 elseif has('win32')
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h8
+  set guifont=DejaVu\ Sans\ Mono:h8
 else
-  set guifont=Inconsolata\ for\ Powerline\ 12
+  set guifont=Inconsolata\ 12
 endif
 set guioptions-=T       " hide gui toolbar
 set guioptions-=m       " hide gui menu

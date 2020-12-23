@@ -4,15 +4,9 @@
 [submodule "vendor/xcape"]
 	path = vendor/xcape
 	url = https://github.com/alols/xcape
-[submodule "vendor/powerline-fonts"]
-	path = vendor/powerline-fonts
-	url = https://github.com/powerline/fonts
 [submodule ".vim/pack/plugins/start/clang_complete"]
 	path = .vim/pack/plugins/start/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete
-[submodule ".vim/pack/plugins/start/vim-airline"]
-	path = .vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
 [submodule ".vim/pack/plugins/start/vim-toml"]
 	path = .vim/pack/plugins/start/vim-toml
 	url = https://github.com/cespare/vim-toml
@@ -67,9 +61,6 @@
 [submodule ".vim/pack/plugins/start/vim-surround"]
 	path = .vim/pack/plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule ".vim/pack/plugins/start/vim-airline-themes"]
-	path = .vim/pack/plugins/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
 [submodule ".vim/pack/plugins/start/vim-hexokinase"]
 	path = .vim/pack/plugins/start/vim-hexokinase
 	url = https://github.com/RRethy/vim-hexokinase.git
