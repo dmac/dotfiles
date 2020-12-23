@@ -26,7 +26,7 @@ set ruler                         " show cursor position, etc.
 set nocursorline                  " don't highlight cursor line
 set showcmd                       " display commands in progress at the bottom
 set cmdheight=1
-set laststatus=2                  " show statusline with filename
+set laststatus=2                  " always show statusline
 set wildmenu                      " command tab completion menu
 set wildmode=list:longest,full    " command tab completion menu options
 set completeopt=longest,menuone   " popup menu completion options
@@ -38,6 +38,19 @@ set foldlevel=99                  " open all folds by default
 set clipboard=unnamedplus
 
 helptags ALL
+
+
+" ------------------------------- Statusline -----------------------------------
+
+set statusline=
+set statusline+=\ %f " path to file relative to cwd
+set statusline+=\ %m " modified flag
+
+set statusline+=%=         " right-align
+set statusline+=\%y        " filetype
+set statusline+=\ ·\ %p%%  " file percent
+set statusline+=\ ·\ %l/%L " line number
+set statusline+=\ ·\ %-3c  " column number
 
 
 " ------------------------ Colorscheme and Highlights --------------------------
@@ -58,7 +71,6 @@ set termguicolors " use gui colors in terminal
 if exists("+colorcolumn")
   let &colorcolumn = 81
 endif
-
 
 " ------------------------------- Mappings -------------------------------------
 
@@ -102,7 +114,6 @@ inoremap <C-f> <Right>
 " note taking
 nnoremap <LEADER>ne :e ~/Dropbox/notes/
 nnoremap <LEADER>ns :Ack  ~/Dropbox/notes<S-Left><Left>
-
 
 let g:ackprg = "rg --vimgrep"
 
