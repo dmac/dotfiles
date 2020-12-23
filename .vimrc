@@ -21,7 +21,7 @@ set ignorecase                    " ignore case when searching...
 set smartcase                     " ...unless a capital letter was typed
 set autoread                      " reload changed files when focus returns
 set modeline                      " enable modelines
-set number                        " show line numbers
+set nonumber                      " show line numbers
 set ruler                         " show cursor position, etc.
 set nocursorline                  " don't highlight cursor line
 set showcmd                       " display commands in progress at the bottom
@@ -36,6 +36,7 @@ set nowritebackup                 " don't save backup files
 set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 set clipboard=unnamedplus
+set fillchars=fold:-,vert:▏
 
 helptags ALL
 
