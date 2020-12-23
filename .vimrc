@@ -53,6 +53,7 @@ function! GoLight()
 endfunction
 
 colors dmac-snes-dark
+set termguicolors " use gui colors in terminal
 
 if exists("+colorcolumn")
   let &colorcolumn = 81
