@@ -303,7 +303,7 @@ let g:tagbar_iconchars = ['▸', '▾']
 
 " ctrlp
 let g:ctrlp_map = '<LEADER>f'
-let g:ctrlp_working_path_mode='r' " Search for files in repository with CtrlP
+let g:ctrlp_working_path_mode='r' " Search for files in repository
 let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$\|/target/\|/node_modules/\|/MopubSDK/\|/mopub-sdk/\|/vendor/\|/antd/\|/adpreview/\|/cache/'
 let g:ctrlp_max_files = 0
 
