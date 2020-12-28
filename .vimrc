@@ -163,6 +163,7 @@ let g:clang_complete_macros = 1
 let g:clang_complete_auto = 0
 let g:clang_sort_algo = "alpha"
 let g:clang_jumpto_declaration_key = "gd"
+let g:clang_format#auto_format = 1
 
 augroup c
   autocmd!
@@ -201,7 +202,7 @@ function! SwapHeader()
 endfunction
 
 " -- Go --
-let g:go_fmt_autosave = 0
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_options = "-local liftoff/"
 let g:go_search_bin_path_first = 0
@@ -224,7 +225,7 @@ augroup go
 augroup END
 
 " -- Clojure --
-let g:cljfmt_on_save = 0
+let g:cljfmt_on_save = 1
 
 augroup clojure
   autocmd!
