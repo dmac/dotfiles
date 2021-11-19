@@ -37,6 +37,7 @@ set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 set clipboard=unnamedplus
 set fillchars=fold:-,vert:▏
+set updatetime=1000
 
 helptags ALL
 
@@ -125,6 +126,11 @@ let g:ackprg = "rg --vimgrep"
 augroup trailing_whitespace
   autocmd!
   autocmd BufWritePre * :%s/\s\+$//e
+augroup end
+
+augroup autosave
+  autocmd!
+  autocmd CursorHold,CursorHoldI * update
 augroup end
 
 " Additional filetypes
