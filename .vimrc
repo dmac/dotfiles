@@ -293,6 +293,13 @@ augroup git
   autocmd FileType gitcommit setlocal shiftwidth=8
 augroup END
 
+" -- Zig --
+augroup zig
+  autocmd!
+  autocmd FileType zig nnoremap <buffer> <LEADER>m :compiler zig_build_exe<CR>:make<CR>
+  autocmd FileType zig nnoremap <buffer> <LEADER>r :!zig run %<CR>
+augroup END
+
 " ------------------------------ Plugin Options --------------------------------
 
 " Disable standard plugin highlighting matching paren.
