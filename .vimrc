@@ -221,7 +221,6 @@ augroup go
   autocmd FileType go setlocal tabstop=8
   autocmd FileType go setlocal softtabstop=8
   autocmd FileType go setlocal shiftwidth=8
-  autocmd FileType go nnoremap <buffer> <LEADER>F :GoFmt<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>m :GoInstall<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>v :GoVet<CR>
   autocmd FileType go nnoremap <buffer> <LEADER>d :GoDoc<CR>
@@ -237,7 +236,6 @@ augroup clojure
   autocmd!
   autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
   autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
-  autocmd FileType clojure nnoremap <buffer> <LEADER>F :CljFmt<CR>
   autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
 augroup END
 
