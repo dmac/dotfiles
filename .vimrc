@@ -302,7 +302,6 @@ let g:Hexokinase_ftEnabled = ['vim', 'css', 'html', 'javascript']
 let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla', 'colour_names']
 
 " nerdtree
-let g:NERDTreeChDirMode=2 " change pwd when NERDTree root changes
 let g:NERDChristmasTree=1 " more colorful NERDTree
 
 " tagbar
