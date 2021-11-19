@@ -64,3 +64,6 @@
 [submodule ".vim/pack/plugins/start/vim-hexokinase"]
 	path = .vim/pack/plugins/start/vim-hexokinase
 	url = https://github.com/RRethy/vim-hexokinase.git
+[submodule ".vim/pack/plugins/start/zig.vim"]
+	path = .vim/pack/plugins/start/zig.vim
+	url = https://github.com/ziglang/zig.vim
