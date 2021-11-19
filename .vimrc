@@ -284,6 +284,15 @@ augroup asm
   autocmd FileType asm setlocal commentstring=\;\ %s
 augroup END
 
+" -- Git --
+augroup git
+  autocmd!
+  autocmd FileType gitcommit setlocal nolist
+  autocmd FileType gitcommit setlocal tabstop=8
+  autocmd FileType gitcommit setlocal softtabstop=8
+  autocmd FileType gitcommit setlocal shiftwidth=8
+augroup END
+
 " ------------------------------ Plugin Options --------------------------------
 
 " Disable standard plugin highlighting matching paren.
