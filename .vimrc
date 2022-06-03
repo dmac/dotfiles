@@ -170,6 +170,7 @@ let g:clang_complete_auto = 0
 let g:clang_sort_algo = "alpha"
 let g:clang_jumpto_declaration_key = "gd"
 let g:clang_format#auto_format = 1
+let g:clang_format#auto_filetypes = ["c", "cpp"]
 
 augroup c
   autocmd!
