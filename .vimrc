@@ -98,7 +98,7 @@ nnoremap <LEADER>TL :TagbarOpen fj<CR>
 nnoremap <LEADER>h :set hlsearch!<CR>
 nnoremap <LEADER>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <LEADER>S :echo join(reverse(map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')),' ')<CR>
-nnoremap <LEADER>gb :Gblame -w<CR>
+nnoremap <LEADER>gb :Git blame -w<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
