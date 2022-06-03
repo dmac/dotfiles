@@ -210,8 +210,9 @@ endfunction
 
 " -- Go --
 let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
-let g:go_fmt_options = "-local liftoff/"
+let g:go_fmt_command = "gopls"
+let g:go_gopls_local = "liftoff/"
+let g:go_gopls_gofumpt = 1
 let g:go_search_bin_path_first = 0
 let g:go_highlight_diagnostic_errors = 0
 let g:go_highlight_diagnostic_warnings = 0
