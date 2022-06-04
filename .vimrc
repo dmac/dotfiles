@@ -107,9 +107,10 @@ augroup trailing_whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 augroup end
 
+" Automatically save changes
 augroup autosave
   autocmd!
-  autocmd CursorHold,CursorHoldI * update
+  autocmd InsertLeave,TextChanged * update
 augroup end
 
 " Additional filetypes
