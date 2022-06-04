@@ -1,31 +1,23 @@
 " --------------------------------- General ------------------------------------
 filetype plugin indent on
 syntax on
-set nocompatible                  " duh
+set nocompatible                  " don't behave like vi
 set history=1000                  " longer history
 set hidden " allow buffers to be bg'ed without saving and allows undo when fg'ed
 set tabstop=2                     " 2 space tabs by default
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set smarttab
-set textwidth=0                   " never auto-wrap text
-set wrapmargin=0
+set softtabstop=2                 " 2 space tabs by default
+set shiftwidth=2                  " 2 space tabs by default
+set expandtab                     " insert spaces when tab is pressed
+set smarttab                      " use shiftwidth when inserting tab
 set wrap linebreak                " wrap long lines
-set nolist                        " don't show whitespace
 set backspace=indent,eol,start    " make backspace work correctly
 set incsearch                     " perform search as you type
-set nohlsearch                    " don't highlight search results
+set nojoinspaces                  " don't join sentences with two spaces
 set scrolloff=5                   " scroll when 5 lines away from edge of screen
 set ignorecase                    " ignore case when searching...
 set smartcase                     " ...unless a capital letter was typed
 set autoread                      " reload changed files when focus returns
-set modeline                      " enable modelines
-set nonumber                      " show line numbers
-set ruler                         " show cursor position, etc.
-set nocursorline                  " don't highlight cursor line
 set showcmd                       " display commands in progress at the bottom
-set cmdheight=1
 set laststatus=2                  " always show statusline
 set wildmenu                      " command tab completion menu
 set wildmode=list:longest,full    " command tab completion menu options
@@ -37,10 +29,8 @@ set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 set clipboard=unnamedplus
 set fillchars=fold:-,vert:▏
-set updatetime=1000
 
 helptags ALL
-
 
 " ------------------------------- Statusline -----------------------------------
 
@@ -219,7 +209,6 @@ let g:go_highlight_diagnostic_warnings = 0
 
 augroup go
   autocmd!
-  autocmd FileType go setlocal nolist
   autocmd FileType go setlocal tabstop=8
   autocmd FileType go setlocal softtabstop=8
   autocmd FileType go setlocal shiftwidth=8
@@ -287,7 +276,6 @@ augroup END
 " -- Git --
 augroup git
   autocmd!
-  autocmd FileType gitcommit setlocal nolist
   autocmd FileType gitcommit setlocal tabstop=8
   autocmd FileType gitcommit setlocal softtabstop=8
   autocmd FileType gitcommit setlocal shiftwidth=8
