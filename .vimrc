@@ -282,20 +282,10 @@ augroup END
 " Disable standard plugin highlighting matching paren.
 let g:loaded_matchparen=1
 
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='base16_grayscale'
-let g:airline_section_z='%3p%% • %l/%L • %v'
-let g:airline_section_error = ''
-let g:airline_section_warning = ''
-
-" Hexokinase
+" hexokinase
 let g:Hexokinase_highlighters = ['background']
 let g:Hexokinase_ftEnabled = ['vim', 'css', 'html', 'javascript']
 let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla', 'colour_names']
-
-" nerdtree
-let g:NERDChristmasTree=1 " more colorful NERDTree
 
 " tagbar
 let g:tagbar_iconchars = ['▸', '▾']
