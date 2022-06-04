@@ -213,14 +213,6 @@ augroup END
 " -- Clojure --
 let g:cljfmt_on_save = 1
 
-augroup clojure
-  autocmd!
-  autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
-  autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
-  autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
-augroup END
-
-" indentation
 let g:clojure_align_multiline_strings = 0
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = "with.*,def.*,let.*,send.*"
@@ -231,6 +223,13 @@ let g:clojure_fuzzy_indent_patterns .= ",fact,facts"                          " 
 let g:clojure_fuzzy_indent_patterns .= ",up,down,table"                       " Lobos
 let g:clojure_fuzzy_indent_patterns .= ",entity"                              " Custom
 
+augroup clojure
+  autocmd!
+  autocmd FileType clojure nnoremap <buffer> <LEADER>e :%Eval<CR>
+  autocmd FileType clojure nnoremap <buffer> <LEADER>E :Eval<CR>
+  autocmd FileType clojure setlocal omnifunc=fireplace#omnicomplete
+augroup END
+
 " -- Python --
 augroup python
   autocmd!
@@ -240,6 +239,8 @@ augroup python
 augroup END
 
 " -- Markdown --
+let g:vim_markdown_conceal = 0
+
 augroup markdown
   autocmd!
   autocmd FileType markdown setlocal tabstop=4
@@ -248,8 +249,6 @@ augroup markdown
   autocmd FileType markdown setlocal textwidth=80
   autocmd FileType markdown nnoremap <buffer> <LEADER>m :%w ! markdownd -s<CR><CR>
 augroup END
-
-let g:vim_markdown_conceal = 0
 
 " -- Rust --
 augroup rust
