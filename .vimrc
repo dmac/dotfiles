@@ -44,20 +44,9 @@ set statusline+=\ ·\ %p%%  " file percent
 set statusline+=\ ·\ %l/%L " line number
 set statusline+=\ ·\ %-3c  " column number
 
+" ------------------------------ Colorscheme -----------------------------------
 
-" ------------------------ Colorscheme and Highlights --------------------------
-
-function! GoDark()
-  set background=dark
-  colorscheme base16-solarized-dark
-endfunction
-
-function! GoLight()
-  set background=light
-  colorscheme base16-solarized-light
-endfunction
-
-colors dmac-snes-dark
+colorscheme dmac-snes-dark
 set termguicolors " use gui colors in terminal
 
 if exists("+colorcolumn")
