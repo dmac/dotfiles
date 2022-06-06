@@ -10,9 +10,6 @@
 [submodule ".vim/pack/plugins/start/toml"]
 	path = .vim/pack/plugins/start/toml
 	url = https://github.com/cespare/vim-toml
-[submodule ".vim/pack/plugins/start/ansible-yaml"]
-	path = .vim/pack/plugins/start/ansible-yaml
-	url = https://github.com/chase/vim-ansible-yaml
 [submodule ".vim/pack/plugins/start/base16-vim"]
 	path = .vim/pack/plugins/start/base16-vim
 	url = https://github.com/chriskempson/base16-vim

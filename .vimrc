@@ -122,7 +122,6 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.h set filetype=c
   autocmd BufNewFile,BufRead *.ejs set filetype=html
   autocmd BufNewFile,BufRead *.less set filetype=scss
-  autocmd BufNewFile,BufRead *.yml set filetype=ansible
   autocmd BufNewFile,BufRead *.tpl set filetype=gotexttmpl
 augroup end
 
