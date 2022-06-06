@@ -1,7 +1,7 @@
 if has('mac')
   set guifont=Inconsolata:h14
 elseif has('win32')
-  set guifont=DejaVu\ Sans\ Mono:h8
+  set guifont=Source\ Code\ Pro:h11
 else
   set guifont=Inconsolata-dz\ 10
   " set guifont=Source\ Code\ Pro\ 10
