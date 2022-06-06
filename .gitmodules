@@ -64,3 +64,6 @@
 [submodule ".vim/pack/plugins/start/zig"]
 	path = .vim/pack/plugins/start/zig
 	url = https://github.com/ziglang/zig.vim
+[submodule ".vim/pack/plugins/start/goyo"]
+	path = .vim/pack/plugins/start/goyo
+	url = https://github.com/junegunn/goyo.vim
