@@ -6,7 +6,7 @@
 	url = https://github.com/alols/xcape
 [submodule ".vim/pack/plugins/start/clang_complete"]
 	path = .vim/pack/plugins/start/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
+	url = https://github.com/xavierd/clang_complete
 [submodule ".vim/pack/plugins/start/toml"]
 	path = .vim/pack/plugins/start/toml
 	url = https://github.com/cespare/vim-toml
