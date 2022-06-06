@@ -111,7 +111,9 @@ augroup end
 " Automatically save changes
 augroup autosave
   autocmd!
-  autocmd InsertLeave,TextChanged * update
+  " Strip trailing whitespace because for some reason, the above autocmd to
+  " strip trailing whitespace doesn't trigger after the update in this autocmd.
+  autocmd InsertLeave,TextChanged * :%s/\s\+$//e | silent update
 augroup end
 
 " Additional filetypes
