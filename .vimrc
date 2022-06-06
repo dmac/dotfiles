@@ -137,6 +137,15 @@ augroup restore_cursor
   autocmd BufReadPost * call ResCur()
 augroup end
 
+" Restore cursor position (from defaults.vim)
+augroup restore_cursor
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ | endif
+augroup end
+
 " -------------------------------- OS Config -----------------------------------
 if has('win32')
   let $PYTHONPATH = "C:\\Python27\\Lib;C:\\Python27\\DLLs;C:\\Python27\\Lib\\lib-tk"
