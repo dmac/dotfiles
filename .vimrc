@@ -51,7 +51,7 @@ colorscheme dmac-snes-dark
 set termguicolors " use gui colors in terminal
 
 if exists("+colorcolumn")
-  let &colorcolumn = 81
+  set colorcolumn=81
 endif
 
 " ------------------------------- Mappings -------------------------------------
@@ -279,6 +279,7 @@ augroup git
   autocmd FileType gitcommit setlocal tabstop=8
   autocmd FileType gitcommit setlocal softtabstop=8
   autocmd FileType gitcommit setlocal shiftwidth=8
+  autocmd FileType gitcommit setlocal colorcolumn=73
 augroup END
 
 " -- Zig --
