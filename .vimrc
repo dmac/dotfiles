@@ -28,8 +28,8 @@ set nowritebackup                 " don't save backup files
 set noswapfile                    " don't create .swp files
 set foldlevel=99                  " open all folds by default
 set clipboard=unnamedplus
-set fillchars=fold:-,vert:▏
 set encoding=utf-8
+set fillchars=fold:-,vert:▏
 
 helptags ALL
 
