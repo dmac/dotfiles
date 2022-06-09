@@ -67,3 +67,6 @@
 [submodule ".vim/pack/plugins/start/goyo"]
 	path = .vim/pack/plugins/start/goyo
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/plugins/start/easy-align"]
+	path = .vim/pack/plugins/start/easy-align
+	url = git@github.com:junegunn/vim-easy-align.git
