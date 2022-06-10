@@ -22,9 +22,6 @@
 [submodule ".vim/pack/plugins/start/clojure-static"]
 	path = .vim/pack/plugins/start/clojure-static
 	url = https://github.com/guns/vim-clojure-static
-[submodule ".vim/pack/plugins/start/ctrlp"]
-	path = .vim/pack/plugins/start/ctrlp
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule ".vim/pack/plugins/start/tagbar"]
 	path = .vim/pack/plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -70,3 +67,9 @@
 [submodule ".vim/pack/plugins/start/easy-align"]
 	path = .vim/pack/plugins/start/easy-align
 	url = git@github.com:junegunn/vim-easy-align.git
+[submodule ".vim/pack/plugins/start/fzf"]
+	path = .vim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule ".vim/pack/plugins/start/fzf.vim"]
+	path = .vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

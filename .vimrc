@@ -72,6 +72,8 @@ nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
 nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/dmac-snes-dark.vim<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>:e<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>:e<CR>
+nnoremap <LEADER>f  :Files<CR>
+nnoremap <LEADER>F  :Buffers<CR>
 nnoremap <LEADER>tt :NERDTreeToggle<CR>
 nnoremap <LEADER>tl :TagbarToggle<CR>
 nnoremap <LEADER>TL :TagbarOpen fj<CR>
@@ -300,11 +302,16 @@ let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl'
 " tagbar
 let g:tagbar_iconchars = ['▸', '▾']
 
-" ctrlp
-let g:ctrlp_map = '<LEADER>f'
-let g:ctrlp_working_path_mode='r' " Search for files in repository
-let g:ctrlp_custom_ignore = '\.git$\|\.DS_Store$\|.*\.class$\|/target/\|/node_modules/\|/MopubSDK/\|/mopub-sdk/\|/vendor/\|/antd/\|/adpreview/\|/cache/'
-let g:ctrlp_max_files = 0
+" fzf
+" Rerun ripgrep search for every query change.
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
