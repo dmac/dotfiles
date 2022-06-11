@@ -113,7 +113,7 @@ augroup end
 " Automatically save changes
 augroup autosave
   autocmd!
-  autocmd InsertLeave,TextChanged * silent update
+  autocmd InsertLeave,TextChanged * ++nested if &l:buftype == '' | silent update | endif
 augroup end
 
 " Additional filetypes
