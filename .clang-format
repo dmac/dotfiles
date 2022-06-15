@@ -5,13 +5,13 @@ AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
-AlignEscapedNewlinesLeft: true
+AlignEscapedNewlines: Left
 AlignOperands:   true
 AlignTrailingComments: true
 AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: All
+AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
@@ -20,34 +20,30 @@ AlwaysBreakTemplateDeclarations: true
 BinPackArguments: true
 BinPackParameters: true
 BraceWrapping:
-  AfterClass:      false
+  AfterCaseLabel:        false
+  AfterClass:            false
   AfterControlStatement: false
-  AfterEnum:       false
-  AfterFunction:   false
-  AfterNamespace:  false
-  AfterObjCDeclaration: false
-  AfterStruct:     false
-  AfterUnion:      false
-  BeforeCatch:     false
-  BeforeElse:      false
-  IndentBraces:    false
+  AfterEnum:             false
+  AfterFunction:         false
+  AfterNamespace:        false
+  AfterObjCDeclaration:  false
+  AfterStruct:           false
+  AfterUnion:            false
+  BeforeCatch:           false
+  BeforeElse:            false
+  IndentBraces:          false
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Attach
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
-# We want no line length limit, but setting ColumnLimit to 0 behaves strangely
-# in some cases. For example, this line:
-#     FOO(int *) n = 0;
-# has a line break inserted between ')' and 'n'.
-ColumnLimit: 999999
+BreakStringLiterals: false
+ColumnLimit: 0
 CommentPragmas:  ''
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat:   false
-ExperimentalAutoDetectBinPacking: false
 ForEachMacros:   []
 IncludeCategories:
   - Regex:           '^<.*\.h>'
@@ -57,6 +53,7 @@ IncludeCategories:
   - Regex:           '.*'
     Priority:        3
 IndentCaseLabels: false
+IndentGotoLabels: false
 IndentWidth:     4
 IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
@@ -64,9 +61,6 @@ MacroBlockBegin: ''
 MacroBlockEnd:   ''
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
-ObjCBlockIndentWidth: 4
-ObjCSpaceAfterProperty: false
-ObjCSpaceBeforeProtocolList: false
 PenaltyBreakBeforeFirstCallParameter: 1
 PenaltyBreakComment: 300
 PenaltyBreakFirstLessLess: 120
