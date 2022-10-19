@@ -1,0 +1,7 @@
+--max-columns=150
+--max-columns-preview
+
+--glob=!*.min.js
+--glob=!*.ipynb
+
+--smart-case

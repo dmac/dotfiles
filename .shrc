@@ -9,6 +9,8 @@ export GOPATH=~/go
 export RUST_SRC_PATH=~/projects/rust/src
 # export CARGO_HOME=~/.cargo
 
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
+
 # Make openssl work on a mac
 # http://22ideastreet.com/debug/smtp-rb14-bug-segmentation-fault
 export RUBYOPT="-ropenssl"
