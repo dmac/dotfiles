@@ -328,6 +328,18 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" zig.vim
+let g:zig_fmt_autosave = 0
+
+" vim-lsc
+let g:lsc_server_commands = {'zig': 'zls'}
+let g:lsc_enable_autocomplete = v:false
+let g:lsc_auto_map = {
+  \    'defaults': v:true,
+  \    'GoToDefinition': 'gd',
+  \    'Completion': 'omnifunc'
+  \}
+
 " MacVim has a bug which causes it to have an incorrect $PATH when running commands like ctags or ruby gems.
 " To fix it, run `sudo mv /etc/zshenv /etc/zprofile` and initialize rbenv and your PATH in ~/.zprofile.
 " See https://github.com/b4winckler/macvim/wiki/Troubleshooting
