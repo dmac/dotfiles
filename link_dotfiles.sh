@@ -12,3 +12,4 @@ do
     echo ${file}
   fi
 done
+rm -fr $HOME/.config/nvim && ln -s $DOTDIR/nvim $HOME/.config/nvim && echo nvim
