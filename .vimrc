@@ -113,7 +113,7 @@ augroup end
 " Automatically save changes
 augroup autosave
   autocmd!
-  autocmd InsertLeave,TextChanged * ++nested if &l:buftype == '' | silent update | endif
+  autocmd InsertLeave,TextChanged * if &l:buftype == '' | silent update | endif
 augroup end
 
 " Additional filetypes
@@ -160,7 +160,7 @@ let g:clang_complete_macros = 1
 let g:clang_complete_auto = 0
 let g:clang_sort_algo = "alpha"
 let g:clang_jumpto_declaration_key = "gd"
-let g:clang_format#auto_format = 1
+let g:clang_format#auto_format = 0
 let g:clang_format#auto_filetypes = ["c", "cpp"]
 
 augroup c
@@ -250,7 +250,7 @@ augroup python
 augroup END
 
 " -- Markdown --
-let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 1
 
 augroup markdown
   autocmd!
@@ -327,9 +327,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-" zig.vim
-let g:zig_fmt_autosave = 0
 
 " vim-lsc
 let g:lsc_server_commands = {'zig': 'zls'}
