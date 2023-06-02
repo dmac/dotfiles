@@ -1,1 +1,1 @@
-/home/dmac/.vim/colors/dmac-snes-dark.vim
+../../.vim/colors/dmac-snes-dark.vim
