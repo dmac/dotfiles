@@ -63,9 +63,9 @@ vim.keymap.set("n", "<LEADER>ev", ":vsplit $MYVIMRC<CR>")
 vim.keymap.set("n", "<LEADER>en", ":vsplit "..nvimdir.."<CR>")
 vim.keymap.set("n", "<LEADER>ec", ":vsplit "..nvimdir.."/colors/dmac-snes-dark.vim<CR>")
 vim.keymap.set("n", "<LEADER>sv", ":source $MYVIMRC<CR>:e<CR>")
-vim.keymap.set("n", "<LEADER>f", ":FzfLua files<CR>")
-vim.keymap.set("n", "<LEADER>b", ":FzfLua buffers<CR>")
-vim.keymap.set("n", "<LEADER>a", ":FzfLua live_grep_native<CR>")
+vim.keymap.set("n", "<LEADER>f", ":Files<CR>")
+vim.keymap.set("n", "<LEADER>b", ":Buffers<CR>")
+vim.keymap.set("n", "<LEADER>a", ":RG<CR>")
 vim.keymap.set("n", "<LEADER>m", ":make<CR>")
 vim.keymap.set("n", "<LEADER>tt", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<LEADER>tl", ":TagbarToggle<CR>")
@@ -221,32 +221,38 @@ require("lazy").setup({
         },
     },
     {
-        "ibhagwan/fzf-lua",
-        opts = {
-            winopts = {
-                preview = {
-                    winopts = {
-                        number = false,
-                        cursorline = false,
-                    },
-                },
-            },
-            files = {
-                fd_opts = "--no-ignore",
-            },
-            fzf_colors = {
-                ["bg+"] = { "bg", "Normal" },
-                ["hl"] = { "fg", "Comment" },
-                ["hl+"] = { "fg", "Comment" },
-                ["info"] = { "fg", "String" },
-                ["prompt"] = { "fg", "Normal" },
-                ["pointer"] = { "fg", "Normal" },
-                ["header"] = { "fg", "Normal" },
-            },
-            grep = {
-                rg_opts = "--column --line-number --no-heading --color=never --smart-case --max-columns=4096",
-            },
-        },
+        "junegunn/fzf.vim",
+        dependencies = { "junegunn/fzf" },
+        init = function()
+            vim.cmd([[
+            let g:fzf_colors = {
+            \   'fg':      ['fg', 'Normal'],
+            \   'bg':      ['bg', 'Normal'],
+            \   'hl':      ['fg', 'Comment'],
+            \   'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \   'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \   'hl+':     ['fg', 'Statement'],
+            \   'info':    ['fg', 'PreProc'],
+            \   'border':  ['fg', 'Ignore'],
+            \   'prompt':  ['fg', 'Conditional'],
+            \   'pointer': ['fg', 'Exception'],
+            \   'marker':  ['fg', 'Keyword'],
+            \   'spinner': ['fg', 'Label'],
+            \   'header':  ['fg', 'Comment']
+            \ }
+
+            " Rerun ripgrep search for every query change.
+            function! RipgrepFzf(query, fullscreen)
+                let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+                let initial_command = printf(command_fmt, shellescape(a:query))
+                let reload_command = printf(command_fmt, '{q}')
+                let spec = {'options': ['--disabled', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+                let spec = fzf#vim#with_preview(spec, 'right', 'ctrl-/')
+                call fzf#vim#grep(initial_command, 1, spec, a:fullscreen)
+            endfunction
+            command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+            ]])
+        end
     },
     {
         "lewis6991/gitsigns.nvim",
