@@ -1,7 +1,17 @@
+# Path
+[[ -d /opt/local/bin ]]     && export PATH=/opt/local/bin:$PATH
+[[ -d /opt/local/sbin ]]    && export PATH=/opt/local/sbin:$PATH
+[[ -d /usr/local/bin ]]     && export PATH=/usr/local/bin:$PATH
+[[ -d ~/bin ]]              && export PATH=$HOME/bin:$PATH
+[[ -d ~/.rbenv ]]           && export PATH=$HOME/.rbenv/bin:$PATH
+[[ -d /usr/local/go/bin ]]  && export PATH=/usr/local/go/bin:$PATH
+[[ -d $GOPATH ]]            && export PATH=$GOPATH/bin:$PATH
+[[ -d ~/.cargo/bin ]]       && export PATH=~/.cargo/bin:$PATH
+
 # System configuration
 export DOTFILES=~/.dotfiles
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR="$([[ -x $(which nvim) ]] && echo 'nvim' || echo 'vim')"
+export VISUAL=$EDITOR
 export PAGER="less -FiRswX"
 export MANPAGER=$PAGER
 export GOPATH=~/go
@@ -14,16 +24,6 @@ export RIPGREP_CONFIG_PATH=~/.ripgreprc
 # Make openssl work on a mac
 # http://22ideastreet.com/debug/smtp-rb14-bug-segmentation-fault
 export RUBYOPT="-ropenssl"
-
-# Path
-[[ -d /opt/local/bin ]]     && export PATH=/opt/local/bin:$PATH
-[[ -d /opt/local/sbin ]]    && export PATH=/opt/local/sbin:$PATH
-[[ -d /usr/local/bin ]]     && export PATH=/usr/local/bin:$PATH
-[[ -d ~/bin ]]              && export PATH=$HOME/bin:$PATH
-[[ -d ~/.rbenv ]]           && export PATH=$HOME/.rbenv/bin:$PATH
-[[ -d /usr/local/go/bin ]]  && export PATH=/usr/local/go/bin:$PATH
-[[ -d $GOPATH ]]            && export PATH=$GOPATH/bin:$PATH
-[[ -d ~/.cargo/bin ]]       && export PATH=~/.cargo/bin:$PATH
 
 # History
 HISTFILE=~/.history       # where to save history
