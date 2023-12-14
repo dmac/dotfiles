@@ -10,6 +10,9 @@
   autosetupmerge = true
   autosetuprebase = always
 
+[merge]
+	conflictstyle = diff3
+
 [color]
   ui = auto
 
