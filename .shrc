@@ -39,21 +39,12 @@ test -n "$LS_COMMON" && alias ls="command ls $LS_COMMON"
 alias ll="ls -Glh"
 alias la="ls -Gla"
 alias g="git"
-alias gh="ghci"
 alias v="vagrant"
 alias a="ansible"
 alias ap="ansible-playbook"
 alias c="cargo"
 
 CDPATH=$CDPATH:~/p
-
-# rbenv configuration
-which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
-alias rr="rbenv"
-alias rh="which rbenv > /dev/null 2>&1 && rbenv rehash; rehash"
-alias be="bundle exec"
-alias bi="bundle install"
-alias gmacs="open -a /Applications/Emacs.app $1"
 
 # Clear local DNS cache on OSX
 alias clear-dns="sudo killall -HUP mDNSResponder"
