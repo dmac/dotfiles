@@ -19,7 +19,8 @@ vim.opt.signcolumn = "yes"              -- show sign column
 vim.opt.clipboard = "unnamedplus"       -- share system clipboard
 vim.opt.hlsearch = false                -- don't leave search highlights
 vim.opt.fillchars = "fold:-,vert:▏"
-vim.opt.grepprg= "rg --vimgrep"
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.tabline = ""
 
 vim.cmd("helptags ALL")
 
@@ -134,7 +135,7 @@ vim.api.nvim_create_autocmd({"FileType"}, {
         vim.opt_local.tabstop = 8
         vim.opt_local.softtabstop = 8
         vim.opt_local.shiftwidth = 8
-        vim.opt_local.colorcolumn = 73
+        vim.opt_local.colorcolumn = "73"
     end
 })
 
@@ -283,10 +284,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        -- TODO: Make references open in fzf window?
         vim.keymap.set('n', 'gr', vim.lsp.buf.references,copts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', '<leader>R', vim.lsp.buf.rename, opts)
-        -- TODO: Make this be FzfLua lsp_references?
         vim.keymap.set('n', '<leader>F', function()
             vim.lsp.buf.format()
             vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
