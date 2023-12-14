@@ -292,6 +292,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.buf.format()
             vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
         end, opts)
+        vim.keymap.set('n', '<leader>D', function()
+            if vim.diagnostic.is_disabled() then
+                vim.diagnostic.enable()
+            else
+                vim.diagnostic.disable()
+            end
+        end)
     end,
 })
 vim.fn.sign_define("DiagnosticSignError", { text = "•", texthl = "DiagnosticSignError" })
