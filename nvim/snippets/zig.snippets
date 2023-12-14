@@ -4,6 +4,11 @@ snippet print "std.debug.print(...);"
 snippet println "std.debug.print(...\n);"
 	std.debug.print("${1}\n", .{${2}});
 
+snippet gpa "std.heap.GernalPurposeAllocator"
+	var gpa = std.heap.GeneralPurposeAllocator{};
+	const allocator = gpa.allocator();
+
+
 snippet arena "std.heap.ArenaAllocator"
 	var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
 	defer arena.deinit();
