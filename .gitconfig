@@ -40,3 +40,7 @@
   #helper = osxkeychain
 [github]
 	user = dmac
+[credential "https://github.com"]
+	helper = !/home/dmac/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/home/dmac/bin/gh auth git-credential
