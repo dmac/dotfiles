@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eu -o pipefail
+
+# xseticon -id "$WINDOWID" /opt/nvim-linux-x86_64/share/icons/hicolor/128x128/apps/nvim.png
+xseticon -id "$WINDOWID" /opt/nvim-linux-x86_64/share/nvim/runtime/neovim.ico
+exec nvim "$@"
