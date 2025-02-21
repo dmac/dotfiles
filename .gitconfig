@@ -22,6 +22,9 @@
 [diff]
   ignoreSubmodules = untracked
 
+[init]
+	defaultBranch = main
+
 [alias]
   di = diff
   st = status
