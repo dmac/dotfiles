@@ -60,3 +60,5 @@ prompt_fancy
 
 # Load z. This must come after setting the prompt.
 . ~/.dotfiles/scripts/z/z.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
