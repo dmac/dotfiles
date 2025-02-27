@@ -76,6 +76,7 @@ call <sid>hi("CursorLine",    "", s:gui01, "", "", "", "")
 call <sid>hi("CursorLineNr",  s:gui04, s:gui01, "", "", "", "")
 call <sid>hi("IncSearch",     s:gui00, s:gui09, "", "", "", "")
 call <sid>hi("VertSplit",     s:gui01, s:gui00, "", "", "", "")
+call <sid>hi("WinSeparator",  s:gui01, s:gui00, "", "", "", "")
 call <sid>hi("SignColumn",    s:gui00, s:gui00, "", "", "", "")
 call <sid>hi("Directory",     s:gui07, s:gui00, "", "", "", "")
 call <sid>hi("Visual",        "",      s:gui01, "", "", "", "")
@@ -102,11 +103,13 @@ call <sid>hi("MatchParen",    "", s:gui02, "", "", "", "")
 call <sid>hi("WarningMsg",    s:gui09, "", "", "", "", "")
 call <sid>hi("WildMenu",      s:gui00, s:gui09, "", "", "", "")
 call <sid>hi("TabLine",       s:gui04, s:gui01, "", "", "", "")
-call <sid>hi("TabLineFill",   "", s:gui01, "", "", "", "")
 call <sid>hi("TabLineSel",    s:gui05, s:gui00, "", "", "", "")
-call <sid>hi("DiffAdd",      s:gui10, s:gui00, "", "", "", "")
-call <sid>hi("DiffChange",   s:gui05, s:gui00, "", "", "", "")
-call <sid>hi("DiffDelete",   s:gui08, s:gui00, "", "", "", "")
+call <sid>hi("Added",         s:gui10, s:gui00, "", "", "", "")
+call <sid>hi("Changed",       s:gui05, s:gui00, "", "", "", "")
+call <sid>hi("Removed",       s:gui08, s:gui00, "", "", "", "")
+"DiffAdd
+"DiffChange
+"DiffDelete
 "DiffText
 "SpellBad
 "SpellLocal
