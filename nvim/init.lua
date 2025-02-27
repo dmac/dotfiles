@@ -43,6 +43,15 @@ vim.cmd("colorscheme dmac-snes-dark")
 vim.opt.termguicolors = true -- use GUI colors in terminal
 vim.opt.colorcolumn = "81"
 
+-- Presentation Mode -----------------------------------------------------------
+-- vim.opt.colorcolumn = "0"
+-- vim.opt.statusline = "%t"
+-- vim.opt.laststatus = 3
+-- vim.opt.cmdheight = 0
+-- vim.opt.showmode = false
+-- vim.keymap.set("n", "<Left>", ":bprev<CR>")
+-- vim.keymap.set("n", "<Right>", ":bnext<CR>")
+
 -- Key Mappings ----------------------------------------------------------------
 
 -- movement
