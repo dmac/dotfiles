@@ -21,6 +21,8 @@ export RUST_SRC_PATH=~/projects/rust/src
 
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # Make openssl work on a mac
 # http://22ideastreet.com/debug/smtp-rb14-bug-segmentation-fault
 export RUBYOPT="-ropenssl"
