@@ -322,4 +322,10 @@ lspconfig.gopls.setup({
         },
     },
 })
-lspconfig.zls.setup({})
+lspconfig.zls.setup({
+    settings = {
+        zls = {
+            semantic_tokens = "none",
+        }
+    }
+})
