@@ -47,7 +47,7 @@ set statusline+=\ ·\ %-3c  " column number
 
 " ------------------------------ Colorscheme -----------------------------------
 
-colorscheme dmac-snes-dark
+colorscheme retcon-snes
 set termguicolors " use gui colors in terminal
 
 if exists("+colorcolumn")
@@ -69,7 +69,7 @@ nnoremap <LEADER>- yyp<C-v>$r-
 " global custom shortcuts
 nnoremap <LEADER>ev :vsplit $MYVIMRC<CR>
 nnoremap <LEADER>eg :vsplit $MYGVIMRC<CR>
-nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/dmac-snes-dark.vim<CR>
+nnoremap <LEADER>ec :vsplit $DOTFILES/.vim/colors/retcon-snes.vim<CR>
 nnoremap <LEADER>sv :source $MYVIMRC<CR>:e<CR>
 nnoremap <LEADER>sg :source $MYGVIMRC<CR>:e<CR>
 nnoremap <LEADER>f  :Files<CR>

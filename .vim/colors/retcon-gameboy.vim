@@ -1,6 +1,6 @@
 hi clear
 syntax reset
-let g:colors_name = "dmac-snes-dark"
+let g:colors_name = "retcon-gameboy"
 
 " AirlineTheme base16_ashes
 " AirlineTheme base16_grayscale
@@ -14,14 +14,14 @@ let g:colors_name = "dmac-snes-dark"
 " AirlineTheme tomorrow
 " AirlineTheme understated
 
-let s:gui00 = "#181818"
-let s:gui01 = "#242424"
+let s:gui00 = "#081820"
+let s:gui01 = "#0c1c24"
 let s:gui02 = "#54585a"
-let s:gui03 = "#707372"
+let s:gui03 = "#346856"
 let s:gui04 = "#b2b4b2"
 let s:gui05 = "#dae0f0"
 let s:gui06 = "#514689"
-let s:gui07 = "#a7a4e0"
+let s:gui07 = "#88c070"
 let s:gui08 = "#c1121c"
 let s:gui09 = "#f7ba0b"
 let s:gui10 = "#007243"

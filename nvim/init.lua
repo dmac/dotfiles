@@ -39,7 +39,7 @@ vim.opt.statusline = statusline
 
 -- Colorscheme -----------------------------------------------------------------
 
-vim.cmd("colorscheme dmac-snes-dark")
+vim.cmd("colorscheme retcon-snes")
 vim.opt.termguicolors = true -- use GUI colors in terminal
 vim.opt.colorcolumn = "81"
 
@@ -71,7 +71,7 @@ local nvimdir = "$HOME/.dotfiles/nvim"
 vim.g.mapleader = ","
 vim.keymap.set("n", "<LEADER>ev", ":vsplit $MYVIMRC<CR>")
 vim.keymap.set("n", "<LEADER>en", ":vsplit "..nvimdir.."<CR>")
-vim.keymap.set("n", "<LEADER>ec", ":vsplit "..nvimdir.."/colors/dmac-snes-dark.vim<CR>")
+vim.keymap.set("n", "<LEADER>ec", ":vsplit "..nvimdir.."/colors/retcon-snes.vim<CR>")
 vim.keymap.set("n", "<LEADER>sv", ":source $MYVIMRC<CR>:e<CR>")
 vim.keymap.set("n", "<LEADER>f", ":Files<CR>")
 vim.keymap.set("n", "<LEADER>b", ":Buffers<CR>")
