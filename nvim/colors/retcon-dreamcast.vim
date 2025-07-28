@@ -1,1 +1,0 @@
-../../.vim/colors/retcon-dreamcast.vim
