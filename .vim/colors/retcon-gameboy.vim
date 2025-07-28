@@ -9,7 +9,7 @@ let s:theme2 = "#88c070"
 let s:theme3 = "#e0f8d0"
 
 let s:bg0 = s:theme0
-let s:bg1 = "#0c1c24" " lighten +0x04
+let s:bg1 = "#0c1c24" " lighten +0x040404
 let s:sec0 = s:theme1
 let s:pri0 = "#b2b2b2"
 let s:pri1 = s:theme3
@@ -81,8 +81,8 @@ call <sid>hi("EndOfBuffer",     s:bg0, s:bg0, "", "", "", "")
 call <sid>hi("ErrorMsg",        s:uired, s:bg0, "", "", "", "")
 call <sid>hi("PMenu",           s:pri0, s:bg1, "", "", "", "")
 call <sid>hi("PMenuSel",        s:bg1, s:pri0, "", "", "", "")
-call <sid>hi("PMenuSbar",       s:bg1, s:bg1, "", "", "", "")
-call <sid>hi("PMenuThumb",      s:bg1, s:pop0, "", "", "", "")
+call <sid>hi("PMenuSbar",       s:sec0, s:sec0, "", "", "", "")
+call <sid>hi("PMenuThumb",      s:pop0, s:pop0, "", "", "", "")
 call <sid>hi("Folded",          s:pop0, s:bg1, "", "", "", "")
 call <sid>hi("Question",        s:pop0, "", "", "", "", "")
 call <sid>hi("QuickFixLine",    s:pop0, s:bg1, "", "", "", "")
@@ -98,15 +98,14 @@ call <sid>hi("WildMenu",        s:bg0, s:uiyel, "", "", "", "")
 call <sid>hi("TabLine",         s:pri0, s:bg1, "", "", "", "")
 call <sid>hi("TabLineSel",      s:pri1, s:bg0, "", "", "", "")
 call <sid>hi("Added",           s:uigre, s:bg0, "", "", "", "")
-call <sid>hi("Changed",         s:pri0, s:bg0, "", "", "", "")
-call <sid>hi("Removed",         s:uired, s:bg0, "", "", "", "")
-call <sid>hi("DiagnosticError", s:uired, s:bg0, "", "", "", "")
-call <sid>hi("DiagnosticWarn",  s:uiyel, s:bg0, "", "", "", "")
 call <sid>hi("DiffAdd",         s:uigre, s:bg0, "", "", "", "")
+call <sid>hi("Changed",         s:pri1, s:bg0, "", "", "", "")
 call <sid>hi("DiffChange",      s:pri1, s:bg0, "", "", "", "")
+call <sid>hi("Removed",         s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiffDelete",      s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiffText",        s:pri1, s:bg0, "", "", "", "")
-call <sid>hi("DiffText",        s:pri1, s:bg0, "", "", "", "")
+call <sid>hi("DiagnosticError", s:uired, s:bg0, "", "", "", "")
+call <sid>hi("DiagnosticWarn",  s:uiyel, s:bg0, "", "", "", "")
 
 call <sid>hi("Comment",       s:pop0, "", s:cterm13, "", "", "")
 call <sid>hi("Constant",      s:pri0, "", "", "", "", "")
