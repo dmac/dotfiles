@@ -9,7 +9,8 @@ let s:theme2 = "#88c070"
 let s:theme3 = "#e0f8d0"
 
 let s:bg0 = s:theme0
-let s:bg1 = "#0c1c24" " lighten +0x040404
+let s:bg1 = "#0c1c24" " lighten bg0 +0x040404
+let s:bg2 = "#2c3c44" " lighten bg0 +0x202020
 let s:sec0 = s:theme1
 let s:pri0 = "#b2b2b2"
 let s:pri1 = s:theme3
@@ -106,6 +107,7 @@ call <sid>hi("DiffDelete",      s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiffText",        s:pri1, s:bg0, "", "", "", "")
 call <sid>hi("DiagnosticError", s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiagnosticWarn",  s:uiyel, s:bg0, "", "", "", "")
+call <sid>hi("LspInlayHint",    s:bg2, "", "", "", "", "")
 
 call <sid>hi("Comment",       s:pop0, "", s:cterm13, "", "", "")
 call <sid>hi("Constant",      s:pri0, "", "", "", "", "")

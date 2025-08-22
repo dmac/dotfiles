@@ -10,8 +10,9 @@ let s:theme3 = "#dae0f0"
 let s:theme4 = "#514689"
 
 let s:bg0 = s:theme0
-let s:bg1 = "#242424" " lighten +0x0c0c0c
-let s:bg2 = s:theme4
+let s:bg1 = "#242424" " lighten bg0 +0x0c0c0c
+let s:bg2 = "#383838" " lighten bg0 +0x202020
+let s:bg3 = s:theme4
 let s:sec0 = s:theme1
 let s:pri0 = "#b2b2b2"
 let s:pri1 = s:theme3
@@ -83,13 +84,13 @@ call <sid>hi("EndOfBuffer",     s:bg0, s:bg0, "", "", "", "")
 call <sid>hi("ErrorMsg",        s:uired, s:bg0, "", "", "", "")
 call <sid>hi("PMenu",           s:pri0, s:bg1, "", "", "", "")
 call <sid>hi("PMenuSel",        s:bg1, s:pri0, "", "", "", "")
-call <sid>hi("PMenuSbar",       s:bg2, s:bg2, "", "", "", "")
+call <sid>hi("PMenuSbar",       s:bg3, s:bg3, "", "", "", "")
 call <sid>hi("PMenuThumb",      s:bg1, s:pop0, "", "", "", "")
 call <sid>hi("Folded",          s:pop0, s:bg1, "", "", "", "")
 call <sid>hi("Question",        s:pop0, "", "", "", "", "")
 call <sid>hi("QuickFixLine",    s:pop0, s:bg1, "", "", "", "")
 call <sid>hi("SpecialKey",      s:pri1, "", "", "", "", "")
-call <sid>hi("ModeMsg",         s:pri1, s:bg2, "", "", "", "")
+call <sid>hi("ModeMsg",         s:pri1, s:bg3, "", "", "", "")
 call <sid>hi("MoreMsg",         s:pop0, "", "", "", "", "")
 call <sid>hi("StatusLine",      s:pri1, s:bg1, "", "", "", "")
 call <sid>hi("StatusLineNC",    s:sec0, s:bg0, "", "", "", "")
@@ -108,6 +109,7 @@ call <sid>hi("DiffDelete",      s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiffText",        s:pri1, s:bg0, "", "", "", "")
 call <sid>hi("DiagnosticError", s:uired, s:bg0, "", "", "", "")
 call <sid>hi("DiagnosticWarn",  s:uiyel, s:bg0, "", "", "", "")
+call <sid>hi("LspInlayHint",    s:bg2, "", "", "", "", "")
 
 call <sid>hi("Comment",       s:pop0, "", s:cterm13, "", "", "")
 call <sid>hi("Constant",      s:pri0, "", "", "", "", "")

@@ -336,6 +336,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 vim.diagnostic.disable()
             end
         end)
+        vim.keymap.set('n', '<leader>N', function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
+        end)
     end,
 })
 vim.diagnostic.config({
@@ -353,7 +356,12 @@ lspconfig.gopls.setup({
     settings = {
         gopls = {
             ["local"] = "liftoff.io/",
-            gofumpt = true
+            gofumpt = true,
+            ["ui.inlayhint.hints"] = {
+                compositeLiteralFields = true,
+                constantValues = true,
+                parameterNames = true
+            },
         },
     },
 })
