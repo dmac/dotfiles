@@ -179,6 +179,14 @@ vim.api.nvim_create_autocmd({"FileType"}, {
 vim.g.zig_fmt_parse_errors = 0
 vim.g.zig_fmt_autosave = 0
 vim.api.nvim_create_augroup("zig", {clear = true})
+vim.api.nvim_create_autocmd({"VimEnter", "ColorScheme"}, {
+    group = "zig",
+    pattern = "*",
+    callback = function(ev)
+        -- zig.vim sets "_" to highlight as Comment. Undo this.
+        vim.api.nvim_set_hl(0, "zigDummyVariable", { link = "Normal" })
+    end
+})
 vim.api.nvim_create_autocmd({"FileType"}, {
     group = "zig",
     pattern = "zig",
