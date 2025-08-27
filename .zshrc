@@ -106,3 +106,5 @@ function precmd()
 # Source plugins
 source $DOTFILES/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/.zlogin
