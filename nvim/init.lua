@@ -85,6 +85,8 @@ vim.keymap.set("n", "<LEADER>h", ":set hlsearch!<CR>")
 vim.keymap.set("n", "<LEADER>cd", ":cd %:p:h<CR>:pwd<CR>")
 vim.keymap.set("n", "<LEADER>S", [[:echo join(reverse(map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')),' ')<CR>]])
 vim.keymap.set("n", "<LEADER>gb", ":Git blame -w<CR>")
+vim.keymap.set("n", "<LEADER>gn", ":Gitsigns nav_hunk next<CR>")
+vim.keymap.set("n", "<LEADER>gp", ":Gitsigns nav_hunk prev<CR>")
 vim.keymap.set("n", "<LEADER>=", "yyp<C-v>$r=") -- underline with ===
 vim.keymap.set("n", "<LEADER>-", "yyp<C-v>$r-") -- underline with ---
 
