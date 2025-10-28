@@ -107,16 +107,11 @@ vim.api.nvim_create_autocmd({"InsertLeave", "TextChanged"}, {
 })
 
 -- additional filetypes
-vim.api.nvim_create_augroup("filetypes", {clear = true})
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = "filetypes",
-    pattern = "*.h",
-    command = "set filetype=c",
-})
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = "filetypes",
-    pattern = "*.tpl",
-    command = "set filetype=gotexttmpl",
+vim.filetype.add({
+    extension = {
+        h = "c",
+        tpl = "gotexttmpl",
+    }
 })
 
 -- vertical help window
