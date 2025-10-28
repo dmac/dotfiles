@@ -161,7 +161,7 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
 })
 vim.api.nvim_create_autocmd({"FileType"}, {
     group = "go",
-    pattern = "go",
+    pattern = {"go", "gotexttmpl"},
     callback = function()
         vim.opt_local.formatprg = ''
         vim.opt_local.tabstop = 8
