@@ -373,3 +373,4 @@ lspconfig.zls.setup({
         }
     }
 })
+vim.lsp.enable("pyright")
