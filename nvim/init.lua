@@ -313,7 +313,6 @@ require("lazy").setup({
 })
 
 -- lspconfig
-local lspconfig = require('lspconfig')
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
@@ -353,7 +352,7 @@ vim.diagnostic.config({
         },
     }
 })
-lspconfig.gopls.setup({
+vim.lsp.config("gopls", {
     settings = {
         gopls = {
             ["local"] = "liftoff.io/",
@@ -366,11 +365,13 @@ lspconfig.gopls.setup({
         },
     },
 })
-lspconfig.zls.setup({
+vim.lsp.enable("gopls")
+vim.lsp.config("zls", {
     settings = {
         zls = {
             semantic_tokens = "none",
         }
     }
 })
+vim.lsp.enable("zls")
 vim.lsp.enable("pyright")
