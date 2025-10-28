@@ -335,11 +335,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
         end, opts)
         vim.keymap.set('n', '<leader>D', function()
-            if vim.diagnostic.is_disabled() then
-                vim.diagnostic.enable()
-            else
-                vim.diagnostic.disable()
-            end
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
         end)
         vim.keymap.set('n', '<leader>N', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
